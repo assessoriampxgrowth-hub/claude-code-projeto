@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Restaurante Centro-Oeste – Almoço por Quilo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #0d0805;
+  }
+
+  /* ── FUNDO PREMIUM ── */
+  .bg-base {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, #3a1a04 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 20% 80%, #1a0a02 0%, transparent 60%),
+      linear-gradient(160deg, #140a03 0%, #0d0805 40%, #1a0d04 70%, #0a0602 100%);
+  }
+
+  /* Textura de fundo – linhas sutis */
+  .bg-texture {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px);
+    opacity: 0.5;
+  }
+
+  /* Glow central – luz dramática sobre a carne */
+  .light-glow {
+    position: absolute;
+    top: -80px; right: -60px;
+    width: 820px; height: 820px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(210,110,10,0.22) 0%, rgba(160,60,0,0.10) 35%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Glow inferior – calor do buffet */
+  .light-glow-bottom {
+    position: absolute;
+    bottom: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 900px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(180,80,0,0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* ── FAIXA LATERAL ESQUERDA ── */
+  .left-accent {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, transparent, #c8860a 25%, #e8a020 50%, #c8860a 75%, transparent);
+  }
+
+  /* ── LOGO / NOME DA MARCA ── */
+  .brand-area {
+    position: absolute;
+    top: 52px; left: 58px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand-since {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #c8860a;
+    text-transform: uppercase;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f5ede0;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+  }
+
+  .brand-name span {
+    color: #e8a020;
+  }
+
+  .brand-divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, #c8860a, transparent);
+    margin-top: 8px;
+  }
+
+  /* ── BLOCO DE TEXTO PRINCIPAL ── */
+  .text-block {
+    position: absolute;
+    top: 180px;
+    left: 58px;
+    width: 480px;
+  }
+
+  .pre-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #c8860a;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .main-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 92px;
+    font-weight: 700;
+    line-height: 0.92;
+    color: #f5ede0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.9), 0 0 60px rgba(200,90,0,0.15);
+    margin-bottom: 6px;
+  }
+
+  .main-title .line2 {
+    color: #e8a020;
+    font-size: 78px;
+  }
+
+  .sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #c8a060;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 32px;
+  }
+
+  /* ── PREÇO ── */
+  .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 34px;
+  }
+
+  .price-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #c8860a;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .price-box {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: linear-gradient(135deg, #b8720a 0%, #e8a020 40%, #c8860a 70%, #9a5c06 100%);
+    padding: 14px 28px 14px 24px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow:
+      0 8px 40px rgba(200,100,0,0.45),
+      0 2px 8px rgba(0,0,0,0.6),
+      inset 0 1px 0 rgba(255,255,255,0.15);
+    width: fit-content;
+  }
+
+  .price-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(255,220,100,0.3);
+  }
+
+  .price-currency {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    line-height: 1;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .price-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 82px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .price-unit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.9);
+    align-self: flex-end;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* ── TEXTO DE APOIO ── */
+  .support-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #b89070;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    margin-bottom: 36px;
+    max-width: 360px;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid #c8860a;
+    padding: 14px 32px;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: #c8860a;
+  }
+
+  .cta-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #f5ede0;
+    text-transform: uppercase;
+  }
+
+  .cta-arrow {
+    width: 20px;
+    height: 2px;
+    background: #c8860a;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cta-arrow::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: -4px;
+    width: 10px; height: 10px;
+    border-right: 2px solid #c8860a;
+    border-top: 2px solid #c8860a;
+    transform: rotate(45deg);
+  }
+
+  /* ── ESPETO DE CARNE (ilustração CSS) ── */
+  .meat-scene {
+    position: absolute;
+    right: -30px;
+    top: 60px;
+    width: 560px;
+    height: 660px;
+  }
+
+  /* Halo de luz atrás do espeto */
+  .meat-halo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(220,130,0,0.20) 0%, rgba(180,80,0,0.08) 45%, transparent 70%);
+  }
+
+  /* Espeto – haste metálica */
+  .skewer-stick {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    width: 18px;
+    height: 620px;
+    background: linear-gradient(90deg, #888 0%, #ddd 30%, #eee 50%, #ccc 70%, #888 100%);
+    border-radius: 9px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+
+  .skewer-stick::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 6px; height: 28px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  }
+
+  /* Pedaços de carne */
+  .meat-piece {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    border-radius: 10px;
+    box-shadow:
+      0 8px 30px rgba(0,0,0,0.5),
+      0 2px 8px rgba(0,0,0,0.4),
+      inset 0 -3px 10px rgba(0,0,0,0.3);
+    z-index: 3;
+  }
+
+  .meat-1 {
+    top: 52px;
+    width: 130px; height: 110px;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 35%, #c8602a 0%, #a04018 40%, #6b2508 80%),
+      linear-gradient(135deg, #b05020 0%, #7a3010 60%, #4a1a05 100%);
+    border-radius: 12px 14px 10px 12px;
+  }
+
+  .meat-1::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 12px;
+    width: 50px; height: 16px;
+    background: radial-gradient(ellipse, rgba(220,160,80,0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  .meat-2 {
+    top: 170px;
+    width: 145px; height: 125px;
+    background:
+      radial-gradient(ellipse 55% 45% at 40% 30%, #d47030 0%, #a84820 40%, #6b2508 75%),
+      linear-gradient(145deg, #bc5822 0%, #823015 60%, #4a1a05 100%);
+    border-radius: 14px 12px 14px 10px;
+  }
+
+  .meat-2::before {
+    content: '';
+    position: absolute;
+    top: 14px; left: 18px;
+    width: 45px; height: 12px;
+    background: rgba(255,200,100,0.25);
+    border-radius: 50%;
+    filter: blur(5px);
+  }
+
+  .meat-2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; right: 14px;
+    width: 30px; height: 8px;
+    background: rgba(255,180,80,0.2);
+    border-radius: 50%;
+    filter: blur(4px);
+  }
+
+  .meat-3 {
+    top: 308px;
+    width: 138px; height: 118px;
+    background:
+      radial-gradient(ellipse 50% 55% at 38% 35%, #c86028 0%, #9e3f18 42%, #631e06 78%),
+      linear-gradient(130deg, #b25020 0%, #7a2e10 55%, #451808 100%);
+    border-radius: 11px 15px 12px 13px;
+  }
+
+  .meat-4 {
+    top: 440px;
+    width: 125px; height: 108px;
+    background:
+      radial-gradient(ellipse 60% 45% at 42% 32%, #cf6830 0%, #a24520 42%, #682005 75%),
+      linear-gradient(140deg, #ba5520 0%, #7e3012 58%, #481808 100%);
+    border-radius: 13px 11px 14px 12px;
+  }
+
+  /* Gordura / brilho na carne */
+  .meat-shine {
+    position: absolute;
+    top: 8px; left: 10px;
+    width: 35%; height: 35%;
+    background: radial-gradient(ellipse, rgba(255,220,150,0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(4px);
+  }
+
+  /* Vapor / fumaça */
+  .steam {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    z-index: 5;
+  }
+
+  .steam-line {
+    width: 3px;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.18) 30%, rgba(255,255,255,0.08) 70%, transparent);
+    border-radius: 4px;
+    animation: steamRise 2.5s ease-in-out infinite;
+  }
+
+  .steam-line:nth-child(1) { height: 55px; animation-delay: 0s; }
+  .steam-line:nth-child(2) { height: 70px; animation-delay: 0.5s; }
+  .steam-line:nth-child(3) { height: 45px; animation-delay: 1s; }
+
+  @keyframes steamRise {
+    0%, 100% { opacity: 0.3; transform: scaleX(1); }
+    50% { opacity: 0.7; transform: scaleX(1.4); }
+  }
+
+  /* Gotas de gordura */
+  .drip {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220,140,40,0.9) 0%, rgba(180,100,20,0.7) 60%, transparent 100%);
+    filter: blur(1px);
+    z-index: 4;
+  }
+
+  .drip-1 { width: 8px; height: 12px; top: 280px; left: calc(50% + 60px); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-8deg); }
+  .drip-2 { width: 6px; height: 10px; top: 150px; left: calc(50% - 68px); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-8deg); }
+
+  /* ── SEPARADOR ── */
+  .section-separator {
+    position: absolute;
+    bottom: 272px;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,134,10,0.4) 20%, rgba(200,134,10,0.6) 50%, rgba(200,134,10,0.4) 80%, transparent);
+  }
+
+  .separator-label {
+    position: absolute;
+    bottom: 284px;
+    left: 58px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #c8860a;
+    text-transform: uppercase;
+    background: #0d0805;
+    padding: 0 10px;
+  }
+
+  /* ── BUFFET (parte inferior) ── */
+  .buffet-area {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 260px;
+    background: linear-gradient(180deg, transparent 0%, rgba(20,10,3,0.95) 25%, #100805 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0 48px;
+    overflow: hidden;
+  }
+
+  /* Fundo brilhante de calor atrás do buffet */
+  .buffet-glow {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 200px;
+    background: radial-gradient(ellipse, rgba(160,70,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    position: relative;
+  }
+
+  .food-bowl {
+    position: relative;
+    border-radius: 50% 50% 48% 48% / 30% 30% 70% 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.5),
+      0 2px 8px rgba(0,0,0,0.4),
+      inset 0 -4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Arroz branco */
+  .bowl-arroz {
+    width: 110px; height: 72px;
+    background: linear-gradient(180deg, #e8e0d0 0%, #d5cdb8 40%, #b8ab96 100%);
+  }
+  .bowl-arroz::after {
+    content: '';
+    position: absolute;
+    top: 10px; left: 15px;
+    right: 15px; height: 18px;
+    background:
+      radial-gradient(circle 6px at 20% 50%, rgba(255,255,255,0.7) 0%, transparent 60%),
+      radial-gradient(circle 5px at 40% 50%, rgba(255,255,255,0.6) 0%, transparent 60%),
+      radial-gradient(circle 6px at 60% 50%, rgba(255,255,255,0.65) 0%, transparent 60%),
+      radial-gradient(circle 5px at 80% 50%, rgba(255,255,255,0.7) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+
+  /* Feijão Tropeiro */
+  .bowl-feijao {
+    width: 110px; height: 72px;
+    background: linear-gradient(180deg, #6b4220 0%, #4a2a10 50%, #361a08 100%);
+  }
+  .bowl-feijao::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 10px; right: 10px; height: 30px;
+    background:
+      radial-gradient(circle 8px at 25% 50%, #7a4e28 0%, transparent 70%),
+      radial-gradient(circle 7px at 50% 40%, #5a3418 0%, transparent 70%),
+      radial-gradient(circle 8px at 75% 55%, #6e4222 0%, transparent 70%),
+      radial-gradient(circle 6px at 15% 70%, #4a2c12 0%, transparent 70%);
+  }
+  .bowl-feijao::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 18px;
+    width: 25px; height: 10px;
+    background: rgba(200,150,80,0.25);
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  /* Farofa */
+  .bowl-farofa {
+    width: 110px; height: 72px;
+    background: linear-gradient(180deg, #c89840 0%, #a07828 50%, #7a5a18 100%);
+  }
+  .bowl-farofa::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 10px; right: 10px; height: 28px;
+    background:
+      radial-gradient(circle 5px at 20% 50%, rgba(220,180,80,0.7) 0%, transparent 70%),
+      radial-gradient(circle 4px at 45% 35%, rgba(200,160,60,0.6) 0%, transparent 70%),
+      radial-gradient(circle 5px at 70% 55%, rgba(210,170,70,0.7) 0%, transparent 70%),
+      radial-gradient(circle 3px at 85% 40%, rgba(220,175,75,0.5) 0%, transparent 70%);
+  }
+
+  /* Mandioca */
+  .bowl-mandioca {
+    width: 100px; height: 68px;
+    background: linear-gradient(180deg, #e8d080 0%, #c8a840 50%, #9a7820 100%);
+  }
+  .bowl-mandioca::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; height: 32px;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255,245,180,0.5) 30%, rgba(255,245,180,0.3) 60%, transparent 100%),
+      linear-gradient(180deg, rgba(255,255,200,0.2) 0%, transparent 100%);
+    border-radius: 4px;
+  }
+  .bowl-mandioca::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 18px;
+    width: 30px; height: 10px;
+    background: rgba(255,240,150,0.3);
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  /* Vinagrete */
+  .bowl-vinagrete {
+    width: 100px; height: 68px;
+    background: linear-gradient(180deg, #c84820 0%, #a03018 50%, #701808 100%);
+  }
+  .bowl-vinagrete::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; height: 28px;
+    background:
+      radial-gradient(circle 7px at 25% 45%, #e06030 0%, transparent 70%),
+      radial-gradient(circle 6px at 55% 35%, #d05028 0%, transparent 70%),
+      radial-gradient(circle 5px at 78% 55%, #b84020 0%, transparent 70%),
+      radial-gradient(circle 4px at 42% 65%, rgba(200,200,80,0.7) 0%, transparent 70%);
+  }
+  .bowl-vinagrete::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 14px;
+    width: 22px; height: 8px;
+    background: rgba(255,180,100,0.25);
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  /* Macarrão */
+  .bowl-macarrao {
+    width: 100px; height: 68px;
+    background: linear-gradient(180deg, #d4a840 0%, #a87c28 50%, #7a5810 100%);
+  }
+  .bowl-macarrao::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 8px; right: 8px; height: 34px;
+    background:
+      repeating-linear-gradient(30deg, transparent 0px, transparent 3px, rgba(220,180,80,0.3) 3px, rgba(220,180,80,0.3) 4px),
+      repeating-linear-gradient(-30deg, transparent 0px, transparent 3px, rgba(200,160,60,0.2) 3px, rgba(200,160,60,0.2) 4px);
+    border-radius: 4px;
+  }
+  .bowl-macarrao::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 16px;
+    width: 28px; height: 10px;
+    background: rgba(255,220,100,0.25);
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  /* Sombra lateral entre itens */
+  .food-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, rgba(200,134,10,0.2), transparent);
+    flex-shrink: 0;
+  }
+
+  .food-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #8a6a40;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ── RODAPÉ ── */
+  .footer-strip {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c8860a 20%, #e8a020 50%, #c8860a 80%, transparent);
+  }
+
+  /* ── PONTOS DECORATIVOS ── */
+  .dot-pattern {
+    position: absolute;
+    top: 60px; right: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    opacity: 0.08;
+  }
+
+  .dot-pattern span {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #e8a020;
+    display: block;
+  }
+
+  /* ── BADGE PREMIUM ── */
+  .badge {
+    position: absolute;
+    top: 52px; right: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px; height: 90px;
+  }
+
+  .badge-ring {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(200,134,10,0.5);
+  }
+
+  .badge-ring-inner {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,134,10,0.25);
+  }
+
+  .badge-text-top {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c8860a;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .badge-main {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #e8a020;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .badge-text-bottom {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #c8860a;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <!-- Fundos e luzes -->
+  <div class="bg-base"></div>
+  <div class="bg-texture"></div>
+  <div class="light-glow"></div>
+  <div class="light-glow-bottom"></div>
+
+  <!-- Faixa lateral dourada -->
+  <div class="left-accent"></div>
+
+  <!-- Padrão de pontos decorativo -->
+  <div class="dot-pattern">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Logo / Marca -->
+  <div class="brand-area">
+    <div class="brand-since">Tradição &amp; Sabor</div>
+    <div class="brand-name">Restaurante<br><span>Centro-Oeste</span></div>
+    <div class="brand-divider"></div>
+  </div>
+
+  <!-- Badge lateral -->
+  <div class="badge">
+    <div class="badge-ring"></div>
+    <div class="badge-ring-inner"></div>
+    <div class="badge-text-top">Buffet</div>
+    <div class="badge-main">POR<br>KG</div>
+    <div class="badge-text-bottom">Premium</div>
+  </div>
+
+  <!-- Bloco de texto principal -->
+  <div class="text-block">
+    <div class="pre-title">Especial do dia</div>
+
+    <div class="main-title">
+      ALMOÇO<br>
+      <span class="line2">POR QUILO</span>
+    </div>
+
+    <div class="sub-title">No Centro-Oeste</div>
+
+    <!-- Preço -->
+    <div class="price-wrapper">
+      <div class="price-label">Preço por quilo</div>
+      <div class="price-box">
+        <span class="price-currency">R$</span>
+        <span class="price-value">76,90</span>
+        <span class="price-unit">/kg</span>
+      </div>
+    </div>
+
+    <div class="support-text">Sabor, variedade e qualidade<br>no seu almoço.</div>
+
+    <div class="cta-button">
+      <span class="cta-text">Venha almoçar com a gente</span>
+      <div class="cta-arrow"></div>
+    </div>
+  </div>
+
+  <!-- Espeto de Carne -->
+  <div class="meat-scene">
+    <div class="meat-halo"></div>
+
+    <!-- Vapor -->
+    <div class="steam">
+      <div class="steam-line"></div>
+      <div class="steam-line"></div>
+      <div class="steam-line"></div>
+    </div>
+
+    <!-- Haste do espeto -->
+    <div class="skewer-stick"></div>
+
+    <!-- Pedaços de carne -->
+    <div class="meat-piece meat-1">
+      <div class="meat-shine"></div>
+    </div>
+    <div class="meat-piece meat-2">
+      <div class="meat-shine"></div>
+    </div>
+    <div class="meat-piece meat-3">
+      <div class="meat-shine"></div>
+    </div>
+    <div class="meat-piece meat-4">
+      <div class="meat-shine"></div>
+    </div>
+
+    <!-- Gotas de gordura -->
+    <div class="drip drip-1"></div>
+    <div class="drip drip-2"></div>
+  </div>
+
+  <!-- Separador -->
+  <div class="separator-label">Acompanhamentos</div>
+  <div class="section-separator"></div>
+
+  <!-- Buffet inferior -->
+  <div class="buffet-area">
+    <div class="buffet-glow"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-arroz"></div>
+      <div class="food-label">Arroz Branco</div>
+    </div>
+
+    <div class="food-divider"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-feijao"></div>
+      <div class="food-label">Feijão Tropeiro</div>
+    </div>
+
+    <div class="food-divider"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-farofa"></div>
+      <div class="food-label">Farofa</div>
+    </div>
+
+    <div class="food-divider"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-mandioca"></div>
+      <div class="food-label">Mandioca</div>
+    </div>
+
+    <div class="food-divider"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-vinagrete"></div>
+      <div class="food-label">Vinagrete</div>
+    </div>
+
+    <div class="food-divider"></div>
+
+    <div class="food-item">
+      <div class="food-bowl bowl-macarrao"></div>
+      <div class="food-label">Macarrão</div>
+    </div>
+  </div>
+
+  <!-- Rodapé dourado -->
+  <div class="footer-strip"></div>
+
+</div>
+</body>
+</html>
