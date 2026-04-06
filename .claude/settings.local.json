@@ -6,7 +6,8 @@
       "Bash(npm run:*)",
       "Bash(mkdir -p \"/c/Users/Matheus/Desktop/-/GERAL/CLIENTES MPX/trafego-pago-video/public\")",
       "Bash(cp \"/c/Users/Matheus/Desktop/CLAUDE CODE PROJETO/VÍDEO TRÁFEGO PAGO.mp4\" \"/c/Users/Matheus/Desktop/-/GERAL/CLIENTES MPX/trafego-pago-video/public/video-base.mp4\")",
-      "Bash(start \"\" \"C:/Program Files/Docker/Docker/Docker Desktop.exe\")"
+      "Bash(start \"\" \"C:/Program Files/Docker/Docker/Docker Desktop.exe\")",
+      "Bash(docker info:*)"
     ]
   },
   "hooks": {
