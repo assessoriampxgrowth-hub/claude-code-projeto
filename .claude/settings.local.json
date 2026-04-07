@@ -43,7 +43,9 @@
       "Bash(\"C:\\\\Users\\\\Matheus\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\" main.py run --client matheus-jesus-elias)",
       "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe\" info)",
       "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker-compose.exe\" up -d)",
-      "Bash(C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe ps:*)"
+      "Bash(C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe ps:*)",
+      "Bash(python main.py list)",
+      "Bash(python gerar_todos.py)"
     ]
   },
   "hooks": {
