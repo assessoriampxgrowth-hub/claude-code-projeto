@@ -38,7 +38,12 @@
       "Bash(python3 main.py run --client matheus-jesus-elias)",
       "Bash(where py:*)",
       "Bash(ls /c/Python*)",
-      "Read(//c/Users/Matheus/AppData/Local/Programs/Python//**)"
+      "Read(//c/Users/Matheus/AppData/Local/Programs/Python//**)",
+      "Bash(set PYTHONUTF8=1)",
+      "Bash(\"C:\\\\Users\\\\Matheus\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\" main.py run --client matheus-jesus-elias)",
+      "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe\" info)",
+      "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker-compose.exe\" up -d)",
+      "Bash(C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe ps:*)"
     ]
   },
   "hooks": {
