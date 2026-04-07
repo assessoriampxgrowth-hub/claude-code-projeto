@@ -7,7 +7,11 @@
       "Bash(mkdir -p \"/c/Users/Matheus/Desktop/-/GERAL/CLIENTES MPX/trafego-pago-video/public\")",
       "Bash(cp \"/c/Users/Matheus/Desktop/CLAUDE CODE PROJETO/VÍDEO TRÁFEGO PAGO.mp4\" \"/c/Users/Matheus/Desktop/-/GERAL/CLIENTES MPX/trafego-pago-video/public/video-base.mp4\")",
       "Bash(start \"\" \"C:/Program Files/Docker/Docker/Docker Desktop.exe\")",
-      "Bash(docker info:*)"
+      "Bash(docker info:*)",
+      "Read(//c/Program Files/Docker/Docker//**)",
+      "Read(//c/Program Files/Docker//**)",
+      "Bash(\"/c/Program Files/Docker/Docker/resources/bin/docker\" info)",
+      "Bash(\"/c/Program Files/Docker/Docker/resources/bin/docker.exe\" info)"
     ]
   },
   "hooks": {
