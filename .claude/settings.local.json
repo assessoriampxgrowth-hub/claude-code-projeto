@@ -33,7 +33,12 @@
       "Bash(curl -s http://localhost:8080/status)",
       "Bash(curl -s http://localhost:8080/qr)",
       "Bash(node -e ':*)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "Bash(python main.py run --client matheus-jesus-elias)",
+      "Bash(python3 main.py run --client matheus-jesus-elias)",
+      "Bash(where py:*)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/Matheus/AppData/Local/Programs/Python//**)"
     ]
   },
   "hooks": {
