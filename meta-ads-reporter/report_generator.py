@@ -1,13 +1,14 @@
 from tabulate import tabulate
 
 
-def build_whatsapp_message(data: dict) -> str:
+def build_whatsapp_message(data: dict, client_name: str = "") -> str:
     period = data["period"]
     totals = data["totals"]
     campaigns = data["campaigns"]
 
     lines = []
-    lines.append("📊 *RELATÓRIO META ADS*")
+    header = f"📊 *RELATÓRIO META ADS*" + (f" — {client_name}" if client_name else "")
+    lines.append(header)
     lines.append(f"📅 {period['start']} → {period['end']}")
     lines.append("")
 

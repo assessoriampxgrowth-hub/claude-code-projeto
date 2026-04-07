@@ -46,8 +46,9 @@ def _styles():
     }
 
 
-def _header_table(period: dict, styles: dict) -> Table:
-    title = Paragraph("RELATÓRIO META ADS", styles["title"])
+def _header_table(period: dict, styles: dict, client_name: str = "") -> Table:
+    title_text = "RELATÓRIO META ADS" + (f"<br/><font size=14>{client_name}</font>" if client_name else "")
+    title = Paragraph(title_text, styles["title"])
     subtitle = Paragraph(
         f"Período: {period['start']}  →  {period['end']}",
         styles["subtitle"],
@@ -166,7 +167,7 @@ def _campaigns_table(campaigns: list) -> Table:
     return t
 
 
-def generate(data: dict, output_dir: str = ".") -> str:
+def generate(data: dict, output_dir: str = ".", client_name: str = "") -> str:
     """Gera o PDF e retorna o caminho do arquivo."""
     os.makedirs(output_dir, exist_ok=True)
 
@@ -187,7 +188,7 @@ def generate(data: dict, output_dir: str = ".") -> str:
     story = []
 
     # Cabeçalho
-    story.append(_header_table(period, styles))
+    story.append(_header_table(period, styles, client_name))
     story.append(Spacer(1, 0.5 * cm))
 
     # Resumo geral

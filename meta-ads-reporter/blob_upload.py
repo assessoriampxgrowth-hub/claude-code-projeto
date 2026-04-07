@@ -21,12 +21,12 @@ def _headers(content_type: str = "application/json") -> dict:
     }
 
 
-def upload_pdf(filepath: str, period_end: str) -> str:
+def upload_pdf(filepath: str, period_end: str, client_id: str = "geral") -> str:
     """
     Faz upload do PDF para Vercel Blob.
     Retorna a URL pública do arquivo.
     """
-    blob_path = f"reports/meta-ads-{period_end}.pdf"
+    blob_path = f"reports/{client_id}/meta-ads-{period_end}.pdf"
 
     with open(filepath, "rb") as f:
         content = f.read()
@@ -43,10 +43,11 @@ def upload_pdf(filepath: str, period_end: str) -> str:
     return url
 
 
-def _load_index() -> list:
-    """Carrega o índice JSON existente ou retorna lista vazia."""
+def _load_index(client_id: str = "geral") -> list:
+    """Carrega o índice JSON do cliente ou retorna lista vazia."""
+    index_path = f"reports/{client_id}/index.json"
     response = requests.get(
-        f"{BLOB_API}/{INDEX_PATH}",
+        f"{BLOB_API}/{index_path}",
         headers={"Authorization": f"Bearer {config.BLOB_TOKEN}"},
         timeout=10,
     )
@@ -56,12 +57,13 @@ def _load_index() -> list:
     return response.json()
 
 
-def update_index(pdf_url: str, data: dict) -> str:
+def update_index(pdf_url: str, data: dict, client: dict) -> str:
     """
-    Atualiza o index.json com o novo relatório.
+    Atualiza o index.json do cliente com o novo relatório.
     Retorna a URL pública do index.json.
     """
-    index = _load_index()
+    client_id = client["id"]
+    index = _load_index(client_id)
 
     period = data["period"]
     totals = data["totals"]
@@ -81,30 +83,47 @@ def update_index(pdf_url: str, data: dict) -> str:
         },
     }
 
-    # Atualiza ou insere no topo
     index = [e for e in index if e["id"] != entry["id"]]
     index.insert(0, entry)
 
     payload = json.dumps(index, ensure_ascii=False, indent=2).encode("utf-8")
+    index_path = f"reports/{client_id}/index.json"
 
     response = requests.put(
-        f"{BLOB_API}/{INDEX_PATH}",
+        f"{BLOB_API}/{index_path}",
         data=payload,
         headers=_headers("application/json"),
         timeout=30,
     )
     response.raise_for_status()
     url = response.json()["url"]
-    print(f"[blob] Índice atualizado: {url}")
+    print(f"[blob] Índice atualizado ({client_id}): {url}")
     return url
 
 
-def publish(filepath: str, data: dict) -> dict:
+def update_clients_registry(clients_summary: list) -> str:
     """
-    Faz upload do PDF e atualiza o índice.
+    Mantém um registry global com a lista de clientes ativos no portal.
+    Usado pelo portal para listar os clientes disponíveis.
+    """
+    payload = json.dumps(clients_summary, ensure_ascii=False, indent=2).encode("utf-8")
+    response = requests.put(
+        f"{BLOB_API}/reports/clients.json",
+        data=payload,
+        headers=_headers("application/json"),
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()["url"]
+
+
+def publish(filepath: str, data: dict, client: dict) -> dict:
+    """
+    Faz upload do PDF e atualiza o índice do cliente.
     Retorna dict com as URLs.
     """
     period_end = data["period"]["end"]
-    pdf_url = upload_pdf(filepath, period_end)
-    index_url = update_index(pdf_url, data)
+    client_id = client["id"]
+    pdf_url = upload_pdf(filepath, period_end, client_id)
+    index_url = update_index(pdf_url, data, client)
     return {"pdf_url": pdf_url, "index_url": index_url}

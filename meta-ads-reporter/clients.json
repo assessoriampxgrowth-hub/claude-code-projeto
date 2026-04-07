@@ -1,0 +1,506 @@
+[
+  {
+    "id": "agri-manutencao-agricolas",
+    "name": "Agri Manutenção Agrícolas",
+    "ad_account_id": "act_855651770255872",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "matheus-jesus-elias",
+    "name": "Matheus Jesus Elias",
+    "ad_account_id": "act_652435915519577",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "life-business",
+    "name": "Life Business",
+    "ad_account_id": "act_834210707396193",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "starten-mineiros",
+    "name": "STARTEN MINEIROS",
+    "ad_account_id": "act_697700034487512",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "start-si",
+    "name": "Start SI",
+    "ad_account_id": "act_363411208107195",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "nutri-mais-01",
+    "name": "NUTRI MAIS - 01",
+    "ad_account_id": "act_801114481304492",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "ca-dom-caetano",
+    "name": "CA - Dom Caetano",
+    "ad_account_id": "act_562199489053145",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "jessica-gois",
+    "name": "Jéssica Góis",
+    "ad_account_id": "act_720290473203489",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "agrotech-maquinas",
+    "name": "Agrotech Máquinas",
+    "ad_account_id": "act_1009712936865047",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "cta-01-start-solucoes-mineiros",
+    "name": "CTA 01 - Start soluções - mineiros",
+    "ad_account_id": "act_714840793349981",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "mpx-star",
+    "name": "MPX Star",
+    "ad_account_id": "act_356581087015582",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "estacao-da-moda-aracaju",
+    "name": "Estação da Moda Aracaju",
+    "ad_account_id": "act_966621371932381",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "dolar-escala",
+    "name": "Dólar Escala",
+    "ad_account_id": "act_492882936680092",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "limpart",
+    "name": "Limpart",
+    "ad_account_id": "act_374951658623625",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "conta-01-wendel",
+    "name": "Conta 01 Wendel",
+    "ad_account_id": "act_964212758735863",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "glow-up",
+    "name": "Glow-UP",
+    "ad_account_id": "act_797066829297008",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "top-20-mineiros",
+    "name": "TOP 20 MINEIROS",
+    "ad_account_id": "act_1045727940337579",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "aquazoo-loja",
+    "name": "Aquazoo Loja",
+    "ad_account_id": "act_8131994186860844",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "escala-forte",
+    "name": "ESCALA FORTE",
+    "ad_account_id": "act_1740399070087397",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "acquatec",
+    "name": "Acquatec",
+    "ad_account_id": "act_515268187737097",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "imoveis",
+    "name": "IMOVEIS",
+    "ad_account_id": "act_635472465835727",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "uzzer-cooler",
+    "name": "UZZER COOLER",
+    "ad_account_id": "act_2219918865131786",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "smart-center",
+    "name": "SMART CENTER",
+    "ad_account_id": "act_1533103744042020",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "voxy-trade",
+    "name": "VOXY TRADE",
+    "ad_account_id": "act_2826293087568278",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "gf-esquadrias",
+    "name": "GF ESQUADRIAS",
+    "ad_account_id": "act_840565304911520",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "hungria-hip-hop",
+    "name": "HUNGRIA HIP HOP",
+    "ad_account_id": "act_695220026408079",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "pizzaria-mineiros",
+    "name": "Pizzaria Mineiros",
+    "ad_account_id": "act_979524571059029",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "pizzaria-mineiros-2",
+    "name": "PIZZARIA MINEIROS",
+    "ad_account_id": "act_918268690333544",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "oticas-bamboo",
+    "name": "Óticas Bamboo",
+    "ad_account_id": "act_568186166021700",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "amalle-calcados",
+    "name": "Amalle Calçados",
+    "ad_account_id": "act_1932509824247339",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "galioze-fretes",
+    "name": "Galioze fretes",
+    "ad_account_id": "act_557139910583711",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "centro-oeste",
+    "name": "Centro Oeste",
+    "ad_account_id": "act_1956329221867212",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "aryane-cristine",
+    "name": "Aryane Cristine",
+    "ad_account_id": "act_2468012553537194",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "conta-teste-01",
+    "name": "Conta Teste 01",
+    "ad_account_id": "act_1001958785314319",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "mega-shop",
+    "name": "Mega Shop",
+    "ad_account_id": "act_1004830295090078",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "ortobom-mineiros",
+    "name": "Ortobom Mineiros",
+    "ad_account_id": "act_1488098785517461",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "toda-chic",
+    "name": "Toda Chic",
+    "ad_account_id": "act_695920296478115",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "elite-store",
+    "name": "ELITE STORE",
+    "ad_account_id": "act_1264740685335293",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "dani-duarte",
+    "name": "Dani duarte",
+    "ad_account_id": "act_24331103836511421",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "use-cristiana",
+    "name": "Use Cristiana",
+    "ad_account_id": "act_689266116781425",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "opiah-assessoria",
+    "name": "Ópiah Assessoria",
+    "ad_account_id": "act_24596983113290348",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "pavimold",
+    "name": "Pavimold",
+    "ad_account_id": "act_1970736930443897",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "via-jardins",
+    "name": "Via jardins",
+    "ad_account_id": "act_829778909619961",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "lr-modas-fitnes",
+    "name": "LR Modas Fitnes",
+    "ad_account_id": "act_1491161228868350",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "ca1-master-positivo",
+    "name": "CA1 | MASTER POSITIVO",
+    "ad_account_id": "act_1762911704335433",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "apple-imports",
+    "name": "Apple + Imports",
+    "ad_account_id": "act_942633921407488",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "dirua2",
+    "name": "DIRUA2",
+    "ad_account_id": "act_4243391502608913",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "ca-hulligel-2",
+    "name": "CA - Hulligel 2",
+    "ad_account_id": "act_1343071190870221",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "gb-auto-center",
+    "name": "GB Auto Center",
+    "ad_account_id": "act_1126248103027265",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "imoveis-2",
+    "name": "IMÓVEIS 2",
+    "ad_account_id": "act_1363396488613441",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "neto-unimed",
+    "name": "Neto Unimed",
+    "ad_account_id": "act_1798723300804221",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "luar-style",
+    "name": "Luar Style",
+    "ad_account_id": "act_782133708214713",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "prod-digitais",
+    "name": "PROD DIGITAIS",
+    "ad_account_id": "act_1325590032827464",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "outlet-modas",
+    "name": "Outlet Modas",
+    "ad_account_id": "act_1648868759437482",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "pizzaria-hulligel",
+    "name": "PIZZARIA HULLIGEL",
+    "ad_account_id": "act_862498600166987",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  },
+  {
+    "id": "dom-caetano",
+    "name": "DOM CAETANO",
+    "ad_account_id": "act_3966804663453162",
+    "whatsapp_recipients": [
+      "5564996453506"
+    ],
+    "active": true
+  }
+]

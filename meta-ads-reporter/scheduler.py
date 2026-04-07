@@ -8,53 +8,79 @@ import report_generator
 import pdf_generator
 import blob_upload
 import whatsapp
+import client_manager
 
 
-def run_report():
-    print("[scheduler] Iniciando geração do relatório...")
+def run_report_for_client(client: dict):
+    """Gera e envia relatório para um cliente específico."""
+    name = client["name"]
+    print(f"\n[scheduler] → Processando: {name}")
     try:
-        # 1. Buscar dados
-        data = meta_api.get_insights(days=config.REPORT_DAYS)
+        data = meta_api.get_insights(
+            days=config.REPORT_DAYS,
+            ad_account_id=client["ad_account_id"],
+        )
+        message = report_generator.build_whatsapp_message(data, client_name=name)
 
-        # 2. Gerar mensagem WhatsApp
-        message = report_generator.build_whatsapp_message(data)
-
-        # 3. Gerar PDF
         with tempfile.TemporaryDirectory() as tmp:
-            pdf_path = pdf_generator.generate(data, output_dir=tmp)
+            pdf_path = pdf_generator.generate(data, output_dir=tmp, client_name=name)
+            urls = blob_upload.publish(pdf_path, data, client)
 
-            # 4. Publicar na nuvem (Blob + índice)
-            urls = blob_upload.publish(pdf_path, data)
+            # Link do portal específico do cliente
+            portal_url = f"{config.CLIENT_PORTAL_URL}/cliente/{client['id']}"
 
-            # 5. Enviar WhatsApp com PDF e link do portal
-            results = whatsapp.broadcast(
+            whatsapp.broadcast(
                 message=message,
                 pdf_path=pdf_path,
-                portal_url=config.CLIENT_PORTAL_URL,
+                portal_url=portal_url,
+                recipients=client["whatsapp_recipients"],
             )
 
-        ok = sum(1 for v in results.values() if v == "ok")
-        print(f"[scheduler] Concluído — {ok}/{len(results)} destinatários.")
-        print(f"[scheduler] Portal: {config.CLIENT_PORTAL_URL}")
+        print(f"[scheduler] ✓ {name} concluído — {urls['pdf_url']}")
+        return True
 
     except Exception as e:
-        print(f"[scheduler] ERRO: {e}")
-        raise
+        print(f"[scheduler] ✗ Erro em {name}: {e}")
+        return False
+
+
+def run_all_reports():
+    """Processa todos os clientes ativos."""
+    clients = client_manager.load_clients()
+    print(f"[scheduler] Iniciando relatórios para {len(clients)} clientes...")
+
+    results = {"ok": 0, "erro": 0}
+    clients_summary = []
+
+    for client in clients:
+        success = run_report_for_client(client)
+        if success:
+            results["ok"] += 1
+            clients_summary.append({"id": client["id"], "name": client["name"]})
+        else:
+            results["erro"] += 1
+
+    # Atualiza registry global de clientes no portal
+    if clients_summary:
+        try:
+            blob_upload.update_clients_registry(clients_summary)
+        except Exception as e:
+            print(f"[scheduler] Aviso: erro ao atualizar registry: {e}")
+
+    print(f"\n[scheduler] Concluído: {results['ok']} ok, {results['erro']} erro(s).")
 
 
 def start():
     config.validate()
 
     scheduler = BlockingScheduler(timezone="America/Sao_Paulo")
-
     trigger = CronTrigger(
         day_of_week=config.SCHEDULE_DAY,
         hour=config.SCHEDULE_HOUR,
         minute=config.SCHEDULE_MINUTE,
         timezone="America/Sao_Paulo",
     )
-
-    scheduler.add_job(run_report, trigger=trigger, id="weekly_report")
+    scheduler.add_job(run_all_reports, trigger=trigger, id="weekly_reports")
 
     day_names = {
         "monday": "segunda-feira", "tuesday": "terça-feira",
@@ -62,6 +88,7 @@ def start():
         "friday": "sexta-feira", "saturday": "sábado", "sunday": "domingo",
     }
     day_pt = day_names.get(config.SCHEDULE_DAY, config.SCHEDULE_DAY)
-    print(f"[scheduler] Agendado: toda {day_pt} às {config.SCHEDULE_HOUR:02d}:{config.SCHEDULE_MINUTE:02d}")
+    print(f"[scheduler] Agendado para toda {day_pt} às {config.SCHEDULE_HOUR:02d}:{config.SCHEDULE_MINUTE:02d}")
+    print(f"[scheduler] {len(client_manager.load_clients())} cliente(s) cadastrado(s).")
     print("[scheduler] Pressione Ctrl+C para parar.")
     scheduler.start()

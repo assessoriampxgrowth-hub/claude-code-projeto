@@ -42,19 +42,20 @@ def send_pdf(phone: str, pdf_path: str, caption: str = "") -> None:
     response.raise_for_status()
 
 
-def broadcast(message: str, pdf_path: str = None, portal_url: str = "") -> dict:
+def broadcast(message: str, pdf_path: str = None, portal_url: str = "",
+              recipients: list = None) -> dict:
     """
-    Envia mensagem de texto + PDF (opcional) para todos os destinatários.
-    Retorna dict com status de cada número.
+    Envia mensagem de texto + PDF (opcional).
+    recipients: lista de números; usa config.WHATSAPP_RECIPIENTS se não informado.
     """
     results = {}
+    phones = recipients if recipients is not None else config.WHATSAPP_RECIPIENTS
 
-    # Adiciona link do portal à mensagem se disponível
     full_message = message
     if portal_url:
         full_message += f"\n\n🔗 *Portal de relatórios:* {portal_url}"
 
-    for phone in config.WHATSAPP_RECIPIENTS:
+    for phone in phones:
         try:
             send_message(phone, full_message)
             if pdf_path:

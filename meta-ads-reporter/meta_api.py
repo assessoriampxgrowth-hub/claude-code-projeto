@@ -9,16 +9,18 @@ def init():
     FacebookAdsApi.init(access_token=config.META_ACCESS_TOKEN)
 
 
-def get_insights(days: int = 7) -> dict:
+def get_insights(days: int = 7, ad_account_id: str = None) -> dict:
     """
     Retorna métricas consolidadas dos últimos N dias.
+    ad_account_id: usa o do .env se não for informado.
     """
     init()
 
-    end_date = date.today() - timedelta(days=1)   # ontem (dados completos)
+    end_date = date.today() - timedelta(days=1)
     start_date = end_date - timedelta(days=days - 1)
 
-    account = AdAccount(config.META_AD_ACCOUNT_ID)
+    account_id = ad_account_id or config.META_AD_ACCOUNT_ID
+    account = AdAccount(account_id)
 
     fields = [
         AdsInsights.Field.campaign_name,
