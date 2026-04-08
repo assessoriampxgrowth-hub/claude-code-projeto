@@ -58,10 +58,7 @@ export default async function ReportPage({ params }: { params: Promise<{ token: 
 
   const snapshot = await db.reportSnapshot.findUnique({
     where: { token },
-    include: {
-      client: { select: { name: true } },
-      adAccount: { select: { accountName: true, accountId: true } },
-    },
+    include: { client: { select: { name: true } } },
   });
 
   if (!snapshot) notFound();
