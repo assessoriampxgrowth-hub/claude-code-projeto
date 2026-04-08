@@ -1,6 +1,5 @@
 import { db } from "@/lib/db";
 import { fetchInsights } from "@/lib/meta/insights";
-import { decrypt } from "@/lib/security/crypto";
 import { ReportData } from "@/lib/meta/normalize";
 
 export async function syncClient(clientId: string): Promise<{
@@ -18,9 +17,7 @@ export async function syncClient(clientId: string): Promise<{
       include: { adAccounts: { where: { active: true } } },
     });
 
-    if (!client.adAccounts.length) {
-      throw new Error("Nenhuma conta de anúncio ativa");
-    }
+    if (!client.adAccounts.length) throw new Error("Nenhuma conta de anúncio ativa");
 
     const account = client.adAccounts[0];
     let data: ReportData;
@@ -34,18 +31,11 @@ export async function syncClient(clientId: string): Promise<{
       );
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
-      if (msg === "TOKEN_EXPIRED") {
-        await db.adAccount.update({
-          where: { id: account.id },
-          data: { tokenStatus: "expired" },
-        });
-        throw new Error("Token expirado — reconecte a conta de anúncio.");
-      }
       await db.adAccount.update({
         where: { id: account.id },
-        data: { tokenStatus: "error" },
+        data: { tokenStatus: msg === "TOKEN_EXPIRED" ? "expired" : "error" },
       });
-      throw err;
+      throw new Error(msg === "TOKEN_EXPIRED" ? "Token expirado — reconecte a conta." : msg);
     }
 
     await db.adAccount.update({
@@ -54,38 +44,22 @@ export async function syncClient(clientId: string): Promise<{
     });
 
     const periodStart = new Date(data.period.start + "T00:00:00Z");
-    const periodEnd = new Date(data.period.end + "T23:59:59Z");
+    const periodEnd   = new Date(data.period.end   + "T23:59:59Z");
+    const token       = `${clientId}-${data.period.end}`;
 
     const snapshot = await db.reportSnapshot.upsert({
-      where: {
-        token: `${clientId}-${data.period.end}`,
-      },
-      create: {
-        clientId,
-        adAccountId: account.id,
-        periodStart,
-        periodEnd,
-        periodType: "weekly",
-        data: data as object,
-        token: `${clientId}-${data.period.end}`,
-      },
-      update: {
-        data: data as object,
-        adAccountId: account.id,
-      },
+      where:  { token },
+      create: { clientId, adAccountId: account.id, periodStart, periodEnd, periodType: "weekly", data: JSON.stringify(data), token },
+      update: { data: JSON.stringify(data), adAccountId: account.id },
     });
 
     await db.syncLog.update({
       where: { id: log.id },
       data: {
         status: "success",
-        message: `Sincronização concluída. ${data.campaigns.length} campanha(s).`,
+        message: `Sincronização concluída. ${data.campaigns.length} campanha(s). Gasto: R$${data.totals.spend.toFixed(2)}`,
         finishedAt: new Date(),
-        details: {
-          campaigns: data.campaigns.length,
-          spend: data.totals.spend,
-          snapshotId: snapshot.id,
-        },
+        details: JSON.stringify({ campaigns: data.campaigns.length, spend: data.totals.spend, snapshotId: snapshot.id }),
       },
     });
 
