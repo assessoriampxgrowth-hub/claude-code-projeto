@@ -22,19 +22,19 @@ export async function POST(req: NextRequest) {
       continue;
     }
 
-    const syncResult = await syncClient(client.id);
-    if (!syncResult.success) {
-      results.push({ id: client.id, name: client.name, status: "error", error: syncResult.error });
+    const sync = await syncClient(client.id);
+    if (!sync.success) {
+      results.push({ id: client.id, name: client.name, status: "error", error: sync.error });
       continue;
     }
 
-    if (client.whatsappPhone && syncResult.snapshotId) {
-      const snapshot = await db.reportSnapshot.findUnique({ where: { id: syncResult.snapshotId } });
-      if (snapshot) {
-        const data = snapshot.data as { period: { start: string; end: string } };
-        const period = `${data.period.start} → ${data.period.end}`;
-        const reportUrl = `${process.env.CLIENT_PORTAL_URL}/r/${snapshot.token}`;
-        await sendReportMessage(client.id, client.whatsappPhone, client.name, period, reportUrl, snapshot.id);
+    if (client.whatsappPhone && sync.snapshotId) {
+      const snap = await db.reportSnapshot.findUnique({ where: { id: sync.snapshotId } });
+      if (snap) {
+        const d = JSON.parse(snap.data) as { period: { start: string; end: string } };
+        const period = `${d.period.start} → ${d.period.end}`;
+        const reportUrl = `${process.env.CLIENT_PORTAL_URL ?? ""}/r/${snap.token}`;
+        await sendReportMessage(client.id, client.whatsappPhone, client.name, period, reportUrl, snap.id);
       }
     }
 
