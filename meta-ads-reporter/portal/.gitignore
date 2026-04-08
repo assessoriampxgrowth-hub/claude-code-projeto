@@ -1,2 +1,9 @@
-.vercel
+/node_modules
+/.next/
+/out/
+/.vercel
+.env
 .env*.local
+/prisma/migrations/
+.DS_Store
+Thumbs.db
