@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Client {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  active        Boolean  @default(true)
+  whatsappPhone String?
+  scheduleDay   String   @default("monday")
+  scheduleHour  Int      @default(8)
+  autoSend      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  adAccounts      AdAccount[]
+  reportSnapshots ReportSnapshot[]
+  whatsappLogs    WhatsAppLog[]
+  syncLogs        SyncLog[]
+}
+
+model AdAccount {
+  id          String    @id @default(cuid())
+  clientId    String
+  client      Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  accountId   String
+  accountName String?
+  accessToken String
+  tokenStatus String    @default("active")
+  lastSyncAt  DateTime?
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model ReportSnapshot {
+  id          String   @id @default(cuid())
+  clientId    String
+  client      Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  adAccountId String?
+  periodStart DateTime
+  periodEnd   DateTime
+  periodType  String   @default("weekly")
+  data        Json
+  pdfUrl      String?
+  token       String   @unique @default(cuid())
+  createdAt   DateTime @default(now())
+}
+
+model WhatsAppLog {
+  id        String    @id @default(cuid())
+  clientId  String
+  client    Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  reportId  String?
+  phone     String
+  messageId String?
+  status    String
+  error     String?
+  sentAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model SyncLog {
+  id          String    @id @default(cuid())
+  clientId    String?
+  client      Client?   @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  adAccountId String?
+  type        String
+  status      String
+  message     String?
+  details     Json?
+  startedAt   DateTime  @default(now())
+  finishedAt  DateTime?
+}

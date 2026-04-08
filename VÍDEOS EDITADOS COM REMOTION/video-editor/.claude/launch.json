@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Video Editor (Next.js)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3333
+    },
+    {
+      "name": "Remotion Studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["remotion", "studio"],
+      "port": 3000
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "10b105a1-8a8b-443d-a7c2-166f44f63ba1",
+  "videoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\10b105a1-8a8b-443d-a7c2-166f44f63ba1\\original.mp4",
+  "status": "ready",
+  "prompt": "",
+  "normalizedPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\10b105a1-8a8b-443d-a7c2-166f44f63ba1\\original.mp4",
+  "transcription": [
+    {
+      "index": 1,
+      "start": "00:00:00,000",
+      "end": "00:00:03,000",
+      "text": "Conteúdo do vídeo",
+      "startSeconds": 0,
+      "endSeconds": 3
+    }
+  ],
+  "analysis": {
+    "format": "short_ad",
+    "mainTheme": "Conteúdo",
+    "palette": [
+      {
+        "bg": "#050508",
+        "accent": "#FFB800",
+        "text": "#FFFFFF"
+      },
+      {
+        "bg": "#0A0F1A",
+        "accent": "#00D4FF",
+        "text": "#FFFFFF"
+      },
+      {
+        "bg": "#0F0A1A",
+        "accent": "#B800FF",
+        "text": "#FFFFFF"
+      },
+      {
+        "bg": "#0A1A0A",
+        "accent": "#00FF88",
+        "text": "#FFFFFF"
+      },
+      {
+        "bg": "#1A0A0A",
+        "accent": "#FF4444",
+        "text": "#FFFFFF"
+      }
+    ],
+    "totalLegendas": 1,
+    "scenes": [
+      {
+        "id": "05e0aa1c-9adb-456f-9c2f-d0db339f0718",
+        "type": "hook",
+        "startLeg": 0,
+        "endLeg": 0,
+        "title": "Hook",
+        "subtitle": "Início",
+        "color": {
+          "bg": "#050508",
+          "accent": "#FFB800",
+          "text": "#FFFFFF"
+        },
+        "emoji": "🎯"
+      },
+      {
+        "id": "89e1c026-aaa5-4c59-be33-f552e07e5c0f",
+        "type": "solution",
+        "startLeg": 0,
+        "endLeg": 0,
+        "title": "Conteúdo",
+        "subtitle": "Desenvolvimento",
+        "color": {
+          "bg": "#0A0F1A",
+          "accent": "#00D4FF",
+          "text": "#FFFFFF"
+        },
+        "emoji": "💡"
+      },
+      {
+        "id": "963e4ad1-afae-450a-af7a-af134c154b8f",
+        "type": "cta",
+        "startLeg": 0,
+        "endLeg": 0,
+        "title": "Call to Action",
+        "subtitle": "Ação",
+        "color": {
+          "bg": "#0F0A1A",
+          "accent": "#B800FF",
+          "text": "#FFFFFF"
+        },
+        "emoji": "🚀"
+      }
+    ]
+  },
+  "videoUrl": "/api/video?id=10b105a1-8a8b-443d-a7c2-166f44f63ba1"
+}

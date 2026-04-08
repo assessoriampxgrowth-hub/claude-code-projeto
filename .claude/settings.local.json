@@ -45,7 +45,11 @@
       "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker-compose.exe\" up -d)",
       "Bash(C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe ps:*)",
       "Bash(python main.py list)",
-      "Bash(python gerar_todos.py)"
+      "Bash(python gerar_todos.py)",
+      "Bash(python -c \"import json; clients = json.load\\(open\\('clients.json', encoding='utf-8'\\)\\); [print\\(c['id'], '-', c['name']\\) for c in clients if 'matheus' in c['name'].lower\\(\\) or 'anuncio' in c['name'].lower\\(\\)]\")",
+      "Bash(python -c \"import json; clients = json.load\\(open\\('clients.json', encoding='utf-8'\\)\\); [print\\(c['id'], '-', c['name'], '-', c['ad_account_id']\\) for c in clients]\")",
+      "Bash(python -c ':*)",
+      "Bash(start:*)"
     ]
   },
   "hooks": {

@@ -1,0 +1,45 @@
+{
+  "name": "video-editor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3333",
+    "build": "next build",
+    "start": "next start -p 3333",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.39.0",
+    "@remotion/bundler": "^4.0.434",
+    "@remotion/cli": "^4.0.434",
+    "@remotion/player": "4.0.434",
+    "@remotion/renderer": "^4.0.434",
+    "@types/fluent-ffmpeg": "2.1.24",
+    "@types/formidable": "3.4.5",
+    "@types/node": "20.12.7",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@types/uuid": "9.0.8",
+    "autoprefixer": "10.4.19",
+    "clsx": "2.1.1",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "fluent-ffmpeg": "2.1.3",
+    "formidable": "3.5.1",
+    "framer-motion": "11.1.7",
+    "lucide-react": "0.378.0",
+    "next": "14.2.21",
+    "openai": "4.77.0",
+    "postcss": "8.4.38",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.434",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.4.5",
+    "uuid": "11.0.5"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.21"
+  }
+}
