@@ -15,20 +15,14 @@ export async function GET(_: NextRequest, { params }: { params: Promise<{ token:
     where: { token },
     include: { client: { select: { name: true } } },
   });
-
   if (!snapshot) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const data = snapshot.data as ReportData;
+  const data: ReportData = JSON.parse(snapshot.data);
   const insights = generateInsights(data);
   const generatedAt = new Date().toLocaleString("pt-BR");
 
   const buffer = await renderToBuffer(
-    React.createElement(ReportPDF, {
-      data,
-      clientName: snapshot.client.name,
-      insights,
-      generatedAt,
-    })
+    React.createElement(ReportPDF, { data, clientName: snapshot.client.name, insights, generatedAt })
   );
 
   const filename = `relatorio-${snapshot.client.name.toLowerCase().replace(/\s+/g, "-")}-${data.period.end}.pdf`;
