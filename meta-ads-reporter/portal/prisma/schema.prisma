@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Client {
@@ -48,7 +47,7 @@ model ReportSnapshot {
   periodStart DateTime
   periodEnd   DateTime
   periodType  String   @default("weekly")
-  data        Json
+  data        String
   pdfUrl      String?
   token       String   @unique @default(cuid())
   createdAt   DateTime @default(now())
@@ -75,7 +74,7 @@ model SyncLog {
   type        String
   status      String
   message     String?
-  details     Json?
+  details     String?
   startedAt   DateTime  @default(now())
   finishedAt  DateTime?
 }

@@ -50,7 +50,11 @@
       "Bash(python -c \"import json; clients = json.load\\(open\\('clients.json', encoding='utf-8'\\)\\); [print\\(c['id'], '-', c['name'], '-', c['ad_account_id']\\) for c in clients]\")",
       "Bash(python -c ':*)",
       "Bash(start:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(cmd.exe:*)",
+      "Read(//c/Users/Matheus/AppData/Local/Programs//**)",
+      "Read(//c/Users/Matheus/AppData/Roaming//**)",
+      "Bash(export PATH=\"/c/Users/Matheus/AppData/Local/nvm/v24.14.1:$PATH\")"
     ]
   },
   "hooks": {
