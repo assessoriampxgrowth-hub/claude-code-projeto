@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Relatórios Meta Ads",
+  title: "Meta Ads Reporter",
   description: "Portal de relatórios de performance",
 };
 
