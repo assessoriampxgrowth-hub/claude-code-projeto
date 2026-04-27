@@ -7,10 +7,9 @@ load_dotenv()
 META_ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN")
 META_AD_ACCOUNT_ID = os.getenv("META_AD_ACCOUNT_ID")
 
-# Evolution API
-EVOLUTION_API_URL = os.getenv("EVOLUTION_API_URL", "http://localhost:8080")
-EVOLUTION_API_KEY = os.getenv("EVOLUTION_API_KEY")
-EVOLUTION_INSTANCE = os.getenv("EVOLUTION_INSTANCE")
+# UazAPI (WhatsApp)
+WHATSAPP_API_URL = os.getenv("WHATSAPP_API_URL", "https://free.uazapi.com")
+WHATSAPP_API_TOKEN = os.getenv("WHATSAPP_API_TOKEN")
 
 # Destinatários (lista de números)
 WHATSAPP_RECIPIENTS = [
@@ -38,7 +37,7 @@ def validate():
     missing = []
     for var in [
         "META_ACCESS_TOKEN", "META_AD_ACCOUNT_ID",
-        "EVOLUTION_API_KEY", "EVOLUTION_INSTANCE",
+        "WHATSAPP_API_TOKEN",
         "BLOB_READ_WRITE_TOKEN",
     ]:
         if not os.getenv(var):

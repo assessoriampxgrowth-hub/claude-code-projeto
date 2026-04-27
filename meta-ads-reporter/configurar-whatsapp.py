@@ -1,111 +1,87 @@
 """
-Script para criar a instância do WhatsApp no Evolution API
-e exibir o QR Code para conexão.
-Execute APÓS a Evolution API estar rodando (iniciar-evolution.bat).
+Script para verificar o status da instância UazAPI (free.uazapi.com).
+Não é necessário instalar nada localmente — a instância roda na nuvem.
+Execute para confirmar que o número está conectado antes de enviar relatórios.
 """
-import time
+import os
 import requests
-import webbrowser
+from dotenv import load_dotenv
 
-EVOLUTION_URL = "http://localhost:8080"
-API_KEY = "metaads-evolution-key-2024"
-INSTANCE_NAME = "meu-whatsapp"
+load_dotenv()
+
+API_URL = os.getenv("WHATSAPP_API_URL", "https://free.uazapi.com")
+API_TOKEN = os.getenv("WHATSAPP_API_TOKEN", "")
 
 HEADERS = {
-    "apikey": API_KEY,
+    "Authorization": API_TOKEN,
     "Content-Type": "application/json",
 }
 
 
-def criar_instancia():
-    print(f"Criando instância '{INSTANCE_NAME}'...")
-    response = requests.post(
-        f"{EVOLUTION_URL}/instance/create",
-        json={
-            "instanceName": INSTANCE_NAME,
-            "qrcode": True,
-            "integration": "WHATSAPP-BAILEYS",
-        },
-        headers=HEADERS,
-        timeout=15,
-    )
-    if response.status_code in (200, 201):
-        print("Instância criada com sucesso!")
-        return True
-    if response.status_code == 409:
-        print("Instância já existe, continuando...")
-        return True
-    print(f"Erro ao criar instância: {response.status_code} — {response.text}")
-    return False
-
-
-def obter_qrcode():
-    print("Obtendo QR Code...")
-    for tentativa in range(10):
+def verificar_status():
+    print("Verificando status da instância UazAPI...")
+    try:
         response = requests.get(
-            f"{EVOLUTION_URL}/instance/connect/{INSTANCE_NAME}",
+            f"{API_URL}/instance/status",
             headers=HEADERS,
             timeout=10,
         )
         if response.status_code == 200:
             data = response.json()
-            qr_base64 = data.get("base64") or data.get("qrcode", {}).get("base64", "")
-            if qr_base64:
-                # Salva e abre o QR Code no navegador
-                html = f"""<!DOCTYPE html>
-<html><head><title>QR Code WhatsApp</title></head>
-<body style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:Arial;background:#f0f2f5">
-<h2 style="color:#1877F2">Escaneie com o WhatsApp</h2>
-<img src="{qr_base64}" style="width:300px;height:300px;border:8px solid white;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15)"/>
-<p style="color:#65676B;margin-top:16px">Abra o WhatsApp → Dispositivos conectados → Conectar dispositivo</p>
-</body></html>"""
-                with open("qrcode.html", "w") as f:
-                    f.write(html)
-                webbrowser.open("qrcode.html")
-                print("QR Code aberto no navegador! Escaneie com o WhatsApp.")
+            state = data.get("state") or data.get("status", "")
+            connected = str(state).lower() in ("open", "connected")
+            if connected:
+                print(f"✓ WhatsApp conectado! Estado: {state}")
                 return True
-        print(f"Aguardando QR Code... tentativa {tentativa + 1}/10")
-        time.sleep(3)
-    print("Não foi possível obter o QR Code. Tente novamente.")
-    return False
+            else:
+                print(f"✗ WhatsApp não conectado. Estado: {state}")
+                print("  Acesse https://free.uazapi.com e conecte o número no painel.")
+                return False
+        else:
+            print(f"✗ Erro ao consultar status: HTTP {response.status_code}")
+            print(f"  Resposta: {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"✗ Falha de conexão: {e}")
+        return False
 
 
-def verificar_conexao():
-    print("Aguardando conexão do WhatsApp (escaneie o QR Code)...")
-    for i in range(30):
-        response = requests.get(
-            f"{EVOLUTION_URL}/instance/fetchInstances",
+def enviar_teste(numero: str):
+    print(f"\nEnviando mensagem de teste para {numero}...")
+    try:
+        response = requests.post(
+            f"{API_URL}/send/text",
+            json={"phone": numero, "message": "✅ Teste de conexão MPX Growth — WhatsApp configurado com sucesso!"},
             headers=HEADERS,
-            timeout=10,
+            timeout=15,
         )
-        if response.status_code == 200:
-            instances = response.json()
-            for inst in instances:
-                if inst.get("instance", {}).get("instanceName") == INSTANCE_NAME:
-                    state = inst.get("instance", {}).get("state", "")
-                    if state == "open":
-                        print("\n✓ WhatsApp conectado com sucesso!")
-                        return True
-                    print(f"  Estado atual: {state} ({i+1}/30)...")
-        time.sleep(5)
-    print("Tempo esgotado. Verifique se escaneou o QR Code corretamente.")
-    return False
+        if response.ok:
+            print("✓ Mensagem enviada com sucesso!")
+            return True
+        else:
+            print(f"✗ Erro ao enviar: HTTP {response.status_code} — {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"✗ Falha ao enviar: {e}")
+        return False
 
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("  CONFIGURAÇÃO WHATSAPP — EVOLUTION API")
+    print("  VERIFICAÇÃO WHATSAPP — UAZAPI")
     print("=" * 50)
 
-    try:
-        requests.get(f"{EVOLUTION_URL}/", timeout=5)
-    except Exception:
-        print("ERRO: Evolution API não está rodando.")
-        print("Execute primeiro: iniciar-evolution.bat")
+    if not API_TOKEN:
+        print("ERRO: WHATSAPP_API_TOKEN não configurado no .env")
+        print("Adicione: WHATSAPP_API_TOKEN=seu-token-aqui")
         exit(1)
 
-    if criar_instancia() and obter_qrcode():
-        verificar_conexao()
+    ok = verificar_status()
+
+    if ok:
+        numero = input("\nDeseja enviar mensagem de teste? Digite o número (ex: 5564999999999) ou Enter para pular: ").strip()
+        if numero:
+            enviar_teste(numero)
 
     print("\nPróximo passo: preencha o .env com suas credenciais do Meta API.")
     print("Depois teste com: python main.py run")

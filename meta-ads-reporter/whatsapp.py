@@ -4,38 +4,33 @@ import config
 
 def _headers() -> dict:
     return {
-        "apikey": config.EVOLUTION_API_KEY,
+        "Authorization": config.WHATSAPP_API_TOKEN,
         "Content-Type": "application/json",
     }
 
 
 def send_message(phone: str, message: str) -> None:
-    """Envia mensagem de texto via Evolution API."""
-    url = f"{config.EVOLUTION_API_URL}/message/sendText/{config.EVOLUTION_INSTANCE}"
-    payload = {"number": phone, "text": message}
+    """Envia mensagem de texto via UazAPI."""
+    url = f"{config.WHATSAPP_API_URL}/send/text"
+    payload = {"phone": phone, "message": message}
     response = requests.post(url, json=payload, headers=_headers(), timeout=30)
     response.raise_for_status()
 
 
 def send_pdf(phone: str, pdf_path: str, caption: str = "") -> None:
-    """
-    Envia PDF como documento via Evolution API.
-    O arquivo é codificado em base64 e enviado como mídia.
-    """
+    """Envia PDF como documento via UazAPI."""
     import base64, os
 
     with open(pdf_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode("utf-8")
 
     filename = os.path.basename(pdf_path)
-    url = f"{config.EVOLUTION_API_URL}/message/sendMedia/{config.EVOLUTION_INSTANCE}"
+    url = f"{config.WHATSAPP_API_URL}/send/document"
 
     payload = {
-        "number": phone,
-        "mediatype": "document",
-        "mimetype": "application/pdf",
-        "media": b64,
-        "fileName": filename,
+        "phone": phone,
+        "document": b64,
+        "filename": filename,
         "caption": caption,
     }
     response = requests.post(url, json=payload, headers=_headers(), timeout=60)
