@@ -1,8 +1,7 @@
 import { db } from "@/lib/db";
 
-const EVOLUTION_URL = process.env.EVOLUTION_API_URL ?? "http://localhost:8080";
-const EVOLUTION_KEY = process.env.EVOLUTION_API_KEY ?? "";
-const EVOLUTION_INSTANCE = process.env.EVOLUTION_INSTANCE ?? "";
+const WHATSAPP_URL = process.env.WHATSAPP_API_URL ?? "https://free.uazapi.com";
+const WHATSAPP_TOKEN = process.env.WHATSAPP_API_TOKEN ?? "";
 
 export async function sendReportMessage(
   clientId: string,
@@ -24,17 +23,14 @@ export async function sendReportMessage(
   });
 
   try {
-    const res = await fetch(
-      `${EVOLUTION_URL}/message/sendText/${EVOLUTION_INSTANCE}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: EVOLUTION_KEY,
-        },
-        body: JSON.stringify({ number: phone, text: message }),
-      }
-    );
+    const res = await fetch(`${WHATSAPP_URL}/send/text`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: WHATSAPP_TOKEN,
+      },
+      body: JSON.stringify({ phone, message }),
+    });
 
     const json = await res.json().catch(() => ({}));
 
