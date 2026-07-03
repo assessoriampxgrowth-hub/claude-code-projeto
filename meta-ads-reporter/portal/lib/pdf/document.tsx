@@ -206,7 +206,7 @@ export function ReportPDF({ data, clientName, insights, generatedAt }: Props) {
             </View>
             {active.map((c, i) => (
               <View key={c.id} style={[s.tableRow, i % 2 === 1 ? s.tableRowAlt : {}]}>
-                <Text style={[s.tableCell, s.tableCellWide]} numberOfLines={1}>
+                <Text style={[s.tableCell, s.tableCellWide]}>
                   {c.name.slice(0, 38)}
                 </Text>
                 <Text style={s.tableCell}>{fmtBRL(c.spend)}</Text>

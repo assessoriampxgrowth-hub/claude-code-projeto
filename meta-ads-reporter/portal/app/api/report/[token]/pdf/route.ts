@@ -22,12 +22,14 @@ export async function GET(_: NextRequest, { params }: { params: Promise<{ token:
   const generatedAt = new Date().toLocaleString("pt-BR");
 
   const buffer = await renderToBuffer(
-    React.createElement(ReportPDF, { data, clientName: snapshot.client.name, insights, generatedAt })
+    React.createElement(ReportPDF, { data, clientName: snapshot.client.name, insights, generatedAt }) as Parameters<
+      typeof renderToBuffer
+    >[0]
   );
 
   const filename = `relatorio-${snapshot.client.name.toLowerCase().replace(/\s+/g, "-")}-${data.period.end}.pdf`;
 
-  return new NextResponse(buffer, {
+  return new NextResponse(new Uint8Array(buffer), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `attachment; filename="${filename}"`,
