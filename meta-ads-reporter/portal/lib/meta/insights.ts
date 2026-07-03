@@ -8,7 +8,6 @@ const FIELDS = [
   "campaign_id",
   "campaign_name",
   "objective",
-  "effective_status",
   "impressions",
   "clicks",
   "spend",
