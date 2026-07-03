@@ -4,6 +4,35 @@ const EVOLUTION_URL = process.env.EVOLUTION_API_URL ?? "http://localhost:8080";
 const EVOLUTION_KEY = process.env.EVOLUTION_API_KEY ?? "";
 const EVOLUTION_INSTANCE = process.env.EVOLUTION_INSTANCE ?? "";
 
+// Envio simples de texto livre (cobrança interna, pauta diária) — sem
+// vínculo com Client/ReportSnapshot, por isso não grava em WhatsAppLog.
+export async function sendWhatsAppText(
+  phone: string,
+  text: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const res = await fetch(
+      `${EVOLUTION_URL}/message/sendText/${EVOLUTION_INSTANCE}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: EVOLUTION_KEY,
+        },
+        body: JSON.stringify({ number: phone, text }),
+      }
+    );
+
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      return { success: false, error: json?.message ?? `HTTP ${res.status}` };
+    }
+    return { success: true };
+  } catch (err: unknown) {
+    return { success: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
 export async function sendReportMessage(
   clientId: string,
   phone: string,
