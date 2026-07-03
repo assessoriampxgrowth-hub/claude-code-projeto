@@ -4,6 +4,7 @@
 /.vercel
 .env
 .env*.local
-/prisma/migrations/
 .DS_Store
 Thumbs.db
+
+.env*
