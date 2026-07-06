@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const tarefas = await buscarTarefasAtrasadas();
+  const { tarefas, listasComErro } = await buscarTarefasAtrasadas();
   const porResponsavel = agruparPorResponsavel(tarefas);
 
   const cobrancasEnviadas: { assigneeId: number; nome: string; qtde: number; status: string }[] = [];
@@ -43,11 +43,12 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  const pauta = montarPautaDiaria(tarefas);
+  const pauta = montarPautaDiaria(tarefas, listasComErro);
   const envioPauta = await sendWhatsAppText(MATHEUS_WHATSAPP, pauta);
 
   return NextResponse.json({
     totalAtrasadas: tarefas.length,
+    listasComErro,
     cobrancas: cobrancasEnviadas,
     pauta: envioPauta.success ? "enviada" : `erro: ${envioPauta.error}`,
   });

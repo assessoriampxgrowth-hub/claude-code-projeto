@@ -32,16 +32,33 @@ export type TarefaAtrasada = {
   assigneeNome: string;
 };
 
-export async function buscarTarefasAtrasadas(): Promise<TarefaAtrasada[]> {
+export type ResultadoBusca = {
+  tarefas: TarefaAtrasada[];
+  listasComErro: { lista: string; erro: string }[];
+};
+
+export async function buscarTarefasAtrasadas(): Promise<ResultadoBusca> {
   const hoje = new Date();
   hoje.setHours(23, 59, 59, 999);
 
   const resultados: TarefaAtrasada[] = [];
+  const listasComErro: { lista: string; erro: string }[] = [];
 
   for (const [listId, listName] of Object.entries(LISTAS_MONITORADAS)) {
-    const data = await clickupFetch<{ tasks: ClickUpTask[] }>(`/list/${listId}/task`, {
-      include_closed: "false",
-    });
+    let data: { tasks: ClickUpTask[] };
+    try {
+      data = await clickupFetch<{ tasks: ClickUpTask[] }>(`/list/${listId}/task`, {
+        include_closed: "false",
+      });
+    } catch (err: unknown) {
+      // Uma lista fora do ar (ClickUp instável) não pode derrubar a checagem
+      // das outras listas nem impedir o envio da pauta/cobrança do que já foi lido.
+      listasComErro.push({
+        lista: listName,
+        erro: err instanceof Error ? err.message : String(err),
+      });
+      continue;
+    }
 
     for (const task of data.tasks) {
       if (!task.due_date) continue;
@@ -63,7 +80,7 @@ export async function buscarTarefasAtrasadas(): Promise<TarefaAtrasada[]> {
     }
   }
 
-  return resultados;
+  return { tarefas: resultados, listasComErro };
 }
 
 export function agruparPorResponsavel(tarefas: TarefaAtrasada[]): Map<number, TarefaAtrasada[]> {
@@ -89,9 +106,18 @@ export function montarMensagemCobranca(nome: string, tarefas: TarefaAtrasada[]):
   );
 }
 
-export function montarPautaDiaria(tarefas: TarefaAtrasada[]): string {
+export function montarPautaDiaria(
+  tarefas: TarefaAtrasada[],
+  listasComErro: { lista: string; erro: string }[] = []
+): string {
+  const avisoErro = listasComErro.length
+    ? `\n\n⚠️ Não consegui checar essas listas do ClickUp hoje (pode ter sido instabilidade): ${listasComErro
+        .map((l) => l.lista)
+        .join(", ")}. Vale dar uma olhada manual nelas.`
+    : "";
+
   if (!tarefas.length) {
-    return "Bom dia! ☀️\n\nNenhuma tarefa atrasada no ClickUp hoje. Tudo em dia.";
+    return `Bom dia! ☀️\n\nNenhuma tarefa atrasada no ClickUp hoje. Tudo em dia.${avisoErro}`;
   }
 
   const porResponsavel = agruparPorResponsavel(tarefas);
@@ -105,5 +131,5 @@ export function montarPautaDiaria(tarefas: TarefaAtrasada[]): string {
     })
     .join("\n\n");
 
-  return `Bom dia! ☀️\n\n📋 *Pauta do dia* — ${tarefas.length} tarefa(s) atrasada(s) no total:\n\n${secoes}`;
+  return `Bom dia! ☀️\n\n📋 *Pauta do dia* — ${tarefas.length} tarefa(s) atrasada(s) no total:\n\n${secoes}${avisoErro}`;
 }
