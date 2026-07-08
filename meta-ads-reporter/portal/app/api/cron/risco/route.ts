@@ -9,7 +9,7 @@ const DESTINATARIOS = [
   { nome: "Adrian", telefone: "5564999350869" },
 ];
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 async function executar(req: NextRequest) {
   if (!cronAutorizado(req)) {

@@ -26,10 +26,6 @@ function normalizar(s: string): string {
 }
 
 type Grupo = { id: string; subject: string };
-type MensagemEvo = {
-  key?: { fromMe?: boolean };
-  messageTimestamp?: number | string;
-};
 
 export type TermometroGrupo = {
   cliente: string;
@@ -54,27 +50,34 @@ async function evoFetch<T>(path: string, body?: unknown): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-async function ultimasMensagens(remoteJid: string): Promise<MensagemEvo[]> {
-  const data = await evoFetch<{ messages?: { records?: MensagemEvo[] } } | MensagemEvo[]>(
-    `/chat/findMessages/${EVO_INSTANCE}`,
-    { where: { key: { remoteJid } }, limit: 25 }
-  );
-  if (Array.isArray(data)) return data;
-  return data.messages?.records ?? [];
-}
-
 function diasDesde(tsSegundos: number, agora: Date): number {
   return Math.floor((agora.getTime() / 1000 - tsSegundos) / 86400);
 }
 
+type ChatEvo = {
+  remoteJid?: string;
+  lastMessage?: { messageTimestamp?: number | string };
+};
+
 export async function buscarTermometro(agora = new Date()): Promise<ResultadoRisco> {
-  const grupos = await evoFetch<Grupo[]>(
-    `/group/fetchAllGroups/${EVO_INSTANCE}?getParticipants=false`
-  );
+  // Duas chamadas só: roster completo de grupos + última mensagem de cada chat.
+  // (findMessages por grupo estourava o tempo limite da função na Vercel.)
+  const [grupos, chats] = await Promise.all([
+    evoFetch<Grupo[]>(`/group/fetchAllGroups/${EVO_INSTANCE}?getParticipants=false`),
+    evoFetch<ChatEvo[]>(`/chat/findChats/${EVO_INSTANCE}`, {}),
+  ]);
+
+  const ultimaPorJid = new Map<string, number>();
+  for (const c of chats) {
+    const ts = Number(c.lastMessage?.messageTimestamp ?? 0);
+    if (c.remoteJid && ts > 0) {
+      ultimaPorJid.set(c.remoteJid, Math.max(ts, ultimaPorJid.get(c.remoteJid) ?? 0));
+    }
+  }
 
   // Grupos de cliente: "MPX - <nome>". Se houver grupo duplicado pro mesmo
   // cliente, fica o com atividade mais recente.
-  const alvos: { cliente: string; grupo: Grupo }[] = [];
+  const porCliente = new Map<string, TermometroGrupo>();
   for (const g of grupos) {
     const subject = g.subject ?? "";
     if (!/^mpx\s*-/i.test(subject.trim())) continue;
@@ -83,40 +86,24 @@ export async function buscarTermometro(agora = new Date()): Promise<ResultadoRis
       const n = normalizar(c);
       return nomeGrupo.includes(n) || n.includes(nomeGrupo);
     });
-    if (cliente) alvos.push({ cliente, grupo: g });
-  }
+    if (!cliente) continue;
 
-  const porCliente = new Map<string, TermometroGrupo>();
-  const lote = 8;
-  for (let i = 0; i < alvos.length; i += lote) {
-    const resultados = await Promise.all(
-      alvos.slice(i, i + lote).map(async ({ cliente, grupo }) => {
-        let msgs: MensagemEvo[] = [];
-        try {
-          msgs = await ultimasMensagens(grupo.id);
-        } catch {
-          // Grupo ilegível não derruba o termômetro dos demais.
-        }
-        const ts = (m: MensagemEvo) => Number(m.messageTimestamp ?? 0);
-        const ordenadas = msgs.filter((m) => ts(m) > 0).sort((a, b) => ts(b) - ts(a));
-        const ultima = ordenadas[0];
-        const ultimaNossa = ordenadas.find((m) => m.key?.fromMe);
-        const diasSemMensagem = ultima ? diasDesde(ts(ultima), agora) : null;
-        const diasSemNossaMensagem = ultimaNossa ? diasDesde(ts(ultimaNossa), agora) : null;
-        // Classifica só pela atividade geral do grupo: o histórico da instância
-        // começa em 03/07/2026 e o time responde de números próprios, então
-        // fromMe não representa "resposta da MPX". null = nada desde o início
-        // do histórico (= frio).
-        const dias = diasSemMensagem ?? 99;
-        const nivel: TermometroGrupo["nivel"] = dias >= 5 ? "frio" : dias >= 3 ? "morno" : "ok";
-        return { cliente, grupo: grupo.subject, diasSemMensagem, diasSemNossaMensagem, nivel };
-      })
-    );
-    for (const r of resultados) {
-      const atual = porCliente.get(r.cliente);
-      if (!atual || (r.diasSemMensagem ?? 99) < (atual.diasSemMensagem ?? 99)) {
-        porCliente.set(r.cliente, r);
-      }
+    const ts = ultimaPorJid.get(g.id);
+    // Sem mensagem registrada = nada desde o início do histórico (03/07/2026) = frio.
+    const diasSemMensagem = ts ? diasDesde(ts, agora) : null;
+    const dias = diasSemMensagem ?? 99;
+    const nivel: TermometroGrupo["nivel"] = dias >= 5 ? "frio" : dias >= 3 ? "morno" : "ok";
+    const item: TermometroGrupo = {
+      cliente,
+      grupo: subject,
+      diasSemMensagem,
+      diasSemNossaMensagem: null,
+      nivel,
+    };
+
+    const atual = porCliente.get(cliente);
+    if (!atual || (item.diasSemMensagem ?? 99) < (atual.diasSemMensagem ?? 99)) {
+      porCliente.set(cliente, item);
     }
   }
 
