@@ -8,12 +8,12 @@ import {
   RESPONSAVEL_WHATSAPP,
 } from "@/lib/clickup/cobranca";
 import { buscarAtaDoDia, montarMensagemAta } from "@/lib/clickup/ata";
+import { cronAutorizado } from "@/lib/cron-auth";
 
 const MATHEUS_WHATSAPP = "5564996453506";
 
-export async function POST(req: NextRequest) {
-  const secret = req.headers.get("x-cron-secret") ?? req.nextUrl.searchParams.get("secret");
-  if (secret !== process.env.CRON_SECRET) {
+async function executar(req: NextRequest) {
+  if (!cronAutorizado(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -77,4 +77,12 @@ export async function POST(req: NextRequest) {
     pauta: envioPauta.success ? "enviada" : `erro: ${envioPauta.error}`,
     ata: ataErro ? { erro: ataErro } : ataEnvios,
   });
+}
+
+export async function GET(req: NextRequest) {
+  return executar(req);
+}
+
+export async function POST(req: NextRequest) {
+  return executar(req);
 }

@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { syncClient } from "@/lib/reports/generate";
 import { sendReportMessage } from "@/lib/whatsapp/send";
+import { cronAutorizado } from "@/lib/cron-auth";
 
-export async function POST(req: NextRequest) {
-  const secret = req.headers.get("x-cron-secret") ?? req.nextUrl.searchParams.get("secret");
-  if (secret !== process.env.CRON_SECRET) {
+async function executar(req: NextRequest) {
+  if (!cronAutorizado(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -42,4 +42,12 @@ export async function POST(req: NextRequest) {
   }
 
   return NextResponse.json({ processed: results.length, results });
+}
+
+export async function GET(req: NextRequest) {
+  return executar(req);
+}
+
+export async function POST(req: NextRequest) {
+  return executar(req);
 }
