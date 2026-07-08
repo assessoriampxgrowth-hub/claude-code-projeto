@@ -7,6 +7,7 @@ import {
   montarPautaDiaria,
   RESPONSAVEL_WHATSAPP,
 } from "@/lib/clickup/cobranca";
+import { buscarAtaDoDia, montarMensagemAta } from "@/lib/clickup/ata";
 
 const MATHEUS_WHATSAPP = "5564996453506";
 
@@ -46,10 +47,34 @@ export async function POST(req: NextRequest) {
   const pauta = montarPautaDiaria(tarefas, listasComErro);
   const envioPauta = await sendWhatsAppText(MATHEUS_WHATSAPP, pauta);
 
+  // Pauta individual da Ata: checklist do dia de cada pessoa no doc "Atas",
+  // priorizado e enviado no WhatsApp de cada um. Falha aqui não derruba o resto.
+  const ataEnvios: { nome: string; pendentes: number; status: string }[] = [];
+  let ataErro: string | null = null;
+  try {
+    const ata = await buscarAtaDoDia();
+    if (ata.erro) {
+      ataErro = ata.erro;
+    } else {
+      for (const pessoa of ata.pessoas) {
+        const mensagem = montarMensagemAta(pessoa, ata.paginaNome ?? "");
+        const envio = await sendWhatsAppText(pessoa.telefone, mensagem);
+        ataEnvios.push({
+          nome: pessoa.nome,
+          pendentes: pessoa.pendentes.length,
+          status: envio.success ? "enviado" : `erro: ${envio.error}`,
+        });
+      }
+    }
+  } catch (err: unknown) {
+    ataErro = err instanceof Error ? err.message : String(err);
+  }
+
   return NextResponse.json({
     totalAtrasadas: tarefas.length,
     listasComErro,
     cobrancas: cobrancasEnviadas,
     pauta: envioPauta.success ? "enviada" : `erro: ${envioPauta.error}`,
+    ata: ataErro ? { erro: ataErro } : ataEnvios,
   });
 }
