@@ -1,4 +1,4 @@
-import { ordenarPorPrioridade } from "./priorizacao";
+import { montarResumoDiario } from "./priorizacao";
 
 // Doc "Atas" fica num workspace ClickUp separado do espaço Operacional.
 // Estrutura do doc: raiz > ano ("2026") > mês ("Julho") > página do dia
@@ -139,26 +139,9 @@ export async function buscarAtaDoDia(hoje = hojeBrasilia()): Promise<ResultadoAt
   };
 }
 
-// Monta a mensagem individual: itens pendentes em lista corrida, já em ordem
-// de prioridade (crítico > bloqueado > potencial > rotina), sem rótulos de
-// nível — formato validado pelo Matheus em 07/07/2026.
+// Resumo diário enxuto (matriz de prioridade completa do Matheus, 09/07/2026):
+// top 3-5 prioridades + blocos Aguardando cliente/equipe. A lista completa
+// fica na ata do ClickUp — WhatsApp é alerta e cobrança, não substituto.
 export function montarMensagemAta(pessoa: ChecklistPessoa, paginaNome: string): string {
-  if (!pessoa.pendentes.length) {
-    return (
-      `Bom dia, *${pessoa.nome}*! ☀️\n\n` +
-      `Ata de hoje (${paginaNome}): nenhuma pendência aberta no seu checklist. 👏`
-    );
-  }
-
-  const ordenados = ordenarPorPrioridade(pessoa.pendentes.map((texto) => ({ texto })));
-  const linhas = ordenados.map((i) => `• ${i.texto}`).join("\n");
-  const rodapeConcluidas = pessoa.concluidas
-    ? `\n\n✅ Já concluídas hoje: ${pessoa.concluidas}`
-    : "";
-
-  return (
-    `Bom dia, *${pessoa.nome}*! ☀️\n\n` +
-    `📋 Suas pendências de hoje (${paginaNome}), já em ordem de prioridade:\n\n` +
-    `${linhas}${rodapeConcluidas}`
-  );
+  return montarResumoDiario(pessoa.nome, pessoa.pendentes, paginaNome, pessoa.concluidas);
 }
