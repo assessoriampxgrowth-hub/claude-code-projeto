@@ -15,15 +15,20 @@ async function executar(req: NextRequest) {
   }
 
   const relatorios = await gerarRelatorios();
-  const prontos = relatorios.filter((r) => r.ok && r.mensagem);
-  const semMovimento = relatorios.filter((r) => r.ok && !r.mensagem).length;
+  const prontos = relatorios.filter((r) => r.ok && r.mensagemCliente);
+  const semMovimento = relatorios.filter((r) => r.ok && !r.mensagemCliente).length;
   const semAcesso = relatorios.filter((r) => !r.ok).length;
 
   let enviados = 0;
   for (const rel of prontos) {
     for (const tel of DESTINATARIOS) {
-      const envio = await sendWhatsAppText(tel, rel.mensagem!);
-      if (envio.success) enviados++;
+      // Versão do cliente (pra encaminhar) seguida da leitura interna.
+      const envioCliente = await sendWhatsAppText(tel, rel.mensagemCliente!);
+      if (envioCliente.success) enviados++;
+      if (rel.mensagemInterna) {
+        const envioInterno = await sendWhatsAppText(tel, rel.mensagemInterna);
+        if (envioInterno.success) enviados++;
+      }
     }
   }
 
