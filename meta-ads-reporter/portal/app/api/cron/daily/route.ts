@@ -1,15 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendWhatsAppText } from "@/lib/whatsapp/send";
-import {
-  buscarTarefasAtrasadas,
-  agruparPorResponsavel,
-  montarMensagemCobranca,
-  montarPautaDiaria,
-  RESPONSAVEL_WHATSAPP,
-} from "@/lib/clickup/cobranca";
 import { buscarAtaDoDia, montarMensagemAta } from "@/lib/clickup/ata";
 import { cronAutorizado } from "@/lib/cron-auth";
 
+// Pauta diária = SOMENTE a Ata do dia (Operacional > Reuniões Diárias > Atas),
+// sincronizada com o calendário de Brasília. Decisão do Matheus em 09/07/2026:
+// as tarefas soltas do ClickUp foram apagadas e não são mais fonte de pauta.
 const MATHEUS_WHATSAPP = "5564996453506";
 
 async function executar(req: NextRequest) {
@@ -17,38 +13,6 @@ async function executar(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { tarefas, listasComErro } = await buscarTarefasAtrasadas();
-  const porResponsavel = agruparPorResponsavel(tarefas);
-
-  const cobrancasEnviadas: { assigneeId: number; nome: string; qtde: number; status: string }[] = [];
-
-  for (const [assigneeId, tarefasDoResponsavel] of porResponsavel) {
-    const contato = RESPONSAVEL_WHATSAPP[assigneeId];
-    if (!contato) {
-      cobrancasEnviadas.push({
-        assigneeId,
-        nome: tarefasDoResponsavel[0].assigneeNome,
-        qtde: tarefasDoResponsavel.length,
-        status: "sem_whatsapp_cadastrado",
-      });
-      continue;
-    }
-
-    const mensagem = montarMensagemCobranca(contato.nome, tarefasDoResponsavel);
-    const envio = await sendWhatsAppText(contato.telefone, mensagem);
-    cobrancasEnviadas.push({
-      assigneeId,
-      nome: contato.nome,
-      qtde: tarefasDoResponsavel.length,
-      status: envio.success ? "enviado" : `erro: ${envio.error}`,
-    });
-  }
-
-  const pauta = montarPautaDiaria(tarefas, listasComErro);
-  const envioPauta = await sendWhatsAppText(MATHEUS_WHATSAPP, pauta);
-
-  // Pauta individual da Ata: checklist do dia de cada pessoa no doc "Atas",
-  // priorizado e enviado no WhatsApp de cada um. Falha aqui não derruba o resto.
   const ataEnvios: { nome: string; pendentes: number; status: string }[] = [];
   let ataErro: string | null = null;
   try {
@@ -70,13 +34,16 @@ async function executar(req: NextRequest) {
     ataErro = err instanceof Error ? err.message : String(err);
   }
 
-  return NextResponse.json({
-    totalAtrasadas: tarefas.length,
-    listasComErro,
-    cobrancas: cobrancasEnviadas,
-    pauta: envioPauta.success ? "enviada" : `erro: ${envioPauta.error}`,
-    ata: ataErro ? { erro: ataErro } : ataEnvios,
-  });
+  // Se a ata do dia não existir (ninguém criou a página), avisa o Matheus em
+  // vez de falhar em silêncio.
+  if (ataErro) {
+    await sendWhatsAppText(
+      MATHEUS_WHATSAPP,
+      `⚠️ Pauta do dia não enviada: ${ataErro}. Cria a página da ata de hoje no ClickUp que eu reenvio no próximo ciclo.`
+    );
+  }
+
+  return NextResponse.json({ ata: ataErro ? { erro: ataErro } : ataEnvios });
 }
 
 export async function GET(req: NextRequest) {

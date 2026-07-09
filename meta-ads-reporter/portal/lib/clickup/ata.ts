@@ -115,7 +115,15 @@ export function extrairChecklists(conteudo: string): ChecklistPessoa[] {
   return Array.from(resultado.values());
 }
 
-export async function buscarAtaDoDia(hoje = new Date()): Promise<ResultadoAta> {
+// A Vercel roda em UTC; a ata do dia segue o calendário de Brasília (UTC-3,
+// sem horário de verão desde 2019). Sem isso, um cron entre 21h e 0h BRT
+// abriria a ata do dia seguinte.
+export function hojeBrasilia(agora = new Date()): Date {
+  const utcMs = agora.getTime() + agora.getTimezoneOffset() * 60000;
+  return new Date(utcMs - 3 * 3600000);
+}
+
+export async function buscarAtaDoDia(hoje = hojeBrasilia()): Promise<ResultadoAta> {
   const paginas = await buscarPaginasDoc();
   const pagina = acharPaginaDoDia(paginas, hoje);
   if (!pagina) {
