@@ -28,9 +28,13 @@ export type CplCliente = {
 
 type DiaInsight = {
   date_start: string;
+  campaign_name?: string;
   spend?: string;
   actions?: { action_type: string; value: string }[];
 };
+
+// Campanha de contratação não conta como lead do cliente (regra 09/07/2026).
+const ehContratacao = (nome?: string) => /contrata[çc][ãa]o/i.test(nome ?? "");
 
 function leadsDoDia(d: DiaInsight): number {
   return (d.actions ?? [])
@@ -55,38 +59,56 @@ async function cplDaConta(cliente: string, accountId: string, encryptedToken: st
   const inicio = new Date(fim);
   inicio.setDate(inicio.getDate() - 6);
 
+  // Nível campanha (não conta agregada) pra poder excluir contratação, com
+  // paginação completa — contas grandes truncavam no limite de uma página.
   const params = new URLSearchParams({
-    level: "account",
+    level: "campaign",
     time_increment: "1",
     time_range: JSON.stringify({ since: fmt(inicio), until: fmt(fim) }),
-    fields: "spend,actions",
+    fields: "campaign_name,spend,actions",
+    limit: "200",
     access_token: token,
   });
 
   let dias: DiaInsight[];
   try {
-    const res = await fetch(`${BASE}/${accountId}/insights?${params}`, { next: { revalidate: 0 } });
-    const json = await res.json();
-    if (!res.ok) throw new Error((json?.error?.message as string) ?? `Meta API ${res.status}`);
-    dias = json.data ?? [];
+    const linhas: DiaInsight[] = [];
+    let url: string | null = `${BASE}/${accountId}/insights?${params}`;
+    let paginas = 0;
+    while (url && paginas < 20) {
+      const res: Response = await fetch(url, { next: { revalidate: 0 } });
+      const json = await res.json();
+      if (!res.ok) throw new Error((json?.error?.message as string) ?? `Meta API ${res.status}`);
+      linhas.push(...(json.data ?? []));
+      url = json.paging?.next ?? null;
+      paginas++;
+    }
+    dias = linhas.filter((l) => !ehContratacao(l.campaign_name));
   } catch (err: unknown) {
     return { cliente, ok: false, erro: err instanceof Error ? err.message.slice(0, 70) : String(err) };
   }
 
-  const gasto7d = dias.reduce((s, d) => s + Number(d.spend || 0), 0);
-  const leads7d = dias.reduce((s, d) => s + leadsDoDia(d), 0);
-  const ontem = dias.find((d) => d.date_start === fmt(fim));
-  const leadsOntem = ontem ? leadsDoDia(ontem) : 0;
-  const gastoOntem = ontem ? Number(ontem.spend || 0) : 0;
+  // Agrega as linhas campanha×dia em totais por dia.
+  const porDia = new Map<string, { gasto: number; leads: number }>();
+  for (const d of dias) {
+    const agg = porDia.get(d.date_start) ?? { gasto: 0, leads: 0 };
+    agg.gasto += Number(d.spend || 0);
+    agg.leads += leadsDoDia(d);
+    porDia.set(d.date_start, agg);
+  }
+
+  const gasto7d = Array.from(porDia.values()).reduce((s, d) => s + d.gasto, 0);
+  const leads7d = Array.from(porDia.values()).reduce((s, d) => s + d.leads, 0);
+  const ontem = porDia.get(fmt(fim));
+  const leadsOntem = ontem?.leads ?? 0;
+  const gastoOntem = ontem?.gasto ?? 0;
 
   let piorDia: { data: string; cpl: number } | null = null;
-  for (const d of dias) {
-    const l = leadsDoDia(d);
-    const g = Number(d.spend || 0);
-    if (l > 0 && g > 0) {
-      const cpl = g / l;
+  for (const [data, agg] of porDia) {
+    if (agg.leads > 0 && agg.gasto > 0) {
+      const cpl = agg.gasto / agg.leads;
       if (!piorDia || cpl > piorDia.cpl) {
-        piorDia = { data: d.date_start.slice(8, 10) + "/" + d.date_start.slice(5, 7), cpl };
+        piorDia = { data: data.slice(8, 10) + "/" + data.slice(5, 7), cpl };
       }
     }
   }

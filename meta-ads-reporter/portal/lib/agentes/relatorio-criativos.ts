@@ -25,6 +25,7 @@ const ACTIONS_CONVERSA = new Set([
 type AdInsight = {
   ad_id?: string;
   ad_name?: string;
+  campaign_name?: string;
   objective?: string;
   spend?: string;
   ctr?: string;
@@ -77,6 +78,28 @@ async function graph<T>(path: string, token: string): Promise<T> {
   if (!res.ok) throw new Error((json?.error?.message as string) ?? `Meta API ${res.status}`);
   return json as T;
 }
+
+// Segue paging.next até o fim — conta grande (ex: LC Motors, 45+ campanhas)
+// truncava no limite de uma página e subnotificava conversas (lição de 09/07).
+async function graphAll<T>(path: string, token: string): Promise<T[]> {
+  const sep = path.includes("?") ? "&" : "?";
+  let url: string | null = `${BASE}/${path}${sep}access_token=${encodeURIComponent(token)}`;
+  const tudo: T[] = [];
+  let paginas = 0;
+  while (url && paginas < 20) {
+    const res: Response = await fetch(url, { next: { revalidate: 0 } });
+    const json = await res.json();
+    if (!res.ok) throw new Error((json?.error?.message as string) ?? `Meta API ${res.status}`);
+    tudo.push(...(json.data ?? []));
+    url = json.paging?.next ?? null;
+    paginas++;
+  }
+  return tudo;
+}
+
+// Regra global (Matheus, 09/07/2026): campanha de contratação/vaga interna
+// nunca conta como lead do cliente — nem no número, nem no custo por conversa.
+const ehContratacao = (nomeCampanha?: string) => /contrata[çc][ãa]o/i.test(nomeCampanha ?? "");
 
 // Alerta principal + próxima ação, em linguagem simples (heurística).
 function diagnostico(
@@ -137,16 +160,18 @@ async function relatorioDaConta(
     const insightsParams = new URLSearchParams({
       level: "ad",
       time_range: JSON.stringify({ since: fmt(inicio), until: fmt(fim) }),
-      fields: "ad_id,ad_name,objective,spend,ctr,cpc,cpm,frequency,impressions,actions",
+      fields: "ad_id,ad_name,campaign_name,objective,spend,ctr,cpc,cpm,frequency,impressions,actions",
       limit: "150",
     });
-    const [insights, adsMeta] = await Promise.all([
-      graph<{ data: AdInsight[] }>(`${accountId}/insights?${insightsParams}`, token),
-      graph<{ data: AdMeta[] }>(
+    const [insightsData, adsData] = await Promise.all([
+      graphAll<AdInsight>(`${accountId}/insights?${insightsParams}`, token),
+      graphAll<AdMeta>(
         `${accountId}/ads?fields=id,preview_shareable_link,effective_status&limit=300`,
         token
       ),
     ]);
+    const insights = { data: insightsData };
+    const adsMeta = { data: adsData };
 
     const linhas = (insights.data ?? []).filter((a) => Number(a.spend || 0) > 0);
     const gastoTotal = linhas.reduce((s, a) => s + Number(a.spend || 0), 0);
@@ -163,8 +188,11 @@ async function relatorioDaConta(
 
     // Base do custo por conversa: SÓ anúncios de mensagem (objetivo de
     // mensagens/leads ou que registraram conversa) — nunca a conta inteira.
+    // Campanhas de contratação ficam fora do lead do cliente.
     const adsConversa = linhas.filter(
-      (a) => conversas(a) > 0 || /MESSAGES|LEAD|ENGAGEMENT/i.test(a.objective ?? "")
+      (a) =>
+        !ehContratacao(a.campaign_name) &&
+        (conversas(a) > 0 || /MESSAGES|LEAD|ENGAGEMENT/i.test(a.objective ?? ""))
     );
     const gastoConversa = adsConversa.reduce((s, a) => s + Number(a.spend || 0), 0);
     const totalConversas = adsConversa.reduce((s, a) => s + conversas(a), 0);
@@ -220,7 +248,7 @@ async function relatorioDaConta(
         const cpl = c > 0 ? ` | ${brl(Number(a.spend || 0) / c)}/conv` : "";
         const link = linkPorAd.get(a.ad_id ?? "");
         return (
-          `• ${a.ad_name ?? "?"} [${statusPorAd.get(a.ad_id ?? "") || "?"}] — ${brl(Number(a.spend || 0))} | ` +
+          `• ${ehContratacao(a.campaign_name) ? "🚫[CONTRATAÇÃO, fora do lead] " : ""}${a.ad_name ?? "?"} [${statusPorAd.get(a.ad_id ?? "") || "?"}] — ${brl(Number(a.spend || 0))} | ` +
           `${c} conv${cpl} | CTR ${Number(a.ctr || 0).toFixed(2)}% | CPC ${brl(Number(a.cpc || 0))} | ` +
           `CPM ${brl(Number(a.cpm || 0))} | freq ${Number(a.frequency || 0).toFixed(1)}` +
           (link ? `\n  ${link}` : "")
