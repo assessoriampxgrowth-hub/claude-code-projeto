@@ -13,7 +13,7 @@ async function executar(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const mensagem = montarMensagemCobrancaClientes(hojeBrasilia());
+  const mensagem = await montarMensagemCobrancaClientes(hojeBrasilia());
   if (!mensagem) {
     return NextResponse.json({ status: "sem_vencimentos_hoje" });
   }

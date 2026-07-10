@@ -14,10 +14,10 @@ const TIER_CLIENTES: Record<string, Tier> = {
   "amalle": "A", "centro oeste": "A", "abel": "A", "agri manut": "A",
   "dicasa": "A", "nlaser": "A", "n laser": "A", "lc motors": "A",
   "moto pneus": "B", "zezinho": "B", "hulligel": "B", "dom caetano": "B",
-  "nutri mais": "C", "nutrimais": "C", "outlet modas": "C", "suzy": "C",
-  "toda chic": "C", "mayara": "C",
+  "nutri mais": "B", "nutrimais": "B", "mult profiss": "B",
+  "outlet modas": "C", "suzy": "C", "toda chic": "C", "mayara": "C",
   "ortobom": "aluno", "tiago": "aluno", "delicias da midi": "aluno",
-  "delícias da midi": "aluno", "mult profiss": "aluno",
+  "delícias da midi": "aluno",
   "mpx": "interno", "resgate": "interno",
 };
 
