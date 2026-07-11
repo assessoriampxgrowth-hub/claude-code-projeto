@@ -39,9 +39,14 @@ export const CLIENTES_ATIVOS: { nome: string; categorias: Categoria[] }[] = [
   { nome: "Moto Pneus", categorias: ["veiculos"] },
   { nome: "Zezinho Ar Condicionado", categorias: ["lar", "servicos"] },
   { nome: "Revest Envelopamentos", categorias: ["lar", "servicos"] },
-  { nome: "Pavimold", categorias: ["servicos"] },
+  { nome: "Pavimold Pré Moldados", categorias: ["servicos"] },
+  { nome: "Pavimold Locações", categorias: ["servicos"] },
   { nome: "Agri Manutenção", categorias: ["agro", "servicos"] },
   { nome: "Abel", categorias: ["varejo"] },
+  { nome: "Academia Ativittá", categorias: ["saude"] },
+  { nome: "Tribos Açaí", categorias: ["alimentacao"] },
+  { nome: "Ótica Luxell Mineiros", categorias: ["saude"] },
+  { nome: "Ótica Luxell Chapadão do Céu", categorias: ["saude"] },
 ];
 
 type DataComercial = {
