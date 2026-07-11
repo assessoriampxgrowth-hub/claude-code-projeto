@@ -2,7 +2,7 @@
 // com o portfólio de clientes ativos da MPX. Roda toda segunda e avisa quais
 // clientes têm data relevante chegando e quando começar os criativos.
 
-type Categoria =
+export type Categoria =
   | "moda"
   | "alimentacao"
   | "beleza"
@@ -20,7 +20,7 @@ const TODAS: Categoria[] = [
 ];
 
 // Clientes ativos MPX por segmento (fonte: memory/02_clientes_mpx.md, jul/2026).
-const CLIENTES_ATIVOS: { nome: string; categorias: Categoria[] }[] = [
+export const CLIENTES_ATIVOS: { nome: string; categorias: Categoria[] }[] = [
   { nome: "Amalle Calçados", categorias: ["moda"] },
   { nome: "Toda Chic", categorias: ["moda"] },
   { nome: "Outlet Modas", categorias: ["moda", "varejo"] },

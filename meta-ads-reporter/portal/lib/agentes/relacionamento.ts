@@ -5,6 +5,7 @@
 // nenhum cliente fica meses esquecido.
 
 import { carregarCarteira } from "./cobranca-clientes";
+import { ideiasParaCliente, formatarIdeia } from "./conteudo";
 
 const ESTACOES = [
   { nome: "🏠 Visita presencial", instrucao: "passar na loja, olhar no olho, ouvir o dono" },
@@ -37,7 +38,17 @@ export async function montarMensagemRelacionamento(hoje: Date): Promise<string> 
       const idx = (semana * ESTACOES.length * POR_ESTACAO + e * POR_ESTACAO + k) % clientes.length;
       escalados.push(clientes[idx]);
     }
-    blocos.push(`*${estacao.nome}:* ${[...new Set(escalados)].join(" e ")}\n_→ ${estacao.instrucao}_`);
+    const unicos = [...new Set(escalados)];
+    let bloco = `*${estacao.nome}:* ${unicos.join(" e ")}\n_→ ${estacao.instrucao}_`;
+
+    // Estação de conteúdo vem com as ideias detalhadas do nicho de cada um.
+    if (estacao.nome.includes("Conteúdo")) {
+      for (const nome of unicos) {
+        const ideias = ideiasParaCliente(nome, semana);
+        bloco += `\n\n💡 *Ideias pra ${nome}:*\n${ideias.map(formatarIdeia).join("\n\n")}`;
+      }
+    }
+    blocos.push(bloco);
   });
 
   const ciclo = Math.ceil(clientes.length / (ESTACOES.length * POR_ESTACAO));
