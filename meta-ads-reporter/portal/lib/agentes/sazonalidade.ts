@@ -136,6 +136,53 @@ export function alertasSazonais(hoje = new Date(), horizonteDias = 45): AlertaSa
     .filter((a) => a.clientes.length > 0);
 }
 
+// Calendário do mês inteiro (dia 1º, encaminhável pro cliente): cada data
+// com prazo de criativo, prazo de subir campanha e argumento comercial.
+export function montarCalendarioMensal(hoje = new Date()): string {
+  const ano = hoje.getFullYear();
+  const mes = hoje.getMonth();
+  const nomeMes = hoje.toLocaleDateString("pt-BR", { month: "long" });
+  const fmt = (d: Date) => d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+
+  // Datas do mês + datas do mês seguinte cujo prazo de criativo cai neste mês.
+  const todas = [...datasDoAno(ano), ...datasDoAno(ano + 1)];
+  const doMes = todas.filter((d) => d.data.getFullYear() === ano && d.data.getMonth() === mes);
+  const proximasComPrazoNoMes = todas.filter((d) => {
+    const prazo = new Date(d.data.getTime() - d.antecedenciaCriativos * 86400000);
+    return d.data.getMonth() !== mes && prazo.getFullYear() === ano && prazo.getMonth() === mes;
+  });
+
+  const bloco = (d: DataComercial) => {
+    const prazoCriativo = new Date(d.data.getTime() - d.antecedenciaCriativos * 86400000);
+    const prazoCampanha = new Date(d.data.getTime() - Math.ceil(d.antecedenciaCriativos / 2) * 86400000);
+    const clientes = CLIENTES_ATIVOS.filter((c) => c.categorias.some((cat) => d.categorias.includes(cat)));
+    return (
+      `📌 *${d.nome}* — ${fmt(d.data)}\n` +
+      `  🎬 Criativos prontos até: ${fmt(prazoCriativo)}\n` +
+      `  🚀 Campanha no ar até: ${fmt(prazoCampanha)}\n` +
+      `  🎯 Encaixa pra: ${clientes.length} cliente(s) da carteira`
+    );
+  };
+
+  const partes: string[] = [
+    `🗓️ *Calendário Comercial — ${nomeMes[0].toUpperCase() + nomeMes.slice(1)}/${ano}*\n_Planejamento MPX Multiplica_`,
+  ];
+  if (doMes.length) {
+    partes.push(`*Datas do mês:*\n\n${doMes.map(bloco).join("\n\n")}`);
+  } else {
+    partes.push(`Sem data comercial forte neste mês — mês de construção: conteúdo de autoridade, depoimentos e remarketing.`);
+  }
+  if (proximasComPrazoNoMes.length) {
+    partes.push(
+      `⏰ *Já começa a preparar neste mês:*\n\n${proximasComPrazoNoMes.map(bloco).join("\n\n")}`
+    );
+  }
+  partes.push(
+    `💡 Regra de ouro: criativo pronto ANTES do prazo = campanha aprendendo antes do concorrente acordar.\n\n_Equipe MPX Multiplica_`
+  );
+  return partes.join("\n\n");
+}
+
 export function montarMensagemSazonalidade(hoje = new Date()): string {
   const alertas = alertasSazonais(hoje);
   if (!alertas.length) {
