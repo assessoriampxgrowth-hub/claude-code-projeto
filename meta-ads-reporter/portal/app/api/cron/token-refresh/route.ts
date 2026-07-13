@@ -27,20 +27,30 @@ async function executar(req: NextRequest) {
     return NextResponse.json({ status: "token_ilegivel" });
   }
 
-  // Quanto falta pra expirar?
+  // Quanto falta pra expirar? Se o debug_token ERRAR (ex: app secret errado),
+  // NÃO é sinal de token expirado — não alarmar por isso.
   const dbg = await fetch(
     `https://graph.facebook.com/v19.0/debug_token?input_token=${token}&access_token=${APP_ID}%7C${APP_SECRET}`
   ).then((r) => r.json());
+  if (dbg?.error) {
+    return NextResponse.json({ status: "debug_falhou", erro: dbg.error.message });
+  }
   const expiresAt = dbg?.data?.expires_at as number | undefined;
   const isValid = dbg?.data?.is_valid as boolean | undefined;
   const diasRestantes = expiresAt ? Math.round((expiresAt * 1000 - Date.now()) / 86400000) : null;
 
-  if (!isValid) {
-    await sendWhatsAppText(
-      MATHEUS_WHATSAPP,
-      `🔴 *Token do Meta expirou.* Os relatórios/saldo/CPL vão parar até gerar um novo. Me avisa que te guio (2 min no Graph API Explorer).`
-    );
-    return NextResponse.json({ status: "token_invalido", diasRestantes });
+  // Só considera inválido se o Meta confirmou is_valid=false de forma explícita.
+  if (isValid === false) {
+    // Confirmação dupla: só alarma se o token realmente não responde a uma chamada real.
+    const teste = await fetch(`https://graph.facebook.com/v19.0/me?access_token=${token}`).then((r) => r.json());
+    if (teste?.error) {
+      await sendWhatsAppText(
+        MATHEUS_WHATSAPP,
+        `🔴 *Token do Meta expirou.* Os relatórios/saldo/CPL vão parar até gerar um novo. Me avisa que te guio (2 min no Graph API Explorer).`
+      );
+      return NextResponse.json({ status: "token_invalido", diasRestantes });
+    }
+    return NextResponse.json({ status: "debug_diz_invalido_mas_token_responde" });
   }
 
   // Token de longa duração (expiresAt = 0 = nunca) ou ainda longe de vencer: nada a fazer.
