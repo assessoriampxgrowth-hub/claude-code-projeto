@@ -55,7 +55,7 @@ async function executar(req: NextRequest) {
     rotas.push("/api/cron/relatorio-criativos");
   }
   if (diaMes === 1) {
-    rotas.push("/api/cron/calendario");
+    rotas.push("/api/cron/calendario", "/api/cron/validacao-criativos");
   }
 
   // Executa em sequência pra não estourar limites da Evolution/Meta.
