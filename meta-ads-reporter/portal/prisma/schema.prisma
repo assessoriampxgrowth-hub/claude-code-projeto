@@ -66,6 +66,20 @@ model WhatsAppLog {
   createdAt DateTime  @default(now())
 }
 
+model CommercialFeedback {
+  id           String   @id @default(cuid())
+  clienteNome  String
+  criativoNome String
+  vendas       Int      @default(0)
+  agendamentos Int      @default(0)
+  ticketMedio  Float?
+  nota         String?
+  autor        String?
+  createdAt    DateTime @default(now())
+
+  @@index([clienteNome])
+}
+
 model SyncLog {
   id          String    @id @default(cuid())
   clientId    String?

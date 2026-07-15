@@ -62,9 +62,25 @@ const SEGMENTO_CLIENTE: Record<string, Segmento> = {
   "n laser": "moda_varejo", "nlaser": "moda_varejo",
 };
 
-// Feedback comercial informado pelo time (preencher quando houver).
-// chave: "cliente::nome do criativo" (minúsculo) -> o que aconteceu comercialmente.
-export const FEEDBACK_COMERCIAL: Record<string, { vendas?: number; agendamentos?: number; nota?: string }> = {};
+// Feedback comercial vem do banco (tabela CommercialFeedback, preenchida pelo
+// time via /feedback). Carregado uma vez por execução e indexado por
+// "cliente::criativo" (minúsculo, sem acento). Somatório quando há vários
+// registros pro mesmo criativo.
+export type FeedbackMap = Record<string, { vendas: number; agendamentos: number; nota?: string }>;
+
+export async function carregarFeedbackComercial(): Promise<FeedbackMap> {
+  const registros = await db.commercialFeedback.findMany({ orderBy: { createdAt: "desc" } });
+  const mapa: FeedbackMap = {};
+  for (const r of registros) {
+    const chave = `${norm(r.clienteNome)}::${norm(r.criativoNome)}`;
+    const atual = mapa[chave] ?? { vendas: 0, agendamentos: 0, nota: undefined as string | undefined };
+    atual.vendas += r.vendas;
+    atual.agendamentos += r.agendamentos;
+    if (r.nota && !atual.nota) atual.nota = r.nota;
+    mapa[chave] = atual;
+  }
+  return mapa;
+}
 
 function norm(s: string): string {
   return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -251,6 +267,7 @@ async function analisarCliente(
   cliente: string,
   accountId: string,
   encToken: string,
+  feedback: FeedbackMap,
   dias = 30
 ): Promise<ResultadoCliente> {
   const seg = segmentoDoCliente(cliente);
@@ -292,7 +309,7 @@ async function analisarCliente(
       const conversas = conversasDe(a);
       const investimento = Number(a.spend || 0);
       const m = meta.get(a.ad_id ?? "");
-      const fb = FEEDBACK_COMERCIAL[`${norm(cliente)}::${norm(a.ad_name ?? "")}`];
+      const fb = feedback[`${norm(cliente)}::${norm(a.ad_name ?? "")}`];
 
       const base = {
         cliente,
@@ -342,11 +359,12 @@ export async function validarCriativosDeTodos(dias = 30): Promise<ResultadoClien
     c.adAccounts.map((a) => ({ cliente: c.name, accountId: a.accountId, token: a.accessToken }))
   );
 
+  const feedback = await carregarFeedbackComercial();
   const out: ResultadoCliente[] = [];
   const lote = 4;
   for (let i = 0; i < alvos.length; i += lote) {
     const parte = await Promise.all(
-      alvos.slice(i, i + lote).map((a) => analisarCliente(a.cliente, a.accountId, a.token, dias))
+      alvos.slice(i, i + lote).map((a) => analisarCliente(a.cliente, a.accountId, a.token, feedback, dias))
     );
     out.push(...parte);
   }
