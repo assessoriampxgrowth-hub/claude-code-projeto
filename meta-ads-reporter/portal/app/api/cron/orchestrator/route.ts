@@ -50,7 +50,8 @@ async function executar(req: NextRequest) {
       "/api/cron/token-refresh",
       "/api/cron/weekly",
       "/api/cron/retencao",
-      "/api/cron/escala"
+      "/api/cron/escala",
+      "/api/cron/prova-social"
     );
   }
   if (diaSemana === 4) {
