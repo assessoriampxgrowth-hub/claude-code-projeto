@@ -98,6 +98,30 @@ model CommercialLead {
   @@index([proximoFollowup])
 }
 
+model ClientConversion {
+  id          String    @id @default(cuid())
+  clienteNome String
+  telefone    String
+  evento      String // agendou | comprou | desqualificado
+  valor       Float?
+  autor       String?
+  enviadoEm   DateTime?
+  erroEnvio   String?
+  createdAt   DateTime  @default(now())
+
+  @@index([clienteNome])
+  @@index([enviadoEm])
+}
+
+model ClientPixel {
+  id          String   @id @default(cuid())
+  clienteNome String   @unique
+  pixelId     String
+  capiToken   String // criptografado (lib/security/crypto)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
 model SyncLog {
   id          String    @id @default(cuid())
   clientId    String?
