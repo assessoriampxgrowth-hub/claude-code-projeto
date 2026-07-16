@@ -48,7 +48,8 @@ async function executar(req: NextRequest) {
       "/api/cron/relacionamento",
       "/api/cron/relatorio-criativos",
       "/api/cron/token-refresh",
-      "/api/cron/weekly"
+      "/api/cron/weekly",
+      "/api/cron/retencao"
     );
   }
   if (diaSemana === 4) {
