@@ -34,7 +34,7 @@ export type Segmento =
   | "veiculos"
   | "b2b_industria";
 
-const BENCHMARK: Record<Segmento, { min: number; max: number; rotulo: string }> = {
+export const BENCHMARK: Record<Segmento, { min: number; max: number; rotulo: string }> = {
   alimentacao: { min: 1, max: 4, rotulo: "Pizzaria/Restaurante" },
   moda_varejo: { min: 2, max: 6, rotulo: "Moda/Varejo local" },
   otica_servicos: { min: 3, max: 10, rotulo: "Ótica/Serviços locais" },

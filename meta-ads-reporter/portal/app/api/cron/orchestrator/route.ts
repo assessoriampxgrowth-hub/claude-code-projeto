@@ -49,11 +49,15 @@ async function executar(req: NextRequest) {
       "/api/cron/relatorio-criativos",
       "/api/cron/token-refresh",
       "/api/cron/weekly",
-      "/api/cron/retencao"
+      "/api/cron/retencao",
+      "/api/cron/escala"
     );
   }
   if (diaSemana === 4) {
     rotas.push("/api/cron/relatorio-criativos");
+  }
+  if (diaSemana === 5) {
+    rotas.push("/api/cron/brief-semanal");
   }
   if (diaMes === 1) {
     rotas.push("/api/cron/calendario", "/api/cron/validacao-criativos");
