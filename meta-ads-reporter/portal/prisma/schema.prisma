@@ -80,6 +80,24 @@ model CommercialFeedback {
   @@index([clienteNome])
 }
 
+model CommercialLead {
+  id              String    @id @default(cuid())
+  nome            String
+  contato         String?
+  origem          String?   // indicação, anúncio, prospecção...
+  segmento        String?
+  status          String    @default("novo") // novo, reuniao, proposta, negociacao, fechado, perdido
+  valorProposta   Float?
+  proximoFollowup DateTime?
+  nota            String?
+  responsavel     String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([status])
+  @@index([proximoFollowup])
+}
+
 model SyncLog {
   id          String    @id @default(cuid())
   clientId    String?
