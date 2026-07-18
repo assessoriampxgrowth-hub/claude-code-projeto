@@ -3,6 +3,9 @@ import path from 'path';
 /** Root directory for all uploads and job data */
 export const UPLOADS_DIR = path.join(process.cwd(), 'uploads');
 
+/** Root directory for final exported videos */
+export const EXPORTS_DIR = path.join(process.cwd(), 'exports');
+
 /** FFmpeg defaults */
 export const FFMPEG_DEFAULTS = {
   videoCodec: 'libx264' as const,

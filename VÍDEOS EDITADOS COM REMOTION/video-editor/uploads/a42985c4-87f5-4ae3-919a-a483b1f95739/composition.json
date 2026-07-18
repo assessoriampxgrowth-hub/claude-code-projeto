@@ -1,0 +1,232 @@
+{
+  "videoSrc": "file://C:/Users/Matheus/Desktop/MEMÓRIA CLAUDE CODE/CODIGO/VÍDEOS EDITADOS COM REMOTION/video-editor/uploads/a42985c4-87f5-4ae3-919a-a483b1f95739/trimmed.mp4",
+  "captions": [
+    {
+      "id": "39106c75-90e7-4580-8ccd-a349ba52b48d",
+      "startTime": 0.7200000286102295,
+      "endTime": 1.693333387374878,
+      "words": [
+        {
+          "word": "Esse",
+          "start": 0.7200000286102295,
+          "end": 0.9633333683013916,
+          "isHighlight": false
+        },
+        {
+          "word": "aqui",
+          "start": 0.9633333683013916,
+          "end": 1.2066667079925537,
+          "isHighlight": false
+        },
+        {
+          "word": "é",
+          "start": 1.2066667079925537,
+          "end": 1.4500000476837158,
+          "isHighlight": false
+        },
+        {
+          "word": "a",
+          "start": 1.4500000476837158,
+          "end": 1.693333387374878,
+          "isHighlight": false
+        }
+      ],
+      "text": "Esse aqui é a",
+      "style": {
+        "name": "premium",
+        "fontFamily": "Poppins, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 46,
+        "color": "#FFFFFF",
+        "highlightColor": "#B800FF",
+        "backgroundColor": "rgba(0,0,0,0.4)",
+        "backgroundOpacity": 0.4,
+        "position": "bottom",
+        "uppercase": false,
+        "maxWordsPerLine": 4,
+        "animation": "slide",
+        "shadowColor": "rgba(0,0,0,0.6)",
+        "shadowBlur": 6
+      }
+    },
+    {
+      "id": "54381912-f21a-4557-b202-345db026e3da",
+      "startTime": 1.693333387374878,
+      "endTime": 2.6666667461395264,
+      "words": [
+        {
+          "word": "nossa",
+          "start": 1.693333387374878,
+          "end": 1.93666672706604,
+          "isHighlight": false
+        },
+        {
+          "word": "agência",
+          "start": 1.93666672706604,
+          "end": 2.180000066757202,
+          "isHighlight": true
+        },
+        {
+          "word": "de",
+          "start": 2.180000066757202,
+          "end": 2.4233334064483643,
+          "isHighlight": false
+        },
+        {
+          "word": "marcha,",
+          "start": 2.4233334064483643,
+          "end": 2.6666667461395264,
+          "isHighlight": true
+        }
+      ],
+      "text": "nossa agência de marcha,",
+      "style": {
+        "name": "premium",
+        "fontFamily": "Poppins, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 46,
+        "color": "#FFFFFF",
+        "highlightColor": "#B800FF",
+        "backgroundColor": "rgba(0,0,0,0.4)",
+        "backgroundOpacity": 0.4,
+        "position": "bottom",
+        "uppercase": false,
+        "maxWordsPerLine": 4,
+        "animation": "slide",
+        "shadowColor": "rgba(0,0,0,0.6)",
+        "shadowBlur": 6
+      }
+    },
+    {
+      "id": "96dfc67a-efbe-4aea-b88f-73bd4f50ae47",
+      "startTime": 2.6666667461395264,
+      "endTime": 3.640000104904175,
+      "words": [
+        {
+          "word": "se",
+          "start": 2.6666667461395264,
+          "end": 2.9100000858306885,
+          "isHighlight": false
+        },
+        {
+          "word": "você",
+          "start": 2.9100000858306885,
+          "end": 3.1533334255218506,
+          "isHighlight": false
+        },
+        {
+          "word": "quiser",
+          "start": 3.1533334255218506,
+          "end": 3.3966667652130127,
+          "isHighlight": false
+        },
+        {
+          "word": "conhecer...",
+          "start": 3.3966667652130127,
+          "end": 3.640000104904175,
+          "isHighlight": true
+        }
+      ],
+      "text": "se você quiser conhecer...",
+      "style": {
+        "name": "premium",
+        "fontFamily": "Poppins, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 46,
+        "color": "#FFFFFF",
+        "highlightColor": "#B800FF",
+        "backgroundColor": "rgba(0,0,0,0.4)",
+        "backgroundOpacity": 0.4,
+        "position": "bottom",
+        "uppercase": false,
+        "maxWordsPerLine": 4,
+        "animation": "slide",
+        "shadowColor": "rgba(0,0,0,0.6)",
+        "shadowBlur": 6
+      }
+    }
+  ],
+  "zooms": [
+    {
+      "startTime": 0,
+      "endTime": 1.5,
+      "scale": 1.135,
+      "focusX": 0.5,
+      "focusY": 0.35,
+      "easing": "easeIn"
+    },
+    {
+      "startTime": 1.5,
+      "endTime": 3.6,
+      "scale": 1.024,
+      "focusX": 0.5,
+      "focusY": 0.4,
+      "easing": "easeOut"
+    },
+    {
+      "startTime": 3.6,
+      "endTime": 6.4,
+      "scale": 1.18,
+      "focusX": 0.5,
+      "focusY": 0.5,
+      "easing": "easeIn"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 1.5,
+      "title": "Nossa Agência",
+      "emphasis": 0.9,
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "scene-002",
+      "type": "narration",
+      "startTime": 1.5,
+      "endTime": 3.6,
+      "title": "Agência de Marcha",
+      "emphasis": 0.8,
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    {
+      "id": "scene-003",
+      "type": "cta",
+      "startTime": 3.6,
+      "endTime": 6.4,
+      "title": "Quer Conhecer?",
+      "emphasis": 0.9,
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    }
+  ],
+  "captionStyle": {
+    "name": "premium",
+    "fontFamily": "Poppins, sans-serif",
+    "fontWeight": 700,
+    "fontSize": 46,
+    "color": "#FFFFFF",
+    "highlightColor": "#B800FF",
+    "backgroundColor": "rgba(0,0,0,0.4)",
+    "backgroundOpacity": 0.4,
+    "position": "bottom",
+    "uppercase": false,
+    "maxWordsPerLine": 4,
+    "animation": "slide",
+    "shadowColor": "rgba(0,0,0,0.6)",
+    "shadowBlur": 6
+  },
+  "fps": 30,
+  "effects": {
+    "colorGrading": "none",
+    "vignette": false,
+    "vignetteIntensity": 0.3,
+    "letterbox": false,
+    "letterboxRatio": 2.35,
+    "blurBackground": false
+  }
+}

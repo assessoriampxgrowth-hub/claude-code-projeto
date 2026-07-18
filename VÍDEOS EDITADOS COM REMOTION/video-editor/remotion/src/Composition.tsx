@@ -1,39 +1,49 @@
-import { AbsoluteFill, Sequence } from 'remotion';
-import { HookScene } from './scenes/HookScene';
-import { SolutionScene } from './scenes/SolutionScene';
-import { CTAScene } from './scenes/CTAScene';
-import { NarrationScene } from './scenes/NarrationScene';
+import React from 'react';
+import { AbsoluteFill, OffthreadVideo, staticFile } from 'remotion';
+import { CaptionOverlay } from '../../src/shared/remotion/CaptionOverlay';
+import { ZoomContainer } from '../../src/shared/remotion/ZoomContainer';
+import { SceneOverlay } from '../../src/shared/remotion/SceneOverlay';
+import { EffectsLayer } from '../../src/shared/remotion/EffectsLayer';
+import { BRollOverlay } from '../../src/shared/remotion/BRollOverlay';
+import type { MainCompositionProps } from '../../src/shared/remotion/types';
 
-interface SceneColor { bg: string; accent: string; text: string; }
-interface Scene { id: string; type: string; title: string; subtitle?: string; body?: string; emoji?: string; color: SceneColor; startLeg: number; endLeg: number; }
-interface SrtEntry { index: number; text: string; startSeconds: number; endSeconds: number; start: string; end: string; }
-interface Props { scenes: Scene[]; legendas: SrtEntry[]; }
+export const MainComposition: React.FC<MainCompositionProps> = ({
+  videoSrc,
+  captions,
+  zooms,
+  scenes,
+  captionStyle,
+  effects,
+  bRollImages,
+}) => {
+  // Absolute URLs (http, file://, blob, data) and root paths are used as-is.
+  // Only bare relative paths go through staticFile().
+  const resolvedSrc = /^(https?:|file:|blob:|data:|\/)/.test(videoSrc)
+    ? videoSrc
+    : staticFile(videoSrc);
 
-const FRAMES_PER_SCENE = 180;
-
-function getSceneComponent(scene: Scene, from: number, durationInFrames: number) {
-  const props = { scene, from, durationInFrames };
-  switch (scene.type) {
-    case 'hook': return <HookScene {...props} />;
-    case 'cta': return <CTAScene {...props} />;
-    case 'narration': return <NarrationScene {...props} />;
-    default: return <SolutionScene {...props} />;
-  }
-}
-
-export const MainComposition = ({ scenes, legendas }: Props) => {
-  let currentFrame = 0;
   return (
-    <AbsoluteFill style={{ background: '#050508' }}>
-      {scenes.map((scene) => {
-        let durationInFrames = FRAMES_PER_SCENE;
-        if (legendas.length > 0 && scene.startLeg < legendas.length && scene.endLeg < legendas.length) {
-          const s = legendas[scene.startLeg]; const e = legendas[scene.endLeg];
-          if (s && e) durationInFrames = Math.max(60, Math.floor((e.endSeconds - s.startSeconds) * 30));
-        }
-        const from = currentFrame; currentFrame += durationInFrames;
-        return <Sequence key={scene.id} from={from} durationInFrames={durationInFrames}>{getSceneComponent(scene, from, durationInFrames)}</Sequence>;
-      })}
+    <AbsoluteFill style={{ backgroundColor: '#000' }}>
+      {/* Layer 1: Video with effects + zoom */}
+      <EffectsLayer effects={effects}>
+        <ZoomContainer zooms={zooms}>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={resolvedSrc}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </AbsoluteFill>
+        </ZoomContainer>
+      </EffectsLayer>
+
+      {/* Layer 2: B-roll / support images */}
+      <BRollOverlay bRollImages={bRollImages} />
+
+      {/* Layer 3: Scene overlays (transitions, vignettes) */}
+      <SceneOverlay scenes={scenes} />
+
+      {/* Layer 4: Caption overlays */}
+      <CaptionOverlay captions={captions} style={captionStyle} />
     </AbsoluteFill>
   );
 };

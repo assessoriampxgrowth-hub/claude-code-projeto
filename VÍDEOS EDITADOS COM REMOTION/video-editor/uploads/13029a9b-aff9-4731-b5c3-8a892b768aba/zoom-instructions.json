@@ -1,0 +1,32 @@
+[
+  {
+    "startTime": 0,
+    "endTime": 9.2,
+    "scale": 1.08,
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "easing": "easeOut",
+    "mode": "in",
+    "rampSeconds": 0.38
+  },
+  {
+    "startTime": 15.8,
+    "endTime": 39.2,
+    "scale": 1.08,
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "easing": "easeOut",
+    "mode": "in",
+    "rampSeconds": 0.4
+  },
+  {
+    "startTime": 49.8,
+    "endTime": 59.3,
+    "scale": 1.08,
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "easing": "easeOut",
+    "mode": "in",
+    "rampSeconds": 0.4
+  }
+]

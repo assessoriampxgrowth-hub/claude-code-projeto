@@ -1,0 +1,1604 @@
+{
+  "videoSrc": "file://C:/Users/Matheus/Desktop/MEMÓRIA CLAUDE CODE/CLAUDE CODE PROJETO/VÍDEOS EDITADOS COM REMOTION/video-editor/uploads/bd23bf70-e933-4efb-8c91-d65f669c81bd/normalized.mp4",
+  "captions": [
+    {
+      "id": "59fc0643-bd93-4cc7-a9e7-75b1c9ad909a",
+      "startTime": 0,
+      "endTime": 1.0774999856948853,
+      "words": [
+        {
+          "word": "TURMA,",
+          "start": 0,
+          "end": 0.5387499928474426,
+          "isHighlight": false
+        },
+        {
+          "word": "PRA",
+          "start": 0.5387499928474426,
+          "end": 1.0774999856948853,
+          "isHighlight": false
+        }
+      ],
+      "text": "TURMA, PRA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "e9c0d95f-98dc-4f87-b6e1-8a4dcace8e7e",
+      "startTime": 1.0774999856948853,
+      "endTime": 2.1549999713897705,
+      "words": [
+        {
+          "word": "VOCÊ",
+          "start": 1.0774999856948853,
+          "end": 1.6162499785423279,
+          "isHighlight": false
+        },
+        {
+          "word": "QUE",
+          "start": 1.6162499785423279,
+          "end": 2.1549999713897705,
+          "isHighlight": false
+        }
+      ],
+      "text": "VOCÊ QUE",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "713da3be-46fb-44b3-9118-f3313fcaa26d",
+      "startTime": 2.1549999713897705,
+      "endTime": 3.2324999570846558,
+      "words": [
+        {
+          "word": "QUER",
+          "start": 2.1549999713897705,
+          "end": 2.693749964237213,
+          "isHighlight": false
+        },
+        {
+          "word": "UM",
+          "start": 2.693749964237213,
+          "end": 3.2324999570846558,
+          "isHighlight": false
+        }
+      ],
+      "text": "QUER UM",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "192e26dc-ea15-43d4-bcd8-aa0679b1354e",
+      "startTime": 3.2324999570846558,
+      "endTime": 4.309999942779541,
+      "words": [
+        {
+          "word": "CARRO",
+          "start": 3.2324999570846558,
+          "end": 3.7712499499320984,
+          "isHighlight": false
+        },
+        {
+          "word": "POPULAR,",
+          "start": 3.7712499499320984,
+          "end": 4.309999942779541,
+          "isHighlight": false
+        }
+      ],
+      "text": "CARRO POPULAR,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "a50b8163-fa36-4ff4-953b-faf4c4e7ff23",
+      "startTime": 4.309999942779541,
+      "endTime": 5.387499928474426,
+      "words": [
+        {
+          "word": "UM",
+          "start": 4.309999942779541,
+          "end": 4.848749935626984,
+          "isHighlight": false
+        },
+        {
+          "word": "GOLZINHO",
+          "start": 4.848749935626984,
+          "end": 5.387499928474426,
+          "isHighlight": false
+        }
+      ],
+      "text": "UM GOLZINHO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "76b6a42f-4da1-4235-b8fa-9d1738798b79",
+      "startTime": 5.387499928474426,
+      "endTime": 6.4649999141693115,
+      "words": [
+        {
+          "word": "2022,",
+          "start": 5.387499928474426,
+          "end": 5.926249921321869,
+          "isHighlight": false
+        },
+        {
+          "word": "ESTOU",
+          "start": 5.926249921321869,
+          "end": 6.4649999141693115,
+          "isHighlight": false
+        }
+      ],
+      "text": "2022, ESTOU",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "c6f0ceb1-8b88-45b5-a797-6dc3980aa143",
+      "startTime": 6.4649999141693115,
+      "endTime": 7.542499899864197,
+      "words": [
+        {
+          "word": "A",
+          "start": 6.4649999141693115,
+          "end": 7.003749907016754,
+          "isHighlight": false
+        },
+        {
+          "word": "BORDO",
+          "start": 7.003749907016754,
+          "end": 7.542499899864197,
+          "isHighlight": false
+        }
+      ],
+      "text": "A BORDO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "244dc8df-5531-4eec-a635-cc0ef0b52d2f",
+      "startTime": 7.542499899864197,
+      "endTime": 8.619999885559082,
+      "words": [
+        {
+          "word": "DESSE",
+          "start": 7.542499899864197,
+          "end": 8.08124989271164,
+          "isHighlight": false
+        },
+        {
+          "word": "CARRO",
+          "start": 8.08124989271164,
+          "end": 8.619999885559082,
+          "isHighlight": false
+        }
+      ],
+      "text": "DESSE CARRO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "fa8b682e-bb61-4f0a-9c80-382e03b7aa82",
+      "startTime": 8.619999885559082,
+      "endTime": 9.0600004196167,
+      "words": [
+        {
+          "word": "AQUI.",
+          "start": 8.619999885559082,
+          "end": 8.899999618530273,
+          "isHighlight": false
+        }
+      ],
+      "text": "AQUI.",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "74c509c6-0cb2-459c-9daf-33ebd4649eef",
+      "startTime": 9.0600004196167,
+      "endTime": 9.862353324890137,
+      "words": [
+        {
+          "word": "ESSE",
+          "start": 9.0600004196167,
+          "end": 9.461176872253418,
+          "isHighlight": false
+        },
+        {
+          "word": "CARRO",
+          "start": 9.461176872253418,
+          "end": 9.862353324890137,
+          "isHighlight": false
+        }
+      ],
+      "text": "ESSE CARRO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "cf63d794-307e-423d-83c1-769da5dc79c4",
+      "startTime": 9.862353324890137,
+      "endTime": 10.664706230163574,
+      "words": [
+        {
+          "word": "EU",
+          "start": 9.862353324890137,
+          "end": 10.263529777526855,
+          "isHighlight": false
+        },
+        {
+          "word": "VENDI",
+          "start": 10.263529777526855,
+          "end": 10.664706230163574,
+          "isHighlight": false
+        }
+      ],
+      "text": "EU VENDI",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "b86b5db2-41ad-48c6-9170-2ab7d24db535",
+      "startTime": 10.664706230163574,
+      "endTime": 11.467059135437012,
+      "words": [
+        {
+          "word": "ELE",
+          "start": 10.664706230163574,
+          "end": 11.065882682800293,
+          "isHighlight": false
+        },
+        {
+          "word": "PRO",
+          "start": 11.065882682800293,
+          "end": 11.467059135437012,
+          "isHighlight": false
+        }
+      ],
+      "text": "ELE PRO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "2d31c2a7-f117-44f7-9274-12fdc0bcdacf",
+      "startTime": 11.467059135437012,
+      "endTime": 12.26941204071045,
+      "words": [
+        {
+          "word": "PRIMEIRO",
+          "start": 11.467059135437012,
+          "end": 11.86823558807373,
+          "isHighlight": false
+        },
+        {
+          "word": "DONO,",
+          "start": 11.86823558807373,
+          "end": 12.26941204071045,
+          "isHighlight": false
+        }
+      ],
+      "text": "PRIMEIRO DONO,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "99e81340-4f5b-4ad0-ad2a-9205669f52c2",
+      "startTime": 12.26941204071045,
+      "endTime": 13.071764945983887,
+      "words": [
+        {
+          "word": "SEGUNDO",
+          "start": 12.26941204071045,
+          "end": 12.670588493347168,
+          "isHighlight": false
+        },
+        {
+          "word": "DONO",
+          "start": 12.670588493347168,
+          "end": 13.071764945983887,
+          "isHighlight": false
+        }
+      ],
+      "text": "SEGUNDO DONO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "0c06b1bd-1c46-4459-a998-1efd79fe854e",
+      "startTime": 13.071764945983887,
+      "endTime": 13.874117851257324,
+      "words": [
+        {
+          "word": "ELE",
+          "start": 13.071764945983887,
+          "end": 13.472941398620605,
+          "isHighlight": false
+        },
+        {
+          "word": "TINHA",
+          "start": 13.472941398620605,
+          "end": 13.874117851257324,
+          "isHighlight": false
+        }
+      ],
+      "text": "ELE TINHA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "8f41da6a-f87d-46f9-a486-ec5010825a5d",
+      "startTime": 13.874117851257324,
+      "endTime": 14.676470756530762,
+      "words": [
+        {
+          "word": "28,",
+          "start": 13.874117851257324,
+          "end": 14.275294303894043,
+          "isHighlight": false
+        },
+        {
+          "word": "29",
+          "start": 14.275294303894043,
+          "end": 14.676470756530762,
+          "isHighlight": false
+        }
+      ],
+      "text": "28, 29",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "5f632641-9abf-4601-bcc1-4e422416469b",
+      "startTime": 14.676470756530762,
+      "endTime": 15.4788236618042,
+      "words": [
+        {
+          "word": "MIL",
+          "start": 14.676470756530762,
+          "end": 15.07764720916748,
+          "isHighlight": false
+        },
+        {
+          "word": "KM,",
+          "start": 15.07764720916748,
+          "end": 15.4788236618042,
+          "isHighlight": false
+        }
+      ],
+      "text": "MIL KM,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "a03a6c86-2ff9-4e97-a4cf-be74ee5b9488",
+      "startTime": 15.4788236618042,
+      "endTime": 16.23250013589859,
+      "words": [
+        {
+          "word": "HOJE",
+          "start": 15.4788236618042,
+          "end": 15.880000114440918,
+          "isHighlight": false
+        },
+        {
+          "word": "ELE",
+          "start": 15.880000114440918,
+          "end": 16.23250013589859,
+          "isHighlight": false
+        }
+      ],
+      "text": "HOJE ELE",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "ec390a45-4e5c-4c0e-8b4b-678230a73e09",
+      "startTime": 16.23250013589859,
+      "endTime": 16.937500178813934,
+      "words": [
+        {
+          "word": "ESTÁ",
+          "start": 16.23250013589859,
+          "end": 16.585000157356262,
+          "isHighlight": false
+        },
+        {
+          "word": "COM",
+          "start": 16.585000157356262,
+          "end": 16.937500178813934,
+          "isHighlight": false
+        }
+      ],
+      "text": "ESTÁ COM",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "79fd62b8-cf24-414c-a4cf-479ced4c81d7",
+      "startTime": 16.937500178813934,
+      "endTime": 17.64250022172928,
+      "words": [
+        {
+          "word": "65",
+          "start": 16.937500178813934,
+          "end": 17.290000200271606,
+          "isHighlight": false
+        },
+        {
+          "word": "MIL",
+          "start": 17.290000200271606,
+          "end": 17.64250022172928,
+          "isHighlight": false
+        }
+      ],
+      "text": "65 MIL",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "140dadba-674d-4836-b615-5e1e6d86fb1c",
+      "startTime": 17.64250022172928,
+      "endTime": 18.347500264644623,
+      "words": [
+        {
+          "word": "KM,",
+          "start": 17.64250022172928,
+          "end": 17.99500024318695,
+          "isHighlight": false
+        },
+        {
+          "word": "NEM",
+          "start": 17.99500024318695,
+          "end": 18.347500264644623,
+          "isHighlight": false
+        }
+      ],
+      "text": "KM, NEM",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "644a6e0e-0de6-459b-8de1-8b4255919926",
+      "startTime": 18.347500264644623,
+      "endTime": 19.052500307559967,
+      "words": [
+        {
+          "word": "PUS",
+          "start": 18.347500264644623,
+          "end": 18.700000286102295,
+          "isHighlight": false
+        },
+        {
+          "word": "A",
+          "start": 18.700000286102295,
+          "end": 19.052500307559967,
+          "isHighlight": false
+        }
+      ],
+      "text": "PUS A",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "704306df-be0a-4d2c-881a-178211310217",
+      "startTime": 19.052500307559967,
+      "endTime": 19.75750035047531,
+      "words": [
+        {
+          "word": "PLACA",
+          "start": 19.052500307559967,
+          "end": 19.40500032901764,
+          "isHighlight": false
+        },
+        {
+          "word": "AINDA,",
+          "start": 19.40500032901764,
+          "end": 19.75750035047531,
+          "isHighlight": false
+        }
+      ],
+      "text": "PLACA AINDA,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "a9638451-8239-4bf0-bbb3-8ed2791a19ec",
+      "startTime": 19.75750035047531,
+      "endTime": 20.462500393390656,
+      "words": [
+        {
+          "word": "CHEGOU",
+          "start": 19.75750035047531,
+          "end": 20.110000371932983,
+          "isHighlight": false
+        },
+        {
+          "word": "AGORA,",
+          "start": 20.110000371932983,
+          "end": 20.462500393390656,
+          "isHighlight": true
+        }
+      ],
+      "text": "CHEGOU AGORA,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "abdd6d00-7d0c-4228-882c-6ab0c4c1ac42",
+      "startTime": 20.462500393390656,
+      "endTime": 21.167500436306,
+      "words": [
+        {
+          "word": "ESTAVA",
+          "start": 20.462500393390656,
+          "end": 20.815000414848328,
+          "isHighlight": false
+        },
+        {
+          "word": "NA",
+          "start": 20.815000414848328,
+          "end": 21.167500436306,
+          "isHighlight": false
+        }
+      ],
+      "text": "ESTAVA NA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "1cded731-5d08-492e-8524-b0b956c9ed22",
+      "startTime": 21.167500436306,
+      "endTime": 21.667500436306,
+      "words": [
+        {
+          "word": "DUCHA.",
+          "start": 21.167500436306,
+          "end": 21.520000457763672,
+          "isHighlight": false
+        }
+      ],
+      "text": "DUCHA.",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "db66965c-d45c-4c4f-8a65-4248ea462221",
+      "startTime": 22.399999618530273,
+      "endTime": 23.495384363027718,
+      "words": [
+        {
+          "word": "OLHA",
+          "start": 22.399999618530273,
+          "end": 22.947691990778996,
+          "isHighlight": false
+        },
+        {
+          "word": "QUE",
+          "start": 22.947691990778996,
+          "end": 23.495384363027718,
+          "isHighlight": false
+        }
+      ],
+      "text": "OLHA QUE",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "05a1e3b7-d36a-4b29-9462-b13b987d231a",
+      "startTime": 23.495384363027718,
+      "endTime": 24.590769107525166,
+      "words": [
+        {
+          "word": "CARRO",
+          "start": 23.495384363027718,
+          "end": 24.043076735276443,
+          "isHighlight": false
+        },
+        {
+          "word": "ZERO,",
+          "start": 24.043076735276443,
+          "end": 24.590769107525166,
+          "isHighlight": false
+        }
+      ],
+      "text": "CARRO ZERO,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "fe549e5f-42af-471b-9beb-6af94347b1ea",
+      "startTime": 24.590769107525166,
+      "endTime": 25.68615385202261,
+      "words": [
+        {
+          "word": "OLHA",
+          "start": 24.590769107525166,
+          "end": 25.138461479773888,
+          "isHighlight": false
+        },
+        {
+          "word": "AÍ,",
+          "start": 25.138461479773888,
+          "end": 25.68615385202261,
+          "isHighlight": false
+        }
+      ],
+      "text": "OLHA AÍ,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "a24dc0a7-1568-4612-8b01-1cfdc0e45c35",
+      "startTime": 25.68615385202261,
+      "endTime": 26.781538596520058,
+      "words": [
+        {
+          "word": "É",
+          "start": 25.68615385202261,
+          "end": 26.233846224271332,
+          "isHighlight": false
+        },
+        {
+          "word": "MERCADORIA",
+          "start": 26.233846224271332,
+          "end": 26.781538596520058,
+          "isHighlight": false
+        }
+      ],
+      "text": "É MERCADORIA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "2325eca5-a4cd-44a8-9224-8dc33e1f891e",
+      "startTime": 26.781538596520058,
+      "endTime": 27.876923341017502,
+      "words": [
+        {
+          "word": "QUE",
+          "start": 26.781538596520058,
+          "end": 27.32923096876878,
+          "isHighlight": false
+        },
+        {
+          "word": "POUCAS",
+          "start": 27.32923096876878,
+          "end": 27.876923341017502,
+          "isHighlight": false
+        }
+      ],
+      "text": "QUE POUCAS",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "0f1709bc-6f86-45e2-8ad6-0583f8c632e8",
+      "startTime": 27.876923341017502,
+      "endTime": 28.972308085514946,
+      "words": [
+        {
+          "word": "PESSOAS",
+          "start": 27.876923341017502,
+          "end": 28.424615713266228,
+          "isHighlight": false
+        },
+        {
+          "word": "TEM,",
+          "start": 28.424615713266228,
+          "end": 28.972308085514946,
+          "isHighlight": false
+        }
+      ],
+      "text": "PESSOAS TEM,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "806d16f9-08db-4180-9c4e-1891152969de",
+      "startTime": 28.972308085514946,
+      "endTime": 29.520000457763672,
+      "words": [
+        {
+          "word": "TÁ?",
+          "start": 28.972308085514946,
+          "end": 29.520000457763672,
+          "isHighlight": false
+        }
+      ],
+      "text": "TÁ?",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "8eca6345-3936-46d2-aaa8-1bec47dea962",
+      "startTime": 30.360000610351562,
+      "endTime": 30.905000686645508,
+      "words": [
+        {
+          "word": "TÁ",
+          "start": 30.360000610351562,
+          "end": 30.632500648498535,
+          "isHighlight": false
+        },
+        {
+          "word": "DISPONÍVEL",
+          "start": 30.632500648498535,
+          "end": 30.905000686645508,
+          "isHighlight": false
+        }
+      ],
+      "text": "TÁ DISPONÍVEL",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "67137873-aa9c-4f7d-a48e-a9f8f7963c73",
+      "startTime": 30.905000686645508,
+      "endTime": 31.450000762939453,
+      "words": [
+        {
+          "word": "AQUI",
+          "start": 30.905000686645508,
+          "end": 31.17750072479248,
+          "isHighlight": false
+        },
+        {
+          "word": "NA",
+          "start": 31.17750072479248,
+          "end": 31.450000762939453,
+          "isHighlight": false
+        }
+      ],
+      "text": "AQUI NA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "4f4030ef-f077-48b5-890a-72d5defa8c15",
+      "startTime": 31.450000762939453,
+      "endTime": 31.9950008392334,
+      "words": [
+        {
+          "word": "MINHA",
+          "start": 31.450000762939453,
+          "end": 31.722500801086426,
+          "isHighlight": false
+        },
+        {
+          "word": "MÃO,",
+          "start": 31.722500801086426,
+          "end": 31.9950008392334,
+          "isHighlight": false
+        }
+      ],
+      "text": "MINHA MÃO,",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "5f79c901-0dbe-4263-92c1-9d60ea559db0",
+      "startTime": 31.9950008392334,
+      "endTime": 32.540000915527344,
+      "words": [
+        {
+          "word": "CORRE",
+          "start": 31.9950008392334,
+          "end": 32.26750087738037,
+          "isHighlight": false
+        },
+        {
+          "word": "PRA",
+          "start": 32.26750087738037,
+          "end": 32.540000915527344,
+          "isHighlight": false
+        }
+      ],
+      "text": "CORRE PRA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "1f6ebd73-66ff-4310-ac9b-5e3397921d43",
+      "startTime": 32.540000915527344,
+      "endTime": 33.08500099182129,
+      "words": [
+        {
+          "word": "CÁ",
+          "start": 32.540000915527344,
+          "end": 32.812500953674316,
+          "isHighlight": false
+        },
+        {
+          "word": "E",
+          "start": 32.812500953674316,
+          "end": 33.08500099182129,
+          "isHighlight": false
+        }
+      ],
+      "text": "CÁ E",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "13d2058f-127e-4054-b191-f28c3539e028",
+      "startTime": 33.08500099182129,
+      "endTime": 33.630001068115234,
+      "words": [
+        {
+          "word": "NÃO",
+          "start": 33.08500099182129,
+          "end": 33.35750102996826,
+          "isHighlight": false
+        },
+        {
+          "word": "PERCA",
+          "start": 33.35750102996826,
+          "end": 33.630001068115234,
+          "isHighlight": false
+        }
+      ],
+      "text": "NÃO PERCA",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "a203b4f2-f83c-45ea-b3ce-562580a4ae91",
+      "startTime": 33.630001068115234,
+      "endTime": 34.17500114440918,
+      "words": [
+        {
+          "word": "A",
+          "start": 33.630001068115234,
+          "end": 33.90250110626221,
+          "isHighlight": false
+        },
+        {
+          "word": "OPORTUNIDADE",
+          "start": 33.90250110626221,
+          "end": 34.17500114440918,
+          "isHighlight": false
+        }
+      ],
+      "text": "A OPORTUNIDADE",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "1e0d029a-a988-4fad-a930-cbaf4ca947d3",
+      "startTime": 34.17500114440918,
+      "endTime": 34.720001220703125,
+      "words": [
+        {
+          "word": "DE",
+          "start": 34.17500114440918,
+          "end": 34.44750118255615,
+          "isHighlight": false
+        },
+        {
+          "word": "COMPRAR",
+          "start": 34.44750118255615,
+          "end": 34.720001220703125,
+          "isHighlight": false
+        }
+      ],
+      "text": "DE COMPRAR",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "55528889-f20a-44ff-9ea0-c987e537570f",
+      "startTime": 34.720001220703125,
+      "endTime": 35.37333424886068,
+      "words": [
+        {
+          "word": "ESSE",
+          "start": 34.720001220703125,
+          "end": 35.0466677347819,
+          "isHighlight": false
+        },
+        {
+          "word": "CARRO",
+          "start": 35.0466677347819,
+          "end": 35.37333424886068,
+          "isHighlight": false
+        }
+      ],
+      "text": "ESSE CARRO",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    },
+    {
+      "id": "1d39f31d-7d75-43c2-b563-7c385c1f22e8",
+      "startTime": 35.37333424886068,
+      "endTime": 35.87333424886068,
+      "words": [
+        {
+          "word": "POPULAR.",
+          "start": 35.37333424886068,
+          "end": 35.70000076293945,
+          "isHighlight": false
+        }
+      ],
+      "text": "POPULAR.",
+      "style": {
+        "name": "aggressive",
+        "fontFamily": "Bebas Neue, Impact, sans-serif",
+        "fontWeight": 900,
+        "fontSize": 60,
+        "color": "#FFFFFF",
+        "highlightColor": "#FF4444",
+        "position": "center",
+        "uppercase": true,
+        "maxWordsPerLine": 2,
+        "animation": "pop",
+        "outlineColor": "#000000",
+        "outlineWidth": 4,
+        "shadowColor": "rgba(255,0,0,0.3)",
+        "shadowBlur": 12
+      }
+    }
+  ],
+  "zooms": [
+    {
+      "startTime": 0,
+      "endTime": 5,
+      "scale": 1.135,
+      "focusX": 0.5,
+      "focusY": 0.35,
+      "easing": "easeIn"
+    },
+    {
+      "startTime": 5,
+      "endTime": 31.6,
+      "scale": 1.02,
+      "focusX": 0.5,
+      "focusY": 0.45,
+      "easing": "linear"
+    },
+    {
+      "startTime": 31.6,
+      "endTime": 36.6,
+      "scale": 1.18,
+      "focusX": 0.5,
+      "focusY": 0.5,
+      "easing": "easeIn"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "03df2396-6a5c-4122-9c1d-7eb07555870f",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 5,
+      "title": "Abertura",
+      "emphasis": 0.9,
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "a0e47dc8-1c5c-490c-9f25-7ea2ddfbdc83",
+      "type": "narration",
+      "startTime": 5,
+      "endTime": 31.6,
+      "title": "Conteudo Principal",
+      "emphasis": 0.5,
+      "transitionIn": "fade",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "6e9f0298-5139-42bf-a2a6-f4fffeb11f0c",
+      "type": "cta",
+      "startTime": 31.6,
+      "endTime": 36.6,
+      "title": "Call to Action",
+      "emphasis": 0.9,
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    }
+  ],
+  "captionStyle": {
+    "name": "aggressive",
+    "fontFamily": "Bebas Neue, Impact, sans-serif",
+    "fontWeight": 900,
+    "fontSize": 60,
+    "color": "#FFFFFF",
+    "highlightColor": "#FF4444",
+    "position": "center",
+    "uppercase": true,
+    "maxWordsPerLine": 2,
+    "animation": "pop",
+    "outlineColor": "#000000",
+    "outlineWidth": 4,
+    "shadowColor": "rgba(255,0,0,0.3)",
+    "shadowBlur": 12
+  },
+  "fps": 30
+}

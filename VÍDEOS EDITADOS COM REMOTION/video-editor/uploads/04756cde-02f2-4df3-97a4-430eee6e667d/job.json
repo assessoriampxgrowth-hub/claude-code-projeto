@@ -1,0 +1,136 @@
+{
+  "id": "04756cde-02f2-4df3-97a4-430eee6e667d",
+  "status": "completed",
+  "config": {
+    "preset": "venda-agressiva",
+    "captionStyle": "aggressive",
+    "musicEnabled": true,
+    "musicMood": "energetic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:07.226Z",
+      "completedAt": "2026-04-21T01:26:17.135Z",
+      "progress": 100,
+      "details": "720x1280, 36.6s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:17.136Z",
+      "completedAt": "2026-04-21T01:26:17.286Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:17.287Z",
+      "completedAt": "2026-04-21T01:26:21.359Z",
+      "progress": 100,
+      "details": "7 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "failed",
+      "startedAt": "2026-04-21T01:26:21.359Z",
+      "completedAt": "2026-04-21T01:26:21.362Z",
+      "error": "Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:21.366Z",
+      "completedAt": "2026-04-21T01:26:21.426Z",
+      "progress": 100,
+      "details": "No significant silences detected"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:21.427Z",
+      "completedAt": "2026-04-21T01:26:21.431Z",
+      "progress": 100,
+      "details": "43 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:21.432Z",
+      "completedAt": "2026-04-21T01:26:21.434Z",
+      "progress": 100,
+      "details": "3 scenes configured, 0 need images, 3 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:21.435Z",
+      "completedAt": "2026-04-21T01:26:21.438Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:21.438Z",
+      "completedAt": "2026-04-21T01:26:22.367Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-04-21T01:26:22.368Z",
+      "completedAt": "2026-04-21T01:26:22.741Z",
+      "error": "You passed C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\remotion\\src\\Root.tsx as your entry point, but this file does not contain \"registerRoot\". You should use the file that calls registerRoot() as the entry point. To ignore this error, pass \"ignoreRegisterRootWarning\" to bundle(). This error cannot be ignored on the CLI."
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:26:22.742Z",
+      "completedAt": "2026-04-21T01:26:22.879Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-04-21T01:26:07.221Z",
+  "updatedAt": "2026-04-21T01:26:22.880Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\1293aeec-0e79-4611-b4a5-ba451727ce4d\\original.mp4",
+  "videoDuration": 36.6,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\normalized.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\transcription.json",
+  "error": "Completed with failures in: analyze, render",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\audio-normalized.wav",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\04756cde-02f2-4df3-97a4-430eee6e667d\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

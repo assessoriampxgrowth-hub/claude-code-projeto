@@ -3,13 +3,14 @@ import { useState } from 'react';
 import UploadZone from '@/components/UploadZone';
 import ProcessingPipeline from '@/components/ProcessingPipeline';
 import VideoEditor from '@/components/VideoEditor';
-import type { ProjectData } from '@/types';
+import type { Job } from '@/types';
 
 type Stage = 'upload' | 'processing' | 'editor';
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>('upload');
-  const [projectData, setProjectData] = useState<ProjectData | null>(null);
+  const [jobId, setJobId] = useState<string | null>(null);
+  const [job, setJob] = useState<Job | null>(null);
 
   return (
     <main className="min-h-screen bg-[#050508]">
@@ -20,30 +21,50 @@ export default function Home() {
               <span className="text-black font-bold text-sm">AI</span>
             </div>
             <h1 className="text-lg font-bold">
-              <span className="gold-text">Video</span> Editor
+              <span className="gold-text">MPX</span> Video Editor
             </h1>
           </div>
           <div className="flex items-center gap-2 text-xs text-white/40">
-            <div className={`w-2 h-2 rounded-full ${stage === 'upload' ? 'bg-yellow-500' : 'bg-white/20'}`} />
+            <div className={`w-2 h-2 rounded-full ${stage === 'upload' ? 'bg-yellow-500' : stage === 'processing' || stage === 'editor' ? 'bg-green-500' : 'bg-white/20'}`} />
             <span>Upload</span>
             <div className="w-8 h-px bg-white/10" />
-            <div className={`w-2 h-2 rounded-full ${stage === 'processing' ? 'bg-yellow-500' : 'bg-white/20'}`} />
+            <div className={`w-2 h-2 rounded-full ${stage === 'processing' ? 'bg-yellow-500' : stage === 'editor' ? 'bg-green-500' : 'bg-white/20'}`} />
             <span>Processando</span>
             <div className="w-8 h-px bg-white/10" />
             <div className={`w-2 h-2 rounded-full ${stage === 'editor' ? 'bg-yellow-500' : 'bg-white/20'}`} />
             <span>Editor</span>
           </div>
+          {stage !== 'upload' && (
+            <button
+              onClick={() => { setStage('upload'); setJobId(null); setJob(null); }}
+              className="text-xs text-white/30 hover:text-white/60 transition-colors"
+            >
+              Novo Projeto
+            </button>
+          )}
         </div>
       </header>
-      <div className="max-w-screen-2xl mx-auto px-8 py-8">
+
+      <div className={stage === 'editor' ? '' : 'max-w-screen-2xl mx-auto px-8 py-8'}>
         {stage === 'upload' && (
-          <UploadZone onUploadComplete={(data) => { setProjectData(data); setStage('processing'); }} />
+          <UploadZone
+            onJobCreated={(id) => {
+              setJobId(id);
+              setStage('processing');
+            }}
+          />
         )}
-        {stage === 'processing' && projectData && (
-          <ProcessingPipeline projectData={projectData} onComplete={(data) => { setProjectData(data); setStage('editor'); }} />
+        {stage === 'processing' && jobId && (
+          <ProcessingPipeline
+            jobId={jobId}
+            onComplete={(completedJob) => {
+              setJob(completedJob);
+              setStage('editor');
+            }}
+          />
         )}
-        {stage === 'editor' && projectData && (
-          <VideoEditor projectData={projectData} setProjectData={setProjectData} />
+        {stage === 'editor' && jobId && (
+          <VideoEditor jobId={jobId} job={job} />
         )}
       </div>
     </main>

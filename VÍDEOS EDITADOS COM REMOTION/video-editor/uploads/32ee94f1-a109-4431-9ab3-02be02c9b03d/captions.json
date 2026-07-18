@@ -1,0 +1,2342 @@
+[
+  {
+    "id": "7a5cf509-0f38-4336-8b19-19e0191e3d5f",
+    "startTime": 0,
+    "endTime": 1.25,
+    "words": [
+      {
+        "word": "Você",
+        "start": 0,
+        "end": 0.3125,
+        "isHighlight": false
+      },
+      {
+        "word": "vai",
+        "start": 0.3125,
+        "end": 0.625,
+        "isHighlight": false
+      },
+      {
+        "word": "focar",
+        "start": 0.625,
+        "end": 0.9375,
+        "isHighlight": false
+      },
+      {
+        "word": "em",
+        "start": 0.9375,
+        "end": 1.25,
+        "isHighlight": false
+      }
+    ],
+    "text": "Você vai focar em",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "e7fefb85-88dc-44d9-9cf4-1a7e1b2c86ee",
+    "startTime": 1.25,
+    "endTime": 2.5,
+    "words": [
+      {
+        "word": "fazer",
+        "start": 1.25,
+        "end": 1.5625,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 1.5625,
+        "end": 1.875,
+        "isHighlight": false
+      },
+      {
+        "word": "pessoa",
+        "start": 1.875,
+        "end": 2.1875,
+        "isHighlight": false
+      },
+      {
+        "word": "visualizar",
+        "start": 2.1875,
+        "end": 2.5,
+        "isHighlight": false
+      }
+    ],
+    "text": "fazer a pessoa visualizar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "3316ad52-965d-4698-9f87-894a81d4a784",
+    "startTime": 2.5,
+    "endTime": 3.75,
+    "words": [
+      {
+        "word": "a",
+        "start": 2.5,
+        "end": 2.8125,
+        "isHighlight": false
+      },
+      {
+        "word": "transformação",
+        "start": 2.8125,
+        "end": 3.125,
+        "isHighlight": true
+      },
+      {
+        "word": "que",
+        "start": 3.125,
+        "end": 3.4375,
+        "isHighlight": false
+      },
+      {
+        "word": "ela",
+        "start": 3.4375,
+        "end": 3.75,
+        "isHighlight": false
+      }
+    ],
+    "text": "a transformação que ela",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "a03472c5-2f15-4041-9df4-8e4c4060d5b8",
+    "startTime": 3.75,
+    "endTime": 5,
+    "words": [
+      {
+        "word": "vai",
+        "start": 3.75,
+        "end": 4.0625,
+        "isHighlight": false
+      },
+      {
+        "word": "ter",
+        "start": 4.0625,
+        "end": 4.375,
+        "isHighlight": false
+      },
+      {
+        "word": "ao",
+        "start": 4.375,
+        "end": 4.6875,
+        "isHighlight": false
+      },
+      {
+        "word": "passar",
+        "start": 4.6875,
+        "end": 5,
+        "isHighlight": false
+      }
+    ],
+    "text": "vai ter ao passar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "423d82ec-ebb0-4d47-95e5-d9025d5389ad",
+    "startTime": 5,
+    "endTime": 6.386666615804036,
+    "words": [
+      {
+        "word": "por",
+        "start": 5,
+        "end": 5.346666653951009,
+        "isHighlight": false
+      },
+      {
+        "word": "aquele",
+        "start": 5.346666653951009,
+        "end": 5.6933333079020185,
+        "isHighlight": false
+      },
+      {
+        "word": "procedimento,",
+        "start": 5.6933333079020185,
+        "end": 6.039999961853027,
+        "isHighlight": false
+      },
+      {
+        "word": "ao",
+        "start": 6.039999961853027,
+        "end": 6.386666615804036,
+        "isHighlight": false
+      }
+    ],
+    "text": "por aquele procedimento, ao",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "225820de-594d-4989-94f4-d6308dd41a47",
+    "startTime": 6.386666615804036,
+    "endTime": 7.773333231608072,
+    "words": [
+      {
+        "word": "fazer",
+        "start": 6.386666615804036,
+        "end": 6.733333269755045,
+        "isHighlight": false
+      },
+      {
+        "word": "aquele",
+        "start": 6.733333269755045,
+        "end": 7.079999923706055,
+        "isHighlight": false
+      },
+      {
+        "word": "serviço",
+        "start": 7.079999923706055,
+        "end": 7.4266665776570635,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 7.4266665776570635,
+        "end": 7.773333231608072,
+        "isHighlight": false
+      }
+    ],
+    "text": "fazer aquele serviço de",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "197d4236-e6db-46c2-9b97-88a19a7cf735",
+    "startTime": 7.773333231608072,
+    "endTime": 9.15999984741211,
+    "words": [
+      {
+        "word": "forma",
+        "start": 7.773333231608072,
+        "end": 8.119999885559082,
+        "isHighlight": false
+      },
+      {
+        "word": "clara",
+        "start": 8.119999885559082,
+        "end": 8.46666653951009,
+        "isHighlight": false
+      },
+      {
+        "word": "e",
+        "start": 8.46666653951009,
+        "end": 8.8133331934611,
+        "isHighlight": false
+      },
+      {
+        "word": "objetiva.",
+        "start": 8.8133331934611,
+        "end": 9.15999984741211,
+        "isHighlight": false
+      }
+    ],
+    "text": "forma clara e objetiva.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "f7734630-1d0b-40d5-b76a-31302998b561",
+    "startTime": 9.680000305175781,
+    "endTime": 10.86857169015067,
+    "words": [
+      {
+        "word": "Uma",
+        "start": 9.680000305175781,
+        "end": 9.977143151419503,
+        "isHighlight": false
+      },
+      {
+        "word": "outra",
+        "start": 9.977143151419503,
+        "end": 10.274285997663226,
+        "isHighlight": false
+      },
+      {
+        "word": "questão",
+        "start": 10.274285997663226,
+        "end": 10.571428843906947,
+        "isHighlight": false
+      },
+      {
+        "word": "muito",
+        "start": 10.571428843906947,
+        "end": 10.86857169015067,
+        "isHighlight": false
+      }
+    ],
+    "text": "Uma outra questão muito",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "44d5e0f7-1e0a-483c-b3d8-d0a50d3333fd",
+    "startTime": 10.86857169015067,
+    "endTime": 12.057143075125559,
+    "words": [
+      {
+        "word": "importante",
+        "start": 10.86857169015067,
+        "end": 11.165714536394391,
+        "isHighlight": false
+      },
+      {
+        "word": "também",
+        "start": 11.165714536394391,
+        "end": 11.462857382638115,
+        "isHighlight": false
+      },
+      {
+        "word": "é",
+        "start": 11.462857382638115,
+        "end": 11.760000228881836,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 11.760000228881836,
+        "end": 12.057143075125559,
+        "isHighlight": false
+      }
+    ],
+    "text": "importante também é que",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "a234bd25-d504-457d-9881-8d1db532abc0",
+    "startTime": 12.057143075125559,
+    "endTime": 13.245714460100446,
+    "words": [
+      {
+        "word": "nós",
+        "start": 12.057143075125559,
+        "end": 12.35428592136928,
+        "isHighlight": false
+      },
+      {
+        "word": "nunca",
+        "start": 12.35428592136928,
+        "end": 12.651428767613002,
+        "isHighlight": false
+      },
+      {
+        "word": "compramos",
+        "start": 12.651428767613002,
+        "end": 12.948571613856725,
+        "isHighlight": false
+      },
+      {
+        "word": "algo",
+        "start": 12.948571613856725,
+        "end": 13.245714460100446,
+        "isHighlight": false
+      }
+    ],
+    "text": "nós nunca compramos algo",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "46cdb023-0009-4ce5-bfe9-dc4196cb9429",
+    "startTime": 13.245714460100446,
+    "endTime": 14.24666690826416,
+    "words": [
+      {
+        "word": "sem",
+        "start": 13.245714460100446,
+        "end": 13.54285730634417,
+        "isHighlight": false
+      },
+      {
+        "word": "saber",
+        "start": 13.54285730634417,
+        "end": 13.84000015258789,
+        "isHighlight": false
+      },
+      {
+        "word": "aquele",
+        "start": 13.84000015258789,
+        "end": 14.043333530426025,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 14.043333530426025,
+        "end": 14.24666690826416,
+        "isHighlight": false
+      }
+    ],
+    "text": "sem saber aquele que",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "d8c78efb-0eb2-4b9d-bc75-946893ad6e0d",
+    "startTime": 14.24666690826416,
+    "endTime": 15.0600004196167,
+    "words": [
+      {
+        "word": "a",
+        "start": 14.24666690826416,
+        "end": 14.450000286102295,
+        "isHighlight": false
+      },
+      {
+        "word": "gente",
+        "start": 14.450000286102295,
+        "end": 14.65333366394043,
+        "isHighlight": false
+      },
+      {
+        "word": "está",
+        "start": 14.65333366394043,
+        "end": 14.856667041778564,
+        "isHighlight": false
+      },
+      {
+        "word": "comprando.",
+        "start": 14.856667041778564,
+        "end": 15.0600004196167,
+        "isHighlight": false
+      }
+    ],
+    "text": "a gente está comprando.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "9607e516-97e3-4550-aa16-7fd605ab3f38",
+    "startTime": 15.760000228881836,
+    "endTime": 17.061333338419598,
+    "words": [
+      {
+        "word": "Então",
+        "start": 15.760000228881836,
+        "end": 16.085333506266277,
+        "isHighlight": false
+      },
+      {
+        "word": "quando",
+        "start": 16.085333506266277,
+        "end": 16.410666783650715,
+        "isHighlight": false
+      },
+      {
+        "word": "você",
+        "start": 16.410666783650715,
+        "end": 16.736000061035156,
+        "isHighlight": false
+      },
+      {
+        "word": "mostra",
+        "start": 16.736000061035156,
+        "end": 17.061333338419598,
+        "isHighlight": false
+      }
+    ],
+    "text": "Então quando você mostra",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "870a13b5-1c51-4e06-9496-288948c5f35b",
+    "startTime": 17.061333338419598,
+    "endTime": 18.362666447957356,
+    "words": [
+      {
+        "word": "o",
+        "start": 17.061333338419598,
+        "end": 17.386666615804035,
+        "isHighlight": false
+      },
+      {
+        "word": "bastidor",
+        "start": 17.386666615804035,
+        "end": 17.711999893188477,
+        "isHighlight": false
+      },
+      {
+        "word": "do",
+        "start": 17.711999893188477,
+        "end": 18.037333170572918,
+        "isHighlight": false
+      },
+      {
+        "word": "seu",
+        "start": 18.037333170572918,
+        "end": 18.362666447957356,
+        "isHighlight": false
+      }
+    ],
+    "text": "o bastidor do seu",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "5bd27e20-cc79-4f0b-ba51-efaff966710b",
+    "startTime": 18.362666447957356,
+    "endTime": 19.663999557495117,
+    "words": [
+      {
+        "word": "serviço,",
+        "start": 18.362666447957356,
+        "end": 18.687999725341797,
+        "isHighlight": false
+      },
+      {
+        "word": "fica",
+        "start": 18.687999725341797,
+        "end": 19.013333002726238,
+        "isHighlight": false
+      },
+      {
+        "word": "muito",
+        "start": 19.013333002726238,
+        "end": 19.338666280110676,
+        "isHighlight": false
+      },
+      {
+        "word": "mais",
+        "start": 19.338666280110676,
+        "end": 19.663999557495117,
+        "isHighlight": false
+      }
+    ],
+    "text": "serviço, fica muito mais",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "94ed4bc2-6152-43d6-af8e-c27bb42cbbbc",
+    "startTime": 19.663999557495117,
+    "endTime": 20.901427950177872,
+    "words": [
+      {
+        "word": "claro",
+        "start": 19.663999557495117,
+        "end": 19.98933283487956,
+        "isHighlight": false
+      },
+      {
+        "word": "na",
+        "start": 19.98933283487956,
+        "end": 20.314666112264,
+        "isHighlight": false
+      },
+      {
+        "word": "cabeça",
+        "start": 20.314666112264,
+        "end": 20.639999389648438,
+        "isHighlight": false
+      },
+      {
+        "word": "da",
+        "start": 20.639999389648438,
+        "end": 20.901427950177872,
+        "isHighlight": false
+      }
+    ],
+    "text": "claro na cabeça da",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "025e5ca8-3764-48b5-9ffd-9c7a22a49fdd",
+    "startTime": 20.901427950177872,
+    "endTime": 21.94714219229562,
+    "words": [
+      {
+        "word": "pessoa",
+        "start": 20.901427950177872,
+        "end": 21.16285651070731,
+        "isHighlight": false
+      },
+      {
+        "word": "visualizar",
+        "start": 21.16285651070731,
+        "end": 21.424285071236746,
+        "isHighlight": false
+      },
+      {
+        "word": "o",
+        "start": 21.424285071236746,
+        "end": 21.685713631766184,
+        "isHighlight": false
+      },
+      {
+        "word": "processo",
+        "start": 21.685713631766184,
+        "end": 21.94714219229562,
+        "isHighlight": false
+      }
+    ],
+    "text": "pessoa visualizar o processo",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "9bda13b9-4fbd-4efb-b2df-c2b86ccb56e5",
+    "startTime": 21.94714219229562,
+    "endTime": 22.992856434413365,
+    "words": [
+      {
+        "word": "que",
+        "start": 21.94714219229562,
+        "end": 22.208570752825054,
+        "isHighlight": false
+      },
+      {
+        "word": "ela",
+        "start": 22.208570752825054,
+        "end": 22.469999313354492,
+        "isHighlight": false
+      },
+      {
+        "word": "vai",
+        "start": 22.469999313354492,
+        "end": 22.731427873883927,
+        "isHighlight": false
+      },
+      {
+        "word": "precisar",
+        "start": 22.731427873883927,
+        "end": 22.992856434413365,
+        "isHighlight": false
+      }
+    ],
+    "text": "que ela vai precisar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "772f0cb5-daff-4efe-a61f-8e8a9b8e3cdd",
+    "startTime": 22.992856434413365,
+    "endTime": 24.03857067653111,
+    "words": [
+      {
+        "word": "passar",
+        "start": 22.992856434413365,
+        "end": 23.2542849949428,
+        "isHighlight": false
+      },
+      {
+        "word": "para",
+        "start": 23.2542849949428,
+        "end": 23.51571355547224,
+        "isHighlight": false
+      },
+      {
+        "word": "poder",
+        "start": 23.51571355547224,
+        "end": 23.777142116001674,
+        "isHighlight": false
+      },
+      {
+        "word": "chegar",
+        "start": 23.777142116001674,
+        "end": 24.03857067653111,
+        "isHighlight": false
+      }
+    ],
+    "text": "passar para poder chegar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "17825a73-c056-4418-9179-59feda4327d7",
+    "startTime": 24.03857067653111,
+    "endTime": 24.81999969482422,
+    "words": [
+      {
+        "word": "naquela",
+        "start": 24.03857067653111,
+        "end": 24.299999237060547,
+        "isHighlight": false
+      },
+      {
+        "word": "transformação.",
+        "start": 24.299999237060547,
+        "end": 24.81999969482422,
+        "isHighlight": true
+      }
+    ],
+    "text": "naquela transformação.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "eaf1899f-8f3f-4ab1-a237-6450819304c5",
+    "startTime": 25.540000915527344,
+    "endTime": 26.750000476837158,
+    "words": [
+      {
+        "word": "Então",
+        "start": 25.540000915527344,
+        "end": 25.842500805854797,
+        "isHighlight": false
+      },
+      {
+        "word": "o",
+        "start": 25.842500805854797,
+        "end": 26.14500069618225,
+        "isHighlight": false
+      },
+      {
+        "word": "conselho",
+        "start": 26.14500069618225,
+        "end": 26.447500586509705,
+        "isHighlight": false
+      },
+      {
+        "word": "prático",
+        "start": 26.447500586509705,
+        "end": 26.750000476837158,
+        "isHighlight": false
+      }
+    ],
+    "text": "Então o conselho prático",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "23fb6481-9e22-4c8b-88c4-902f82d3c42c",
+    "startTime": 26.750000476837158,
+    "endTime": 27.960000038146973,
+    "words": [
+      {
+        "word": "que",
+        "start": 26.750000476837158,
+        "end": 27.052500367164612,
+        "isHighlight": false
+      },
+      {
+        "word": "eu",
+        "start": 27.052500367164612,
+        "end": 27.355000257492065,
+        "isHighlight": false
+      },
+      {
+        "word": "te",
+        "start": 27.355000257492065,
+        "end": 27.65750014781952,
+        "isHighlight": false
+      },
+      {
+        "word": "dou,",
+        "start": 27.65750014781952,
+        "end": 27.960000038146973,
+        "isHighlight": false
+      }
+    ],
+    "text": "que eu te dou,",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "db909a21-a183-4bc2-b22a-563eeb5bddf6",
+    "startTime": 27.960000038146973,
+    "endTime": 29.169999599456787,
+    "words": [
+      {
+        "word": "uma",
+        "start": 27.960000038146973,
+        "end": 28.262499928474426,
+        "isHighlight": false
+      },
+      {
+        "word": "dica",
+        "start": 28.262499928474426,
+        "end": 28.56499981880188,
+        "isHighlight": false
+      },
+      {
+        "word": "prática",
+        "start": 28.56499981880188,
+        "end": 28.867499709129333,
+        "isHighlight": false
+      },
+      {
+        "word": "é,",
+        "start": 28.867499709129333,
+        "end": 29.169999599456787,
+        "isHighlight": false
+      }
+    ],
+    "text": "uma dica prática é,",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "454862dc-4476-4796-807a-d01ca1347f94",
+    "startTime": 29.169999599456787,
+    "endTime": 30.3799991607666,
+    "words": [
+      {
+        "word": "faça",
+        "start": 29.169999599456787,
+        "end": 29.47249948978424,
+        "isHighlight": false
+      },
+      {
+        "word": "vídeo",
+        "start": 29.47249948978424,
+        "end": 29.774999380111694,
+        "isHighlight": false
+      },
+      {
+        "word": "dos",
+        "start": 29.774999380111694,
+        "end": 30.077499270439148,
+        "isHighlight": false
+      },
+      {
+        "word": "seus",
+        "start": 30.077499270439148,
+        "end": 30.3799991607666,
+        "isHighlight": false
+      }
+    ],
+    "text": "faça vídeo dos seus",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "b135e5a3-3d7d-4177-a609-4ba845a0d4d0",
+    "startTime": 30.3799991607666,
+    "endTime": 31.690768461961014,
+    "words": [
+      {
+        "word": "bastidores",
+        "start": 30.3799991607666,
+        "end": 30.707691486065205,
+        "isHighlight": true
+      },
+      {
+        "word": "desde",
+        "start": 30.707691486065205,
+        "end": 31.035383811363808,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 31.035383811363808,
+        "end": 31.36307613666241,
+        "isHighlight": false
+      },
+      {
+        "word": "pessoa",
+        "start": 31.36307613666241,
+        "end": 31.690768461961014,
+        "isHighlight": false
+      }
+    ],
+    "text": "bastidores desde a pessoa",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "623cd79a-656a-4e4c-bd67-87af83d28465",
+    "startTime": 31.690768461961014,
+    "endTime": 33.001537763155426,
+    "words": [
+      {
+        "word": "chegando,",
+        "start": 31.690768461961014,
+        "end": 32.01846078725961,
+        "isHighlight": false
+      },
+      {
+        "word": "processo",
+        "start": 32.01846078725961,
+        "end": 32.34615311255822,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 32.34615311255822,
+        "end": 32.67384543785682,
+        "isHighlight": false
+      },
+      {
+        "word": "ela",
+        "start": 32.67384543785682,
+        "end": 33.001537763155426,
+        "isHighlight": false
+      }
+    ],
+    "text": "chegando, processo que ela",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "afaeef98-97c5-4150-ac86-91a749d6b16a",
+    "startTime": 33.001537763155426,
+    "endTime": 34.31230706434984,
+    "words": [
+      {
+        "word": "passa,",
+        "start": 33.001537763155426,
+        "end": 33.329230088454025,
+        "isHighlight": false
+      },
+      {
+        "word": "transformação,",
+        "start": 33.329230088454025,
+        "end": 33.65692241375263,
+        "isHighlight": true
+      },
+      {
+        "word": "todo",
+        "start": 33.65692241375263,
+        "end": 33.98461473905123,
+        "isHighlight": false
+      },
+      {
+        "word": "o",
+        "start": 33.98461473905123,
+        "end": 34.31230706434984,
+        "isHighlight": false
+      }
+    ],
+    "text": "passa, transformação, todo o",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "76f944fd-c156-4c8b-aa63-6898cd6b0a3d",
+    "startTime": 34.31230706434984,
+    "endTime": 35.555999755859375,
+    "words": [
+      {
+        "word": "seu",
+        "start": 34.31230706434984,
+        "end": 34.63999938964844,
+        "isHighlight": false
+      },
+      {
+        "word": "serviço",
+        "start": 34.63999938964844,
+        "end": 34.945332845052086,
+        "isHighlight": false
+      },
+      {
+        "word": "até",
+        "start": 34.945332845052086,
+        "end": 35.25066630045573,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 35.25066630045573,
+        "end": 35.555999755859375,
+        "isHighlight": false
+      }
+    ],
+    "text": "seu serviço até a",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "dd92ece5-dbe1-470f-8c3c-b40717c4b98f",
+    "startTime": 35.555999755859375,
+    "endTime": 36.77733357747396,
+    "words": [
+      {
+        "word": "etapa",
+        "start": 35.555999755859375,
+        "end": 35.86133321126302,
+        "isHighlight": false
+      },
+      {
+        "word": "final",
+        "start": 35.86133321126302,
+        "end": 36.166666666666664,
+        "isHighlight": false
+      },
+      {
+        "word": "da",
+        "start": 36.166666666666664,
+        "end": 36.47200012207031,
+        "isHighlight": false
+      },
+      {
+        "word": "transformação",
+        "start": 36.47200012207031,
+        "end": 36.77733357747396,
+        "isHighlight": true
+      }
+    ],
+    "text": "etapa final da transformação",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "1b81d8a9-9484-4f0d-b04f-5f70acaf681d",
+    "startTime": 36.77733357747396,
+    "endTime": 37.99866739908854,
+    "words": [
+      {
+        "word": "e",
+        "start": 36.77733357747396,
+        "end": 37.0826670328776,
+        "isHighlight": false
+      },
+      {
+        "word": "rode",
+        "start": 37.0826670328776,
+        "end": 37.38800048828125,
+        "isHighlight": false
+      },
+      {
+        "word": "isso",
+        "start": 37.38800048828125,
+        "end": 37.6933339436849,
+        "isHighlight": false
+      },
+      {
+        "word": "como",
+        "start": 37.6933339436849,
+        "end": 37.99866739908854,
+        "isHighlight": false
+      }
+    ],
+    "text": "e rode isso como",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "0644dada-2e0a-4fb9-8641-19be89222ca7",
+    "startTime": 37.99866739908854,
+    "endTime": 39.220001220703125,
+    "words": [
+      {
+        "word": "um",
+        "start": 37.99866739908854,
+        "end": 38.30400085449219,
+        "isHighlight": false
+      },
+      {
+        "word": "reconhecimento",
+        "start": 38.30400085449219,
+        "end": 38.609334309895836,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 38.609334309895836,
+        "end": 38.91466776529948,
+        "isHighlight": false
+      },
+      {
+        "word": "marca.",
+        "start": 38.91466776529948,
+        "end": 39.220001220703125,
+        "isHighlight": false
+      }
+    ],
+    "text": "um reconhecimento de marca.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "84e22b7a-13fa-419b-b91f-3d517f9e1d69",
+    "startTime": 40.119998931884766,
+    "endTime": 41.55529358807732,
+    "words": [
+      {
+        "word": "E",
+        "start": 40.119998931884766,
+        "end": 40.478822595932904,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 40.478822595932904,
+        "end": 40.83764625998104,
+        "isHighlight": false
+      },
+      {
+        "word": "segunda",
+        "start": 40.83764625998104,
+        "end": 41.19646992402918,
+        "isHighlight": false
+      },
+      {
+        "word": "dica",
+        "start": 41.19646992402918,
+        "end": 41.55529358807732,
+        "isHighlight": false
+      }
+    ],
+    "text": "E a segunda dica",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "2d81aeb0-ff47-4b1a-818c-8351e2e2d3f3",
+    "startTime": 41.55529358807732,
+    "endTime": 42.99058824426987,
+    "words": [
+      {
+        "word": "é,",
+        "start": 41.55529358807732,
+        "end": 41.91411725212546,
+        "isHighlight": false
+      },
+      {
+        "word": "faça",
+        "start": 41.91411725212546,
+        "end": 42.272940916173596,
+        "isHighlight": false
+      },
+      {
+        "word": "vídeo",
+        "start": 42.272940916173596,
+        "end": 42.631764580221734,
+        "isHighlight": false
+      },
+      {
+        "word": "da",
+        "start": 42.631764580221734,
+        "end": 42.99058824426987,
+        "isHighlight": false
+      }
+    ],
+    "text": "é, faça vídeo da",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "54871780-259f-4676-bb19-1b804be90350",
+    "startTime": 42.99058824426987,
+    "endTime": 44.42588290046243,
+    "words": [
+      {
+        "word": "transformação",
+        "start": 42.99058824426987,
+        "end": 43.34941190831802,
+        "isHighlight": true
+      },
+      {
+        "word": "do",
+        "start": 43.34941190831802,
+        "end": 43.708235572366156,
+        "isHighlight": false
+      },
+      {
+        "word": "antes",
+        "start": 43.708235572366156,
+        "end": 44.067059236414295,
+        "isHighlight": false
+      },
+      {
+        "word": "e",
+        "start": 44.067059236414295,
+        "end": 44.42588290046243,
+        "isHighlight": false
+      }
+    ],
+    "text": "transformação do antes e",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "41627ac9-a64c-4684-a54b-c98f5a1ae7aa",
+    "startTime": 44.42588290046243,
+    "endTime": 45.86117755665499,
+    "words": [
+      {
+        "word": "depois",
+        "start": 44.42588290046243,
+        "end": 44.78470656451057,
+        "isHighlight": false
+      },
+      {
+        "word": "com",
+        "start": 44.78470656451057,
+        "end": 45.14353022855871,
+        "isHighlight": false
+      },
+      {
+        "word": "oferta",
+        "start": 45.14353022855871,
+        "end": 45.50235389260685,
+        "isHighlight": false
+      },
+      {
+        "word": "direta",
+        "start": 45.50235389260685,
+        "end": 45.86117755665499,
+        "isHighlight": false
+      }
+    ],
+    "text": "depois com oferta direta",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "651a94f8-1b99-4d80-bcb0-2c8cea202ca9",
+    "startTime": 45.86117755665499,
+    "endTime": 46.86200103759766,
+    "words": [
+      {
+        "word": "levando",
+        "start": 45.86117755665499,
+        "end": 46.220001220703125,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 46.220001220703125,
+        "end": 46.43400115966797,
+        "isHighlight": false
+      },
+      {
+        "word": "pessoa",
+        "start": 46.43400115966797,
+        "end": 46.64800109863281,
+        "isHighlight": false
+      },
+      {
+        "word": "para",
+        "start": 46.64800109863281,
+        "end": 46.86200103759766,
+        "isHighlight": false
+      }
+    ],
+    "text": "levando a pessoa para",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "82259f45-e4ef-4670-ad93-dae35e6084cd",
+    "startTime": 46.86200103759766,
+    "endTime": 47.71800079345703,
+    "words": [
+      {
+        "word": "o",
+        "start": 46.86200103759766,
+        "end": 47.0760009765625,
+        "isHighlight": false
+      },
+      {
+        "word": "seu",
+        "start": 47.0760009765625,
+        "end": 47.290000915527344,
+        "isHighlight": false
+      },
+      {
+        "word": "WhatsApp",
+        "start": 47.290000915527344,
+        "end": 47.50400085449219,
+        "isHighlight": true
+      },
+      {
+        "word": "para",
+        "start": 47.50400085449219,
+        "end": 47.71800079345703,
+        "isHighlight": false
+      }
+    ],
+    "text": "o seu WhatsApp para",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "6cb2bec1-57ee-4555-a1f1-d008fdadc573",
+    "startTime": 47.71800079345703,
+    "endTime": 48.36000061035156,
+    "words": [
+      {
+        "word": "captação",
+        "start": 47.71800079345703,
+        "end": 47.932000732421876,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 47.932000732421876,
+        "end": 48.146000671386716,
+        "isHighlight": false
+      },
+      {
+        "word": "leads.",
+        "start": 48.146000671386716,
+        "end": 48.36000061035156,
+        "isHighlight": true
+      }
+    ],
+    "text": "captação de leads.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "447b5ee2-4b17-4e3f-86bb-14cec94f2541",
+    "startTime": 49.279998779296875,
+    "endTime": 49.779998779296875,
+    "words": [
+      {
+        "word": "Utilize",
+        "start": 49.279998779296875,
+        "end": 49.459999084472656,
+        "isHighlight": false
+      },
+      {
+        "word": "isso.",
+        "start": 49.459999084472656,
+        "end": 49.63999938964844,
+        "isHighlight": false
+      }
+    ],
+    "text": "Utilize isso.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "81d07b05-6126-408a-ba29-b6309663f723",
+    "startTime": 49.84000015258789,
+    "endTime": 50.63428551810129,
+    "words": [
+      {
+        "word": "Se",
+        "start": 49.84000015258789,
+        "end": 50.03857149396624,
+        "isHighlight": false
+      },
+      {
+        "word": "você",
+        "start": 50.03857149396624,
+        "end": 50.237142835344585,
+        "isHighlight": false
+      },
+      {
+        "word": "não",
+        "start": 50.237142835344585,
+        "end": 50.43571417672293,
+        "isHighlight": false
+      },
+      {
+        "word": "tiver",
+        "start": 50.43571417672293,
+        "end": 50.63428551810129,
+        "isHighlight": false
+      }
+    ],
+    "text": "Se você não tiver",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "afa5b2d5-e99a-4ffe-8ca9-33566d35a6d9",
+    "startTime": 50.63428551810129,
+    "endTime": 51.428570883614675,
+    "words": [
+      {
+        "word": "resultado,",
+        "start": 50.63428551810129,
+        "end": 50.832856859479634,
+        "isHighlight": true
+      },
+      {
+        "word": "você",
+        "start": 50.832856859479634,
+        "end": 51.03142820085798,
+        "isHighlight": false
+      },
+      {
+        "word": "pode",
+        "start": 51.03142820085798,
+        "end": 51.22999954223633,
+        "isHighlight": false
+      },
+      {
+        "word": "vir",
+        "start": 51.22999954223633,
+        "end": 51.428570883614675,
+        "isHighlight": false
+      }
+    ],
+    "text": "resultado, você pode vir",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "fffbbfdc-6aed-41d1-8c68-babee3dafa45",
+    "startTime": 51.428570883614675,
+    "endTime": 52.22285624912807,
+    "words": [
+      {
+        "word": "aqui",
+        "start": 51.428570883614675,
+        "end": 51.62714222499302,
+        "isHighlight": false
+      },
+      {
+        "word": "nos",
+        "start": 51.62714222499302,
+        "end": 51.82571356637137,
+        "isHighlight": false
+      },
+      {
+        "word": "comentários",
+        "start": 51.82571356637137,
+        "end": 52.024284907749724,
+        "isHighlight": false
+      },
+      {
+        "word": "e",
+        "start": 52.024284907749724,
+        "end": 52.22285624912807,
+        "isHighlight": false
+      }
+    ],
+    "text": "aqui nos comentários e",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "ddcfa0a8-775b-4fc6-b50b-6c612db98a51",
+    "startTime": 52.22285624912807,
+    "endTime": 53.24736765811318,
+    "words": [
+      {
+        "word": "falar,",
+        "start": 52.22285624912807,
+        "end": 52.42142759050642,
+        "isHighlight": false
+      },
+      {
+        "word": "Mateus,",
+        "start": 52.42142759050642,
+        "end": 52.619998931884766,
+        "isHighlight": false
+      },
+      {
+        "word": "não",
+        "start": 52.619998931884766,
+        "end": 52.93368329499897,
+        "isHighlight": false
+      },
+      {
+        "word": "deu",
+        "start": 52.93368329499897,
+        "end": 53.24736765811318,
+        "isHighlight": false
+      }
+    ],
+    "text": "falar, Mateus, não deu",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "15f67aea-2d1f-47c3-af89-d54c28dabb54",
+    "startTime": 53.24736765811318,
+    "endTime": 54.50210511057001,
+    "words": [
+      {
+        "word": "certo,",
+        "start": 53.24736765811318,
+        "end": 53.56105202122738,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 53.56105202122738,
+        "end": 53.87473638434159,
+        "isHighlight": false
+      },
+      {
+        "word": "eu",
+        "start": 53.87473638434159,
+        "end": 54.188420747455794,
+        "isHighlight": false
+      },
+      {
+        "word": "mando,",
+        "start": 54.188420747455794,
+        "end": 54.50210511057001,
+        "isHighlight": false
+      }
+    ],
+    "text": "certo, que eu mando,",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "b07f41ea-a5d5-4f8e-91e4-adbdf6a1941c",
+    "startTime": 54.50210511057001,
+    "endTime": 55.75684256302683,
+    "words": [
+      {
+        "word": "sei",
+        "start": 54.50210511057001,
+        "end": 54.81578947368421,
+        "isHighlight": false
+      },
+      {
+        "word": "lá,",
+        "start": 54.81578947368421,
+        "end": 55.12947383679842,
+        "isHighlight": false
+      },
+      {
+        "word": "50",
+        "start": 55.12947383679842,
+        "end": 55.443158199912624,
+        "isHighlight": false
+      },
+      {
+        "word": "reais",
+        "start": 55.443158199912624,
+        "end": 55.75684256302683,
+        "isHighlight": false
+      }
+    ],
+    "text": "sei lá, 50 reais",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "70f3091d-ab29-4b84-8216-3d3534fac346",
+    "startTime": 55.75684256302683,
+    "endTime": 57.01158001548365,
+    "words": [
+      {
+        "word": "no",
+        "start": 55.75684256302683,
+        "end": 56.070526926141035,
+        "isHighlight": false
+      },
+      {
+        "word": "seu",
+        "start": 56.070526926141035,
+        "end": 56.38421128925524,
+        "isHighlight": false
+      },
+      {
+        "word": "Pix",
+        "start": 56.38421128925524,
+        "end": 56.697895652369446,
+        "isHighlight": false
+      },
+      {
+        "word": "só",
+        "start": 56.697895652369446,
+        "end": 57.01158001548365,
+        "isHighlight": false
+      }
+    ],
+    "text": "no seu Pix só",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "a7f99c9f-19b6-4fc6-a4a2-972ae807b29d",
+    "startTime": 57.01158001548365,
+    "endTime": 58.26631746794048,
+    "words": [
+      {
+        "word": "para",
+        "start": 57.01158001548365,
+        "end": 57.325264378597865,
+        "isHighlight": false
+      },
+      {
+        "word": "te",
+        "start": 57.325264378597865,
+        "end": 57.63894874171207,
+        "isHighlight": false
+      },
+      {
+        "word": "provar",
+        "start": 57.63894874171207,
+        "end": 57.952633104826276,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 57.952633104826276,
+        "end": 58.26631746794048,
+        "isHighlight": false
+      }
+    ],
+    "text": "para te provar que",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "ff310201-18ff-4cac-9164-7767a218a349",
+    "startTime": 58.26631746794048,
+    "endTime": 59,
+    "words": [
+      {
+        "word": "funciona",
+        "start": 58.26631746794048,
+        "end": 58.58000183105469,
+        "isHighlight": false
+      },
+      {
+        "word": "isso",
+        "start": 58.58000183105469,
+        "end": 58.720001220703125,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 58.720001220703125,
+        "end": 58.86000061035156,
+        "isHighlight": false
+      },
+      {
+        "word": "eu",
+        "start": 58.86000061035156,
+        "end": 59,
+        "isHighlight": false
+      }
+    ],
+    "text": "funciona isso que eu",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "d8430041-be09-44b6-99a5-48a4a78b720f",
+    "startTime": 59,
+    "endTime": 59.5,
+    "words": [
+      {
+        "word": "estou",
+        "start": 59,
+        "end": 59.13999938964844,
+        "isHighlight": false
+      },
+      {
+        "word": "falando.",
+        "start": 59.13999938964844,
+        "end": 59.279998779296875,
+        "isHighlight": false
+      }
+    ],
+    "text": "estou falando.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "cf6fe68d-118c-495e-a4c6-17d8beef59af",
+    "startTime": 59.52000045776367,
+    "endTime": 60.02000045776367,
+    "words": [
+      {
+        "word": "Fechou?",
+        "start": 59.52000045776367,
+        "end": 59.7400016784668,
+        "isHighlight": false
+      }
+    ],
+    "text": "Fechou?",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  }
+]

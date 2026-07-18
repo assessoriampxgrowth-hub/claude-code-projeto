@@ -1,0 +1,22 @@
+[
+  {
+    "startTime": 0.7,
+    "endTime": 5.7,
+    "scale": 1.08,
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "easing": "easeOut",
+    "mode": "in",
+    "rampSeconds": 0.38
+  },
+  {
+    "startTime": 14,
+    "endTime": 29.1,
+    "scale": 1.08,
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "easing": "easeOut",
+    "mode": "in",
+    "rampSeconds": 0.4
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "format": "short_form",
+  "mainTheme": "Estratégias de marketing para conversão através de bastidores e transformações",
+  "targetDuration": 60,
+  "mood": "cinematic",
+  "pace": "fast",
+  "musicMood": "inspiring",
+  "highlights": [
+    "transformação",
+    "bastidores",
+    "antes e depois",
+    "WhatsApp",
+    "leads",
+    "resultados"
+  ],
+  "scenes": [
+    {
+      "id": "scene-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 9.2,
+      "title": "O poder da visualização",
+      "subtitle": "Foque na transformação clara e objetiva",
+      "emphasis": 0.9,
+      "illustrationPrompt": "person visualizing transformation, before and after concept, modern marketing graphics",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "scene-002",
+      "type": "problem",
+      "startTime": 9.7,
+      "endTime": 15.1,
+      "title": "A necessidade de transparência",
+      "subtitle": "Ninguém compra sem conhecer o produto",
+      "emphasis": 0.7,
+      "illustrationPrompt": "confused customer looking at unknown product, question marks, transparency concept",
+      "zoomSuggestion": "none",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    {
+      "id": "scene-003",
+      "type": "solution",
+      "startTime": 15.8,
+      "endTime": 24.8,
+      "title": "Mostrar os bastidores",
+      "subtitle": "Clareza no processo gera confiança",
+      "emphasis": 0.8,
+      "illustrationPrompt": "behind the scenes business process, step by step workflow, professional service environment",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "scene-004",
+      "type": "benefit",
+      "startTime": 25.5,
+      "endTime": 39.2,
+      "title": "Primeira dica prática",
+      "subtitle": "Vídeos completos do processo para reconhecimento de marca",
+      "emphasis": 0.9,
+      "illustrationPrompt": "video production setup, customer journey from arrival to transformation, brand recognition icons",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    {
+      "id": "scene-005",
+      "type": "benefit",
+      "startTime": 40.1,
+      "endTime": 48.4,
+      "title": "Segunda dica prática",
+      "subtitle": "Antes e depois com oferta direta para WhatsApp",
+      "emphasis": 0.9,
+      "illustrationPrompt": "before and after transformation split screen, WhatsApp interface, lead generation funnel",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "scene-006",
+      "type": "narration",
+      "startTime": 49.3,
+      "endTime": 49.6,
+      "title": "Call to action",
+      "subtitle": "Utilize essas estratégias",
+      "emphasis": 0.6,
+      "illustrationPrompt": "action button, implementation concept, marketing tools",
+      "zoomSuggestion": "none",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    },
+    {
+      "id": "scene-007",
+      "type": "proof",
+      "startTime": 49.8,
+      "endTime": 59.3,
+      "title": "Garantia de resultado",
+      "subtitle": "Confiança total na estratégia",
+      "emphasis": 0.9,
+      "illustrationPrompt": "money back guarantee, confident businessman, success metrics, Pix payment icon",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "scene-008",
+      "type": "cta",
+      "startTime": 59.5,
+      "endTime": 59.7,
+      "title": "Fechamento",
+      "subtitle": "Acordo feito",
+      "emphasis": 0.8,
+      "illustrationPrompt": "handshake deal, agreement concept, marketing success",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    }
+  ]
+}

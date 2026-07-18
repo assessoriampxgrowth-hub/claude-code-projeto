@@ -1,0 +1,136 @@
+{
+  "id": "bd23bf70-e933-4efb-8c91-d65f669c81bd",
+  "status": "completed",
+  "config": {
+    "preset": "venda-agressiva",
+    "captionStyle": "aggressive",
+    "musicEnabled": true,
+    "musicMood": "energetic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:29:50.382Z",
+      "completedAt": "2026-04-21T01:29:58.427Z",
+      "progress": 100,
+      "details": "720x1280, 36.6s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:29:58.428Z",
+      "completedAt": "2026-04-21T01:29:58.563Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:29:58.564Z",
+      "completedAt": "2026-04-21T01:30:01.349Z",
+      "progress": 100,
+      "details": "7 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "failed",
+      "startedAt": "2026-04-21T01:30:01.350Z",
+      "completedAt": "2026-04-21T01:30:01.353Z",
+      "error": "Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:01.359Z",
+      "completedAt": "2026-04-21T01:30:01.419Z",
+      "progress": 100,
+      "details": "No significant silences detected"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:01.420Z",
+      "completedAt": "2026-04-21T01:30:01.424Z",
+      "progress": 100,
+      "details": "43 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:01.425Z",
+      "completedAt": "2026-04-21T01:30:01.430Z",
+      "progress": 100,
+      "details": "3 scenes configured, 0 need images, 3 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:01.431Z",
+      "completedAt": "2026-04-21T01:30:01.434Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:01.435Z",
+      "completedAt": "2026-04-21T01:30:02.344Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-04-21T01:30:02.344Z",
+      "completedAt": "2026-04-21T01:30:16.657Z",
+      "error": "Received a status code of 404 while downloading file http://localhost:3000/public/file%3A//C%3A/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CLAUDE%20CODE%20PROJETO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/uploads/bd23bf70-e933-4efb-8c91-d65f669c81bd/normalized.mp4.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\Matheus\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-yL03Hw\\\\public\\\\file:\\\\C:\\\\Users\\\\Matheus\\\\Desktop\\\\MEMÓRIA CLAUDE CODE\\\\CLAUDE CODE PROJETO\\\\VÍDEOS EDITADOS COM REMOTION\\\\video-editor\\\\uploads\\\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\\\normalized.mp4) could not be found\"}\n---\n    at readFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CLAUDE%20CODE%20PROJETO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:507:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at readFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CLAUDE%20CODE%20PROJETO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:507:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-04-21T01:30:16.661Z",
+      "completedAt": "2026-04-21T01:30:16.840Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-04-21T01:29:50.378Z",
+  "updatedAt": "2026-04-21T01:30:16.841Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\0f10fa0b-eab9-49df-a4c7-f174377119c4\\original.mp4",
+  "videoDuration": 36.6,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\normalized.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\transcription.json",
+  "error": "Completed with failures in: analyze, render",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\audio-normalized.wav",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\bd23bf70-e933-4efb-8c91-d65f669c81bd\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

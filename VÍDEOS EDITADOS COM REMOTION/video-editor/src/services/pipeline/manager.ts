@@ -25,6 +25,15 @@ import {
 
 import { generateCutList } from '@/services/editing/cutEngine';
 import { generateZoomInstructions, ZoomInstruction } from '@/services/editing/zoomEngine';
+import { detectFacesForScenes, SceneFace } from '@/services/editing/faceDetector';
+import { decideEdits, EditDecision } from '@/editor/decision/SmartEditDecisionEngine';
+import { decideSfx } from '@/editor/decision/SfxDecisionEngine';
+import { decideOverlays } from '@/editor/decision/VisualOverlayDecisionEngine';
+import { searchBRoll } from '@/editor/assets/AssetSearchService';
+import { buildCueSfx } from '@/services/audio/sfxMixer';
+import { runQualityGate, formatQualityReport } from '@/editor/validation/QualityGate';
+import { getCaptionPreset } from '@/editor/captions/CaptionSettings';
+import type { BRollImage } from '@/shared/remotion/types';
 
 import { getCaptionStyle } from '@/services/captions/styles';
 import {
@@ -38,10 +47,13 @@ import { selectSceneCompositions, SceneDecision } from '@/services/assets/sceneS
 
 import { normalizeAudioLoudness } from '@/services/audio/normalizer';
 import { mixWithFades } from '@/services/audio/mixer';
+import { buildSceneSfx, mixSfx } from '@/services/audio/sfxMixer';
 import { selectMusic, MusicTrack } from '@/services/audio/musicSelector';
 
 import { getPreset } from '@/config/presets';
-import { UPLOADS_DIR } from '@/config/defaults';
+import { UPLOADS_DIR, EXPORTS_DIR, RENDER_DEFAULTS } from '@/config/defaults';
+import { RemotionRenderProvider } from '@/providers/render/remotion';
+import { copyFile } from 'fs/promises';
 
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
@@ -81,6 +93,8 @@ export class PipelineManager {
     let zoomInstructions: ZoomInstruction[] = [];
     let musicTrack: MusicTrack | null = null;
     let videoDuration = 0;
+    let editDecisions: EditDecision[] = [];
+    let bRollImages: BRollImage[] = [];
 
     // ──────────────────────────────────────────────
     // Step 1: Normalize video
@@ -132,17 +146,50 @@ export class PipelineManager {
     const transcribeOk = await this.runStep(job, 'transcribe', async () => {
       await jobStore.updateStatus(job.id, 'transcribing');
 
+      // Use native fetch instead of OpenAI SDK to avoid node-fetch ECONNRESET on Node v24
       const audioBuffer = await readFile(audioPath);
-      const response = await this.openai.audio.transcriptions.create({
-        file: new File([audioBuffer], 'audio.wav', { type: 'audio/wav' }),
-        model: 'whisper-1',
-        response_format: 'verbose_json',
-        timestamp_granularities: ['word', 'segment'],
-        language: 'pt',
-      });
+      const formData = new FormData();
+      formData.append('file', new Blob([audioBuffer], { type: 'audio/wav' }), 'audio.wav');
+      formData.append('model', 'whisper-1');
+      formData.append('response_format', 'verbose_json');
+      formData.append('timestamp_granularities[]', 'word');
+      formData.append('timestamp_granularities[]', 'segment');
+      formData.append('language', 'pt');
 
-      // Parse the response into TranscriptionSegment format
-      const rawResponse = response as unknown as Record<string, unknown>;
+      let rawResponse: Record<string, unknown> | null = null;
+      const maxRetries = 3;
+      for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+          const res = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+            },
+            body: formData,
+          });
+          if (!res.ok) {
+            const errBody = await res.text();
+            throw new Error(`Whisper API error ${res.status}: ${errBody}`);
+          }
+          rawResponse = await res.json() as Record<string, unknown>;
+          break;
+        } catch (err: unknown) {
+          const isConnectionError =
+            err instanceof Error &&
+            (err.message.includes('ECONNRESET') ||
+              err.message.includes('ETIMEDOUT') ||
+              err.message.includes('fetch failed'));
+          if (isConnectionError && attempt < maxRetries) {
+            const delay = attempt * 3000;
+            console.log(`Transcription attempt ${attempt} failed, retrying in ${delay}ms...`);
+            await new Promise((r) => setTimeout(r, delay));
+            continue;
+          }
+          throw err;
+        }
+      }
+
+      if (!rawResponse) throw new Error('Transcription failed after all retries');
       const segments = (rawResponse.segments as Array<Record<string, unknown>>) ?? [];
 
       transcription = segments.map(
@@ -282,10 +329,30 @@ export class PipelineManager {
         true
       );
 
-      // Generate zoom instructions
+      // Face detection (MPX strategic preset only) — keeps zoom off the face
+      let sceneFaces: SceneFace[] | undefined;
+      if (
+        job.config.zoomEnabled &&
+        preset.strategicZoom &&
+        job.normalizedVideoPath
+      ) {
+        try {
+          sceneFaces = await detectFacesForScenes(
+            job.normalizedVideoPath,
+            editPlan.scenes,
+            jobDir
+          );
+        } catch {
+          sceneFaces = undefined; // fall back to conservative center crop
+        }
+      }
+
+      // Generate zoom instructions (strategic, face-aware — no seesaw)
       zoomInstructions = generateZoomInstructions(
         editPlan,
-        job.config.zoomEnabled
+        job.config.zoomEnabled,
+        job.videoDuration,
+        sceneFaces
       );
 
       // Save scene and zoom data
@@ -322,7 +389,49 @@ export class PipelineManager {
         }
       }
 
-      return `${sceneDecisions.length} scenes configured, ${imageCount} need images, ${zoomInstructions.length} zoom instructions`;
+      // ─── Smart Edit Decision Engine ───
+      // Pontua cada fronteira de frase e decide corte/transição.
+      editDecisions = decideEdits(transcription, silences, editPlan, {
+        videoDuration,
+        pace: editPlan.pace,
+      });
+      await writeFile(
+        path.join(jobDir, 'edit-decisions.json'),
+        JSON.stringify(editDecisions, null, 2)
+      );
+
+      // ─── Visual Overlay Decision Engine ───
+      // Sugere B-roll só quando há relação semântica com a fala.
+      const overlaySuggestions = decideOverlays(editPlan.scenes, transcription);
+      bRollImages = [];
+      for (const sug of overlaySuggestions) {
+        try {
+          const asset = await searchBRoll(sug.query);
+          if (asset) {
+            bRollImages.push({
+              sceneId: sug.sceneId,
+              src: asset.url,
+              assetType: asset.type,
+              mode: sug.mode,
+              start: sug.start,
+              end: sug.end,
+              opacity: 1,
+            });
+          }
+        } catch {
+          /* B-roll opcional — falha não quebra o pipeline */
+        }
+      }
+      await writeFile(
+        path.join(jobDir, 'overlays.json'),
+        JSON.stringify({ suggestions: overlaySuggestions, resolved: bRollImages }, null, 2)
+      );
+
+      const transitionCount = editDecisions.filter(
+        (d) => d.action === 'transition'
+      ).length;
+
+      return `${sceneDecisions.length} cenas, ${imageCount} imagens, ${zoomInstructions.length} zooms, ${transitionCount} transicoes, ${bRollImages.length} B-roll`;
     });
 
     // ──────────────────────────────────────────────
@@ -361,6 +470,9 @@ export class PipelineManager {
       const normalizedAudioPath = path.join(jobDir, 'audio-normalized.wav');
       await normalizeAudioLoudness(audioPath, normalizedAudioPath);
 
+      let baseAudio = normalizedAudioPath;
+      let resultMsg = 'Audio normalized (no music)';
+
       if (musicTrack && job.config.musicEnabled) {
         // Mix voice with music
         await mixWithFades(
@@ -376,48 +488,197 @@ export class PipelineManager {
             fadeOutDuration: 3,
           }
         );
-        job.mixedAudioPath = mixedAudioPath;
-        return 'Voice + music mixed with ducking';
-      } else {
-        // No music - just use normalized audio
-        job.mixedAudioPath = normalizedAudioPath;
-        return 'Audio normalized (no music)';
+        baseAudio = mixedAudioPath;
+        resultMsg = 'Voice + music mixed with ducking';
       }
+
+      // SFX layer (MPX preset) — overlays caption/cut/impact sounds.
+      // Gracefully no-ops when no SFX files are present in public/sfx/.
+      job.mixedAudioPath = baseAudio;
+      if (preset.strategicZoom && editPlan) {
+        try {
+          // Context-aware SFX: the decision engine picks the right sound
+          // for each edit moment (click/whoosh/snap/soft_hit...).
+          const cues = decideSfx(editDecisions, videoDuration);
+          let placements = buildCueSfx(cues);
+          // Fallback: if named SFX files are missing, use scene-boundary SFX
+          if (placements.length === 0) {
+            const sceneStarts = editPlan.scenes
+              .map((s) => s.startTime)
+              .sort((a, b) => a - b);
+            placements = buildSceneSfx(sceneStarts);
+          }
+          if (placements.length > 0) {
+            const sfxAudioPath = path.join(jobDir, 'audio-with-sfx.aac');
+            const applied = await mixSfx(baseAudio, sfxAudioPath, placements);
+            if (applied) {
+              job.mixedAudioPath = sfxAudioPath;
+              resultMsg += ` + ${placements.length} SFX`;
+            }
+          }
+        } catch {
+          // SFX failure must not break the pipeline
+        }
+      }
+
+      return resultMsg;
     });
 
     // ──────────────────────────────────────────────
-    // Step 10: Render final video
+    // Step 10: Render final video via Remotion
     // ──────────────────────────────────────────────
     const finalVideoPath = path.join(jobDir, 'final.mp4');
     await this.runStep(job, 'render', async () => {
       await jobStore.updateStatus(job.id, 'rendering');
 
-      // Prepare the composition data for the renderer
-      const compositionData = {
-        videoPath: job.normalizedVideoPath,
-        audioPath: job.mixedAudioPath,
-        captions: captionBlocks,
-        scenes: sceneDecisions,
-        zoomInstructions,
-        editPlan,
-        preset,
-        duration: videoDuration,
-        width: job.videoWidth ?? 1080,
-        height: job.videoHeight ?? 1920,
-        fps: 30,
+      // Resolve output dimensions.
+      // MPX preset (forceVertical) ALWAYS exports 1080x1920 9:16.
+      const renderPreset = getPreset(job.config.preset);
+      let width = job.videoWidth ?? RENDER_DEFAULTS.width;
+      let height = job.videoHeight ?? RENDER_DEFAULTS.height;
+      if (renderPreset.forceVertical) {
+        width = 1080;
+        height = 1920;
+      }
+      const fps = RENDER_DEFAULTS.fps;
+
+      // Map caption style for Remotion
+      const captionStyleForRemotion = captionBlocks.length > 0
+        ? captionBlocks[0].style
+        : {
+            name: 'clean', fontFamily: 'Inter, sans-serif', fontWeight: 600,
+            fontSize: 42, color: '#FFFFFF', highlightColor: '#00D4FF',
+            position: 'bottom' as const, uppercase: false, maxWordsPerLine: 5,
+            animation: 'fade' as const,
+          };
+
+      // Map scenes for Remotion
+      const scenesForRemotion = (editPlan?.scenes ?? []).map((s) => ({
+        id: s.id,
+        type: s.type,
+        startTime: s.startTime,
+        endTime: s.endTime,
+        title: s.title,
+        emphasis: s.emphasis,
+        transitionIn: s.transitionIn,
+        transitionOut: s.transitionOut,
+      }));
+
+      // Remotion's OffthreadVideo only accepts http(s) URLs (not file://).
+      // Serve the local video over HTTP via the Next.js /api/video route.
+      const { pathToFileURL } = await import('url');
+      const baseUrl =
+        process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3333';
+      const videoSource = `${baseUrl}/api/video?id=${job.id}`;
+
+      // Resolve effects — from saved editor state if present, else job config
+      let effects = job.config.effects ?? {
+        colorGrading: 'none',
+        vignette: false,
+        vignetteIntensity: 0.3,
+        letterbox: false,
+        letterboxRatio: 2.35,
+        blurBackground: false,
+      };
+      try {
+        const editorStatePath = path.join(jobDir, 'editor-state.json');
+        const savedRaw = await readFile(editorStatePath, 'utf-8');
+        const saved = JSON.parse(savedRaw);
+        if (saved.effects) effects = saved.effects;
+      } catch {
+        /* no saved editor state */
+      }
+
+      // Remotion render only accepts http(s) sources. Keep http B-roll
+      // (Pexels/Pixabay); local B-roll files are skipped in render.
+      void pathToFileURL;
+      const bRollForRemotion = bRollImages.filter((b) => /^https?:/.test(b.src));
+
+      const inputProps = {
+        videoSrc: videoSource,
+        captions: captionBlocks.map((b) => ({
+          id: b.id,
+          startTime: b.startTime,
+          endTime: b.endTime,
+          words: b.words,
+          text: b.text,
+          style: b.style,
+        })),
+        zooms: zoomInstructions,
+        scenes: scenesForRemotion,
+        captionStyle: captionStyleForRemotion,
+        fps,
+        effects,
+        bRollImages: bRollForRemotion,
       };
 
-      // Save composition data for Remotion
+      // ─── Quality Gate ─── valida o padrão MPX antes de renderizar
+      try {
+        const sfxCount = decideSfx(editDecisions, videoDuration).length;
+        const captionPresetName = renderPreset.forceVertical
+          ? 'mpx-premium'
+          : 'minimal-clean';
+        const report = runQualityGate({
+          width,
+          height,
+          captionSettings: getCaptionPreset(captionPresetName),
+          zooms: zoomInstructions,
+          decisions: editDecisions,
+          sfxCount,
+          videoDuration,
+        });
+        await writeFile(
+          path.join(jobDir, 'quality-report.txt'),
+          formatQualityReport(report)
+        );
+        if (!report.pass) {
+          console.warn('[QualityGate] avisos:', report.warnings.join(' | '));
+        }
+      } catch {
+        /* QualityGate é informativo — não bloqueia o render */
+      }
+
+      // Save composition data for reference
       await writeFile(
         path.join(jobDir, 'composition.json'),
-        JSON.stringify(compositionData, null, 2)
+        JSON.stringify(inputProps, null, 2)
       );
 
-      // The actual Remotion render would be triggered here
-      // For now, save the composition data that Remotion would consume
-      job.finalVideoPath = finalVideoPath;
+      // Render using Remotion
+      const renderer = new RemotionRenderProvider();
+      const availability = await renderer.validateAvailability();
+      if (availability.status !== 'available') {
+        throw new Error(`Remotion renderer unavailable: ${availability.error}`);
+      }
 
-      return 'Composition data prepared for rendering';
+      const result = await renderer.render(
+        'MainComposition',
+        inputProps,
+        {
+          width,
+          height,
+          fps,
+          codec: RENDER_DEFAULTS.codec,
+          outputPath: finalVideoPath,
+        }
+      );
+
+      job.finalVideoPath = result.outputPath;
+
+      // Copy to exports directory
+      const exportsDir = path.join(EXPORTS_DIR, job.id);
+      await mkdir(exportsDir, { recursive: true });
+      await copyFile(result.outputPath, path.join(exportsDir, 'final.mp4'));
+
+      // Also copy subtitles and edit plan to exports
+      const srtPath = path.join(jobDir, 'captions.srt');
+      const vttPath = path.join(jobDir, 'captions.vtt');
+      if (existsSync(srtPath)) await copyFile(srtPath, path.join(exportsDir, 'transcription.srt'));
+      if (existsSync(vttPath)) await copyFile(vttPath, path.join(exportsDir, 'transcription.vtt'));
+      if (existsSync(editPlanPath)) await copyFile(editPlanPath, path.join(exportsDir, 'edit-plan.json'));
+
+      const sizeMb = (result.fileSizeBytes / 1024 / 1024).toFixed(1);
+      return `Rendered ${result.durationSeconds.toFixed(1)}s video (${sizeMb}MB)`;
     });
 
     // ──────────────────────────────────────────────
@@ -431,7 +692,6 @@ export class PipelineManager {
       try {
         const videoForThumb = job.normalizedVideoPath ?? job.originalVideoPath;
         if (videoForThumb) {
-          // Pick a frame from the first "hook" scene, or at 1 second
           const hookScene = editPlan?.scenes.find(
             (s) => s.type === 'hook'
           );
@@ -445,6 +705,11 @@ export class PipelineManager {
             path: thumbnailPath,
             type: 'image/jpeg',
           });
+          // Copy to exports
+          const exportsDir = path.join(EXPORTS_DIR, job.id);
+          if (existsSync(exportsDir)) {
+            await copyFile(thumbnailPath, path.join(exportsDir, 'thumbnail.jpg'));
+          }
         }
       } catch (err) {
         console.error('Thumbnail generation failed:', err);

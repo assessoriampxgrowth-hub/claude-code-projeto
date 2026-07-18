@@ -1,0 +1,137 @@
+[
+  {
+    "time": 5.679999828338623,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.156
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 10.079999923706055,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 12.84000015258789,
+    "action": "none",
+    "score": {
+      "silenceScore": 0.2,
+      "semanticChangeScore": 1,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.316
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 13.619999885559082,
+    "action": "hard-cut",
+    "score": {
+      "silenceScore": 0.7,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.352
+    },
+    "reason": "pausa natural entre frases"
+  },
+  {
+    "time": 19.559999465942383,
+    "action": "none",
+    "score": {
+      "silenceScore": 0.2,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.21200000000000002
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 21.799999237060547,
+    "action": "none",
+    "score": {
+      "silenceScore": 1,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0.3333333333333333,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.33333333333333337
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 25.940000534057617,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0.3333333333333333,
+      "hookScore": 0,
+      "ctaScore": 0.7,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.020599999999999997
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 26.34000015258789,
+    "action": "hard-cut",
+    "score": {
+      "silenceScore": 0.45,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0.7,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.366
+    },
+    "reason": "pausa natural entre frases"
+  },
+  {
+    "time": 27.920000076293945,
+    "action": "none",
+    "score": {
+      "silenceScore": 0.7,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0.7,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.28
+    },
+    "reason": "fala contínua / sem pausa"
+  }
+]

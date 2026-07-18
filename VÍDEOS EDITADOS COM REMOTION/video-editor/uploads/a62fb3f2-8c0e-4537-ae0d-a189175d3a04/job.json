@@ -1,0 +1,79 @@
+{
+  "id": "a62fb3f2-8c0e-4537-ae0d-a189175d3a04",
+  "status": "failed",
+  "config": {
+    "preset": "premium",
+    "captionStyle": "premium",
+    "musicEnabled": true,
+    "musicMood": "cinematic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:12:35.285Z",
+      "completedAt": "2026-04-14T16:12:43.928Z",
+      "progress": 100,
+      "details": "720x1280, 60.1s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:12:43.929Z",
+      "completedAt": "2026-04-14T16:12:44.111Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "failed",
+      "startedAt": "2026-04-14T16:12:44.112Z",
+      "completedAt": "2026-04-14T16:14:29.942Z",
+      "error": "Connection error."
+    },
+    {
+      "name": "analyze",
+      "status": "pending"
+    },
+    {
+      "name": "detect-silences",
+      "status": "pending"
+    },
+    {
+      "name": "generate-captions",
+      "status": "pending"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "pending"
+    },
+    {
+      "name": "select-music",
+      "status": "pending"
+    },
+    {
+      "name": "mix-audio",
+      "status": "pending"
+    },
+    {
+      "name": "render",
+      "status": "pending"
+    },
+    {
+      "name": "generate-outputs",
+      "status": "pending"
+    }
+  ],
+  "createdAt": "2026-04-14T16:12:35.282Z",
+  "updatedAt": "2026-04-14T16:14:29.944Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\9d62ad8c-316d-43e9-a479-937260d92a88\\original.mp4",
+  "videoDuration": 60.137,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a62fb3f2-8c0e-4537-ae0d-a189175d3a04\\normalized.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a62fb3f2-8c0e-4537-ae0d-a189175d3a04\\audio.wav",
+  "error": "Step \"transcribe\" failed: Connection error."
+}

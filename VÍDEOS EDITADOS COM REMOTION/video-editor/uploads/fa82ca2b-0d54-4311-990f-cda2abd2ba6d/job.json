@@ -1,0 +1,143 @@
+{
+  "id": "fa82ca2b-0d54-4311-990f-cda2abd2ba6d",
+  "status": "completed",
+  "config": {
+    "preset": "premium",
+    "captionStyle": "premium",
+    "musicEnabled": true,
+    "musicMood": "cinematic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:18:31.612Z",
+      "completedAt": "2026-05-16T16:18:49.320Z",
+      "progress": 100,
+      "details": "1920x1080, 29.6s, 59.94fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:18:49.322Z",
+      "completedAt": "2026-05-16T16:18:49.438Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:18:49.439Z",
+      "completedAt": "2026-05-16T16:18:58.419Z",
+      "progress": 100,
+      "details": "10 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:18:58.420Z",
+      "completedAt": "2026-05-16T16:19:11.088Z",
+      "progress": 100,
+      "details": "6 scenes planned, mood: energetic"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:11.089Z",
+      "completedAt": "2026-05-16T16:19:11.146Z",
+      "progress": 100,
+      "details": "No significant silences detected"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:11.147Z",
+      "completedAt": "2026-05-16T16:19:11.151Z",
+      "progress": 100,
+      "details": "27 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:11.152Z",
+      "completedAt": "2026-05-16T16:19:12.253Z",
+      "progress": 100,
+      "details": "6 cenas, 3 imagens, 2 zooms, 0 transicoes, 4 B-roll"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:12.253Z",
+      "completedAt": "2026-05-16T16:19:12.256Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:12.257Z",
+      "completedAt": "2026-05-16T16:19:12.993Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:19:12.993Z",
+      "completedAt": "2026-05-16T16:20:56.915Z",
+      "progress": 100,
+      "details": "Rendered 30.0s video (36.4MB)"
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-05-16T16:20:56.917Z",
+      "completedAt": "2026-05-16T16:20:57.126Z",
+      "progress": 100,
+      "details": "5 output files generated"
+    }
+  ],
+  "createdAt": "2026-05-16T16:18:31.607Z",
+  "updatedAt": "2026-05-16T16:20:57.127Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\3d4e3a56-73c1-435a-a0a5-015876e66f0b\\original.mov",
+  "videoDuration": 29.603333,
+  "videoWidth": 1920,
+  "videoHeight": 1080,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\normalized.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\transcription.json",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\audio-normalized.wav",
+  "finalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\final.mp4",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\metadata.json",
+      "type": "application/json"
+    },
+    {
+      "name": "Final Video",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\fa82ca2b-0d54-4311-990f-cda2abd2ba6d\\final.mp4",
+      "type": "video/mp4"
+    }
+  ]
+}

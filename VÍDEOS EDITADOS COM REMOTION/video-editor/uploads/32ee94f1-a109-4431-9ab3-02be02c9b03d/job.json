@@ -1,0 +1,138 @@
+{
+  "id": "32ee94f1-a109-4431-9ab3-02be02c9b03d",
+  "status": "completed",
+  "config": {
+    "preset": "premium",
+    "captionStyle": "premium",
+    "musicEnabled": true,
+    "musicMood": "cinematic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true,
+    "customPrompt": "Edite este vídeo no estilo cinematográfico, moderno e dinâmico, para conteúdo de caixinha de perguntas sobre marketing e vendas.\n\nObjetivo da edição:\ndeixar o vídeo mais envolvente, profissional, rápido e retenção alta.\n\nInstruções:\n- corte pausas, erros, respirações longas e trechos sem impacto\n- mantenha ritmo acelerado, sem ficar corrido demais\n- destaque os melhores trechos com zooms suaves e punch in estratégico\n- adicione legendas dinâmicas com palavras-chave em destaque\n- insira transições curtas, limpas e modernas entre cortes\n- use imagens, ilustrações e elementos visuais que reforcem o que está sendo falado sobre marketing, vendas, leads, anúncios, conversão e resultados\n- aplique efeito sonoro leve nas transições e nos destaques de fala\n- coloque trilha de fundo moderna, elegante e motivadora, baixa o suficiente para não atrapalhar a voz\n- valorize os hooks e as frases fortes com impacto visual\n- crie sensação de autoridade, clareza e energia\n- estética clean, premium e cinematográfica\n- mantenha foco total na mensagem e na retenção\n\nEstilo visual:\nedição parecida com criadores de conteúdo de marketing de alto nível, com cortes inteligentes, motion leve, imagens de apoio estratégicas e visual profissional para redes sociais.\n\nResultado esperado:\num vídeo curto, objetivo, visualmente forte, com aparência premium, que prenda atenção do início ao fim e passe autoridade sobre marketing e vendas."
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:17:24.608Z",
+      "completedAt": "2026-04-15T00:17:34.628Z",
+      "progress": 100,
+      "details": "720x1280, 60.1s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:17:34.630Z",
+      "completedAt": "2026-04-15T00:17:34.776Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:17:34.777Z",
+      "completedAt": "2026-04-15T00:17:39.947Z",
+      "progress": 100,
+      "details": "17 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:17:39.948Z",
+      "completedAt": "2026-04-15T00:17:57.160Z",
+      "progress": 100,
+      "details": "8 scenes planned, mood: cinematic"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:17:57.161Z",
+      "completedAt": "2026-04-15T00:18:04.781Z",
+      "progress": 100,
+      "details": "Removed 6.4s of silence, 9 cuts"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:18:04.782Z",
+      "completedAt": "2026-04-15T00:18:04.789Z",
+      "progress": 100,
+      "details": "50 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:18:04.795Z",
+      "completedAt": "2026-04-15T00:18:04.835Z",
+      "progress": 100,
+      "details": "8 scenes configured, 4 need images, 7 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:18:04.841Z",
+      "completedAt": "2026-04-15T00:18:04.867Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:18:04.877Z",
+      "completedAt": "2026-04-15T00:18:06.850Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-04-15T00:18:06.851Z",
+      "completedAt": "2026-04-15T00:18:06.864Z",
+      "error": "You passed C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\remotion\\src\\Root.tsx as your entry point, but this file does not contain \"registerRoot\". You should use the file that calls registerRoot() as the entry point. To ignore this error, pass \"ignoreRegisterRootWarning\" to bundle(). This error cannot be ignored on the CLI."
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-04-15T00:18:06.868Z",
+      "completedAt": "2026-04-15T00:18:07.019Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-04-15T00:17:24.605Z",
+  "updatedAt": "2026-04-15T00:18:07.020Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a3d57777-d828-4a98-844e-f0aae190f12f\\original.mp4",
+  "videoDuration": 60.137,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\trimmed.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\transcription.json",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\audio-normalized.wav",
+  "error": "Completed with failures in: render",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\32ee94f1-a109-4431-9ab3-02be02c9b03d\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,3 +26,18 @@ body {
 
 .gold-gradient { background: linear-gradient(135deg, #FFB800, #FFD700); }
 .gold-text { background: linear-gradient(135deg, #FFB800, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Form input shared style */
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input:focus { border-color: rgba(255, 184, 0, 0.5); }
+.input::placeholder { color: rgba(255, 255, 255, 0.25); }

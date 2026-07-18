@@ -1,0 +1,78 @@
+{
+  "suggestions": [
+    {
+      "sceneId": "hook-001",
+      "start": 1.1,
+      "end": 4.1,
+      "mode": "overlay",
+      "query": "money payment growth chart",
+      "topic": "dinheiro",
+      "reason": "fala menciona \"dinheiro\" (1 gatilho(s))"
+    },
+    {
+      "sceneId": "solution-001",
+      "start": 6.2,
+      "end": 9.7,
+      "mode": "overlay",
+      "query": "social media ads dashboard analytics",
+      "topic": "trafego",
+      "reason": "fala menciona \"trafego\" (1 gatilho(s))"
+    },
+    {
+      "sceneId": "proof-001",
+      "start": 14.4,
+      "end": 17.76,
+      "mode": "overlay",
+      "query": "social media ads dashboard analytics",
+      "topic": "trafego",
+      "reason": "fala menciona \"trafego\" (1 gatilho(s))"
+    },
+    {
+      "sceneId": "benefit-001",
+      "start": 20.2,
+      "end": 23.7,
+      "mode": "overlay",
+      "query": "social media ads dashboard analytics",
+      "topic": "trafego",
+      "reason": "fala menciona \"trafego\" (4 gatilho(s))"
+    }
+  ],
+  "resolved": [
+    {
+      "sceneId": "hook-001",
+      "src": "https://videos.pexels.com/video-files/6282322/6282322-sd_360_640_30fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 1.1,
+      "end": 4.1,
+      "opacity": 1
+    },
+    {
+      "sceneId": "solution-001",
+      "src": "https://videos.pexels.com/video-files/36825184/15602540_360_640_25fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 6.2,
+      "end": 9.7,
+      "opacity": 1
+    },
+    {
+      "sceneId": "proof-001",
+      "src": "https://videos.pexels.com/video-files/36825184/15602540_360_640_25fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 14.4,
+      "end": 17.76,
+      "opacity": 1
+    },
+    {
+      "sceneId": "benefit-001",
+      "src": "https://videos.pexels.com/video-files/36825184/15602540_360_640_25fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 20.2,
+      "end": 23.7,
+      "opacity": 1
+    }
+  ]
+}

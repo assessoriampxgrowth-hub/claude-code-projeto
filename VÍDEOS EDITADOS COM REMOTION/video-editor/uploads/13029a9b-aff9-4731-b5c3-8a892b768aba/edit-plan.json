@@ -1,0 +1,109 @@
+{
+  "format": "short_form",
+  "mainTheme": "estratégias de marketing visual para transformação e conversão",
+  "targetDuration": 60,
+  "mood": "energetic",
+  "pace": "medium",
+  "musicMood": "inspiring",
+  "highlights": [
+    "transformação",
+    "visualizar",
+    "bastidores",
+    "antes e depois",
+    "captação de leads",
+    "funciona"
+  ],
+  "scenes": [
+    {
+      "id": "hook-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 9.2,
+      "title": "O Segredo da Visualização",
+      "subtitle": "Faça seus clientes verem a transformação",
+      "emphasis": 0.9,
+      "illustrationPrompt": "person looking at mirror seeing transformation, before and after concept, bright lighting",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "problem-001",
+      "type": "problem",
+      "startTime": 9.7,
+      "endTime": 15.1,
+      "title": "O Problema da Confiança",
+      "subtitle": "Ninguém compra sem conhecer",
+      "emphasis": 0.7,
+      "illustrationPrompt": "confused customer with question marks, uncertainty, shopping decision dilemma",
+      "zoomSuggestion": "none",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    {
+      "id": "solution-001",
+      "type": "solution",
+      "startTime": 15.8,
+      "endTime": 24.8,
+      "title": "A Solução: Mostrar o Processo",
+      "subtitle": "Bastidores geram clareza e confiança",
+      "emphasis": 0.8,
+      "illustrationPrompt": "behind the scenes footage, professional service process, step by step transformation",
+      "zoomSuggestion": "out",
+      "transitionIn": "slide",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "benefit-001",
+      "type": "benefit",
+      "startTime": 25.5,
+      "endTime": 39.2,
+      "title": "Dica Prática #1",
+      "subtitle": "Filme todo o processo como branding",
+      "emphasis": 0.8,
+      "illustrationPrompt": "video camera filming service process, from arrival to final transformation, professional setup",
+      "zoomSuggestion": "in",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    },
+    {
+      "id": "benefit-002",
+      "type": "benefit",
+      "startTime": 40.1,
+      "endTime": 49.6,
+      "title": "Dica Prática #2",
+      "subtitle": "Antes/depois + oferta direta para WhatsApp",
+      "emphasis": 0.8,
+      "illustrationPrompt": "before and after comparison split screen, WhatsApp icon, lead generation concept",
+      "zoomSuggestion": "none",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "proof-001",
+      "type": "proof",
+      "startTime": 49.8,
+      "endTime": 59.3,
+      "title": "Garantia Total",
+      "subtitle": "50 reais no Pix se não funcionar",
+      "emphasis": 0.9,
+      "illustrationPrompt": "money guarantee, confident businessman, Pix payment symbol, success guarantee",
+      "zoomSuggestion": "in",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    },
+    {
+      "id": "cta-001",
+      "type": "cta",
+      "startTime": 59.5,
+      "endTime": 60.1,
+      "title": "Fechou?",
+      "subtitle": "Implemente agora essas estratégias",
+      "emphasis": 1,
+      "illustrationPrompt": "call to action graphic, thumbs up, agreement gesture, success motivation",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    }
+  ]
+}

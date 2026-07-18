@@ -1,0 +1,42 @@
+{
+  "suggestions": [
+    {
+      "sceneId": "hook-001",
+      "start": 0.4,
+      "end": 3.9,
+      "mode": "overlay",
+      "query": "customer payment checkout sale",
+      "topic": "venda",
+      "reason": "fala menciona \"venda\" (2 gatilho(s))"
+    },
+    {
+      "sceneId": "problem-002",
+      "start": 12.1,
+      "end": 14.379999999999999,
+      "mode": "overlay",
+      "query": "customers store shopping people",
+      "topic": "clientes",
+      "reason": "fala menciona \"clientes\" (2 gatilho(s))"
+    }
+  ],
+  "resolved": [
+    {
+      "sceneId": "hook-001",
+      "src": "https://videos.pexels.com/video-files/6202074/6202074-uhd_1440_2560_24fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 0.4,
+      "end": 3.9,
+      "opacity": 1
+    },
+    {
+      "sceneId": "problem-002",
+      "src": "https://videos.pexels.com/video-files/7680431/7680431-hd_720_1366_25fps.mp4",
+      "assetType": "video",
+      "mode": "overlay",
+      "start": 12.1,
+      "end": 14.379999999999999,
+      "opacity": 1
+    }
+  ]
+}

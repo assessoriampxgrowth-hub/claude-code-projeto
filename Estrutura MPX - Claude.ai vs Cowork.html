@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrutura Organizacional MPX Growth</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1, #a78bfa, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+  }
+
+  .card {
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid;
+  }
+  .card-claude {
+    background: linear-gradient(145deg, #1e1b4b, #1a1a2e);
+    border-color: #4f46e5;
+  }
+  .card-cowork {
+    background: linear-gradient(145deg, #0c2340, #0a1628);
+    border-color: #0ea5e9;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+  .icon-claude { background: rgba(99,102,241,0.25); }
+  .icon-cowork { background: rgba(14,165,233,0.25); }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f1f5f9;
+  }
+  .card-subtitle {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  .purpose-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-claude { background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.4); }
+  .badge-cowork { background: rgba(14,165,233,0.2); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.4); }
+
+  .folder-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .folder-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s;
+  }
+  .folder-item:hover { background: rgba(255,255,255,0.06); }
+
+  .folder-item.sub {
+    margin-left: 20px;
+    font-size: 0.85rem;
+    background: transparent;
+    border: none;
+    padding: 5px 10px;
+  }
+  .folder-item.sub:hover { background: rgba(255,255,255,0.03); }
+
+  .folder-emoji { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+  .folder-name {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    font-weight: 500;
+  }
+  .folder-name span {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-top: 1px;
+  }
+
+  .tag {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tag-context { background: rgba(168,85,247,0.2); color: #c4b5fd; }
+  .tag-prod { background: rgba(34,197,94,0.2); color: #86efac; }
+  .tag-auto { background: rgba(251,146,60,0.2); color: #fdba74; }
+
+  /* Fluxo */
+  .flow-section {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  .flow-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 150px;
+  }
+  .flow-step-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .flow-step-label { font-size: 0.78rem; color: #94a3b8; }
+  .flow-step-title { font-size: 0.9rem; font-weight: 600; color: #e2e8f0; margin-top: 2px; }
+
+  .flow-arrow {
+    font-size: 1.2rem;
+    color: #475569;
+    padding: 0 10px;
+  }
+
+  /* Regras */
+  .rules-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .rule-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .rule-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .rule-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .rule-card ul li {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    padding-left: 16px;
+    position: relative;
+  }
+  .rule-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+  }
+
+  .section-divider {
+    max-width: 1100px;
+    margin: 30px auto;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  @media (max-width: 700px) {
+    .grid, .rules-section { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Estrutura Organizacional MPX Growth</h1>
+  <p>Claude.ai Projetos (contexto permanente) + Cowork / Computador (produção diária)</p>
+</div>
+
+<!-- GRID PRINCIPAL -->
+<div class="grid">
+
+  <!-- CLAUDE.AI -->
+  <div class="card card-claude">
+    <div class="card-header">
+      <div class="card-icon icon-claude">🧠</div>
+      <div>
+        <div class="card-title">Claude.ai — Projetos</div>
+        <div class="card-subtitle">Memória permanente por cliente</div>
+      </div>
+    </div>
+    <div class="purpose-badge badge-claude">Contexto & Conhecimento</div>
+
+    <div class="folder-tree">
+
+      <div class="folder-item">
+        <div class="folder-emoji">📁</div>
+        <div class="folder-name">Projeto: [Nome do Cliente]
+          <span>Um projeto por cliente no Claude.ai</span>
+        </div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📄</div>
+        <div class="folder-name">briefing_cliente.md
+          <span>Dados completos do formulário</span>
+        </div>
+        <div class="tag tag-context">Contexto</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">🎯</div>
+        <div class="folder-name">objetivos_e_metas.md
+          <span>KPIs, expectativas, meta de faturamento</span>
+        </div>
+        <div class="tag tag-context">Contexto</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📋</div>
+        <div class="folder-name">plano_de_servico.md
+          <span>Plano contratado, verbas, entregáveis</span>
+        </div>
+        <div class="tag tag-context">Contexto</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📊</div>
+        <div class="folder-name">historico_resultados.md
+          <span>Resumo mensal de performance</span>
+        </div>
+        <div class="tag tag-context">Contexto</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">🗣️</div>
+        <div class="folder-name">tom_de_voz.md
+          <span>Linguagem, referencias, publico-alvo</span>
+        </div>
+        <div class="tag tag-context">Contexto</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COWORK -->
+  <div class="card card-cowork">
+    <div class="card-header">
+      <div class="card-icon icon-cowork">💻</div>
+      <div>
+        <div class="card-title">Cowork — Computador</div>
+        <div class="card-subtitle">Produção e entregáveis do dia a dia</div>
+      </div>
+    </div>
+    <div class="purpose-badge badge-cowork">Produção & Entregáveis</div>
+
+    <div class="folder-tree">
+
+      <div class="folder-item">
+        <div class="folder-emoji">📁</div>
+        <div class="folder-name">CLIENTES MPX / [Categoria] / [Cliente]
+          <span>Pasta física no seu computador</span>
+        </div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📝</div>
+        <div class="folder-name">01_Briefing
+          <span>PDF original + .md gerado pelo Claude</span>
+        </div>
+        <div class="tag tag-auto">Auto</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">🎬</div>
+        <div class="folder-name">02_Criativos_e_Roteiros
+          <span>Scripts, legendas, textos de vídeo</span>
+        </div>
+        <div class="tag tag-prod">Produção</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📈</div>
+        <div class="folder-name">03_Relatorios
+          <span>Relatórios mensais em .xlsx / .pdf</span>
+        </div>
+        <div class="tag tag-prod">Produção</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">📢</div>
+        <div class="folder-name">04_Anuncios_e_Campanhas
+          <span>Copies, headlines, públicos</span>
+        </div>
+        <div class="tag tag-prod">Produção</div>
+      </div>
+
+      <div class="folder-item sub">
+        <div class="folder-emoji">🖼️</div>
+        <div class="folder-name">05_Materiais_do_Cliente
+          <span>Logo, fotos, identidade visual</span>
+        </div>
+        <div class="tag tag-prod">Produção</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FLUXO -->
+<div class="flow-section">
+  <div class="flow-title">Fluxo de um novo cliente</div>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-step-icon">📋</div>
+      <div class="flow-step-label">Cliente preenche</div>
+      <div class="flow-step-title">Formulário Respondi</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">🤖</div>
+      <div class="flow-step-label">Claude converte</div>
+      <div class="flow-step-title">PDF → .md</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">💻</div>
+      <div class="flow-step-label">Salvo automático</div>
+      <div class="flow-step-title">Pasta no Computador</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">🧠</div>
+      <div class="flow-step-label">Você sobe manual</div>
+      <div class="flow-step-title">Projeto Claude.ai</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">🚀</div>
+      <div class="flow-step-label">Produção começa</div>
+      <div class="flow-step-title">Criativos & Relatórios</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- REGRAS -->
+<div class="rules-section">
+  <div class="rule-card">
+    <h4>🧠 O que fica no Claude.ai</h4>
+    <ul>
+      <li>Tudo que o Claude precisa "saber" sobre o cliente</li>
+      <li>Briefing, objetivos, público-alvo, tom de voz</li>
+      <li>Histórico resumido de resultados</li>
+      <li>Plano de serviço contratado</li>
+      <li>Informações que não mudam com frequência</li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h4>💻 O que fica no Computador</h4>
+    <ul>
+      <li>Tudo que o Claude produz para o cliente</li>
+      <li>Relatórios, roteiros, copies, planilhas</li>
+      <li>Arquivos enviados pelo próprio cliente</li>
+      <li>Materiais gerados mês a mês</li>
+      <li>Histórico completo de entregáveis</li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h4>⚡ Quando usar qual</h4>
+    <ul>
+      <li>Abrir projeto no Claude.ai → contexto carregado automaticamente</li>
+      <li>Pedir produção no Cowork → arquivo salvo direto na pasta</li>
+      <li>Novo briefing chega → Claude processa e organiza no computador</li>
+      <li>Você decide o que sobe pro projeto Claude.ai</li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h4>🔄 Manutenção mensal</h4>
+    <ul>
+      <li>Atualizar histórico de resultados no projeto Claude.ai</li>
+      <li>Salvar relatório do mês na pasta do cliente</li>
+      <li>Novos materiais do cliente em 05_Materiais</li>
+      <li>Revisar objetivos se houve mudança de plano</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

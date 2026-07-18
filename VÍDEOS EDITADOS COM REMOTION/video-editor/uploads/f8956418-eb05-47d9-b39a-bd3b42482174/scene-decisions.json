@@ -1,0 +1,147 @@
+[
+  {
+    "scene": {
+      "id": "scene-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 9.2,
+      "title": "SEGREDO DA VISUALIZAÇÃO",
+      "subtitle": "Faça o cliente VER a transformação",
+      "emphasis": 0.9,
+      "illustrationPrompt": "Before and after transformation split screen showing dramatic change",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "blend-overlay",
+      "opacity": 0.3
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "Before and after transformation split screen showing dramatic change"
+  },
+  {
+    "scene": {
+      "id": "scene-002",
+      "type": "problem",
+      "startTime": 9.7,
+      "endTime": 15.1,
+      "title": "O PROBLEMA",
+      "subtitle": "Ninguém compra sem saber o que está comprando",
+      "emphasis": 0.7,
+      "illustrationPrompt": "Confused customer looking at question marks and unknown service",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-003",
+      "type": "solution",
+      "startTime": 15.8,
+      "endTime": 24.8,
+      "title": "A SOLUÇÃO",
+      "subtitle": "Mostre os BASTIDORES do seu serviço",
+      "emphasis": 0.8,
+      "illustrationPrompt": "Behind the scenes footage of professional service being performed",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-004",
+      "type": "benefit",
+      "startTime": 25.5,
+      "endTime": 39.2,
+      "title": "DICA PRÁTICA #1",
+      "subtitle": "Filme todo o processo: chegada → transformação → resultado",
+      "emphasis": 0.8,
+      "illustrationPrompt": "Step by step process timeline showing customer journey from start to finish",
+      "zoomSuggestion": "none",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "pip",
+      "pipPosition": "bottom-right",
+      "pipScale": 0.3,
+      "opacity": 1
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "Step by step process timeline showing customer journey from start to finish"
+  },
+  {
+    "scene": {
+      "id": "scene-005",
+      "type": "benefit",
+      "startTime": 40.1,
+      "endTime": 48.4,
+      "title": "DICA PRÁTICA #2",
+      "subtitle": "Antes e depois + oferta direta para WhatsApp",
+      "emphasis": 0.8,
+      "illustrationPrompt": "WhatsApp interface with before after images and direct call to action",
+      "zoomSuggestion": "in",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "pip",
+      "pipPosition": "bottom-right",
+      "pipScale": 0.3,
+      "opacity": 1
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "WhatsApp interface with before after images and direct call to action"
+  },
+  {
+    "scene": {
+      "id": "scene-006",
+      "type": "proof",
+      "startTime": 49.3,
+      "endTime": 59.3,
+      "title": "GARANTIA TOTAL",
+      "subtitle": "Não funcionou? R$ 50 no seu PIX!",
+      "emphasis": 0.9,
+      "illustrationPrompt": "Money back guarantee badge with PIX payment symbol and confident person",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-007",
+      "type": "cta",
+      "startTime": 59.5,
+      "endTime": 60.1,
+      "title": "FECHOU?",
+      "subtitle": "Aplique agora!",
+      "emphasis": 1,
+      "illustrationPrompt": "Strong call to action with handshake and agreement visual",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "split-screen",
+      "splitRatio": 0.5
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "Strong call to action with handshake and agreement visual"
+  }
+]

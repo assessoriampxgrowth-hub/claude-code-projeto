@@ -14,7 +14,7 @@ export class RemotionRenderProvider implements RenderProvider {
 
   async validateAvailability(): Promise<ProviderInfo> {
     // Check that the remotion directory and entry point exist
-    const entryPoint = path.join(this.remotionDir, 'src', 'Root.tsx');
+    const entryPoint = path.join(this.remotionDir, 'src', 'index.ts');
     if (!fs.existsSync(entryPoint)) {
       return {
         name: this.name,
@@ -51,7 +51,7 @@ export class RemotionRenderProvider implements RenderProvider {
       selectComposition,
     } = await import('@remotion/renderer');
 
-    const entryPoint = path.join(this.remotionDir, 'src', 'Root.tsx');
+    const entryPoint = path.join(this.remotionDir, 'src', 'index.ts');
 
     // Ensure output directory exists
     const outputDir = path.dirname(options.outputPath);

@@ -4,7 +4,7 @@
     {
       "name": "Video Editor (Next.js)",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": ["run", "dev", "--prefix", "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor"],
       "port": 3333
     },
     {

@@ -1,0 +1,137 @@
+{
+  "id": "a42985c4-87f5-4ae3-919a-a483b1f95739",
+  "status": "completed",
+  "config": {
+    "preset": "premium",
+    "captionStyle": "premium",
+    "musicEnabled": true,
+    "musicMood": "cinematic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:45.015Z",
+      "completedAt": "2026-05-16T06:06:47.801Z",
+      "progress": 100,
+      "details": "1920x1080, 6.4s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:47.802Z",
+      "completedAt": "2026-05-16T06:06:47.910Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:47.911Z",
+      "completedAt": "2026-05-16T06:06:50.538Z",
+      "progress": 100,
+      "details": "1 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:50.538Z",
+      "completedAt": "2026-05-16T06:06:57.814Z",
+      "progress": 100,
+      "details": "3 scenes planned, mood: energetic"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:57.815Z",
+      "completedAt": "2026-05-16T06:06:57.930Z",
+      "progress": 100,
+      "details": "Removed 3.3s of silence, 1 cuts"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:57.931Z",
+      "completedAt": "2026-05-16T06:06:57.935Z",
+      "progress": 100,
+      "details": "3 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:57.935Z",
+      "completedAt": "2026-05-16T06:06:57.939Z",
+      "progress": 100,
+      "details": "3 scenes configured, 2 need images, 3 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:57.940Z",
+      "completedAt": "2026-05-16T06:06:57.943Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:57.943Z",
+      "completedAt": "2026-05-16T06:06:58.174Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-05-16T06:06:58.175Z",
+      "completedAt": "2026-05-16T06:06:59.864Z",
+      "error": "Error: Received a status code of 404 while downloading file http://localhost:3000/public/file%3A//C%3A/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/uploads/a42985c4-87f5-4ae3-919a-a483b1f95739/trimmed.mp4."
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-05-16T06:06:59.868Z",
+      "completedAt": "2026-05-16T06:07:00.054Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-05-16T06:06:45.012Z",
+  "updatedAt": "2026-05-16T06:07:00.055Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\2b58a06a-dcb9-45f4-bc3c-90f851cb5907\\original.mov",
+  "videoDuration": 6.366667,
+  "videoWidth": 1920,
+  "videoHeight": 1080,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\trimmed.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\transcription.json",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\audio-normalized.wav",
+  "error": "Completed with failures in: render",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\a42985c4-87f5-4ae3-919a-a483b1f95739\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

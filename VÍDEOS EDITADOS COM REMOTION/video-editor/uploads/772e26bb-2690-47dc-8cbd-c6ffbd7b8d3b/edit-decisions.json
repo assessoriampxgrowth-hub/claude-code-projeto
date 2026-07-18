@@ -1,0 +1,107 @@
+[
+  {
+    "time": 3.9000000953674316,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 5.980000019073486,
+    "action": "hard-cut",
+    "score": {
+      "silenceScore": 0.45,
+      "semanticChangeScore": 1,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.386
+    },
+    "reason": "pausa natural entre frases"
+  },
+  {
+    "time": 8,
+    "action": "none",
+    "score": {
+      "silenceScore": 0.2,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.008400000000000001
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 11.520000457763672,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0.6666666666666666,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.0394
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 15.5,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0.6666666666666666,
+      "hookScore": 0,
+      "ctaScore": 0,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.26266666666666666
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 17.18000030517578,
+    "action": "none",
+    "score": {
+      "silenceScore": 0,
+      "semanticChangeScore": 0,
+      "keywordImpactScore": 0,
+      "hookScore": 0,
+      "ctaScore": 0.7,
+      "emotionalIntensityScore": 0,
+      "recentTransitionPenalty": 0,
+      "total": 0.08399999999999999
+    },
+    "reason": "fala contínua / sem pausa"
+  },
+  {
+    "time": 18.020000457763672,
+    "action": "cut+sfx",
+    "score": {
+      "silenceScore": 1,
+      "semanticChangeScore": 0.6,
+      "keywordImpactScore": 0.3333333333333333,
+      "hookScore": 0,
+      "ctaScore": 0.7,
+      "emotionalIntensityScore": 0.5,
+      "recentTransitionPenalty": 0,
+      "total": 0.6133333333333334
+    },
+    "reason": "fim de frase com ênfase"
+  }
+]

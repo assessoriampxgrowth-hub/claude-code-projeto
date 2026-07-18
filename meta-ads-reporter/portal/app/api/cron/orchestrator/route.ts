@@ -39,7 +39,7 @@ async function executar(req: NextRequest) {
 
   const rotas: string[] = [];
   if (ehDiaUtil) {
-    rotas.push("/api/cron/daily", "/api/cron/saldo", "/api/cron/cpl", "/api/cron/cobranca-clientes", "/api/cron/followup", "/api/cron/capi-upload", "/api/cron/agenda");
+    rotas.push("/api/cron/daily", "/api/cron/saldo", "/api/cron/entrega", "/api/cron/cpl", "/api/cron/cobranca-clientes", "/api/cron/followup", "/api/cron/capi-upload", "/api/cron/agenda");
   }
   if (diaSemana === 1) {
     rotas.push(

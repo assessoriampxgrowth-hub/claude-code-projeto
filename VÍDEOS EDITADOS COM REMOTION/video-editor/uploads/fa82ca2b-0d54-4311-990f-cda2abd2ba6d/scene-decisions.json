@@ -1,0 +1,124 @@
+[
+  {
+    "scene": {
+      "id": "hook-001",
+      "type": "hook",
+      "startTime": 0.7,
+      "endTime": 5.7,
+      "title": "Investimento Mínimo",
+      "subtitle": "Menos de R$50 para gerar lucro",
+      "emphasis": 0.9,
+      "illustrationPrompt": "hands holding Brazilian real money bills with profit arrows going up",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "blend-overlay",
+      "opacity": 0.3
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "hands holding Brazilian real money bills with profit arrows going up"
+  },
+  {
+    "scene": {
+      "id": "solution-001",
+      "type": "solution",
+      "startTime": 5.8,
+      "endTime": 12.8,
+      "title": "Treinamento Completo",
+      "subtitle": "Configure sua primeira campanha em 24h",
+      "emphasis": 0.8,
+      "illustrationPrompt": "modern laptop screen showing advertising campaign setup interface with clock showing 24 hours",
+      "zoomSuggestion": "none",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "transition-001",
+      "type": "transition",
+      "startTime": 13,
+      "endTime": 13.6,
+      "title": "Demonstração",
+      "subtitle": "Veja na tela",
+      "emphasis": 0.6,
+      "illustrationPrompt": "computer screen with arrow pointing to display",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "proof-001",
+      "type": "proof",
+      "startTime": 14,
+      "endTime": 19.6,
+      "title": "Resultados Reais",
+      "subtitle": "R$2.294 investido = R$16.882 vendido",
+      "emphasis": 1,
+      "illustrationPrompt": "dashboard showing campaign results with green profit numbers and charts going up",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "benefit-001",
+      "type": "benefit",
+      "startTime": 19.8,
+      "endTime": 26.3,
+      "title": "Para Iniciantes",
+      "subtitle": "Aprenda mesmo sem experiência",
+      "emphasis": 0.8,
+      "illustrationPrompt": "person learning at computer with beginner-friendly interface and success symbols",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "pip",
+      "pipPosition": "bottom-right",
+      "pipScale": 0.3,
+      "opacity": 1
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "person learning at computer with beginner-friendly interface and success symbols"
+  },
+  {
+    "scene": {
+      "id": "cta-001",
+      "type": "cta",
+      "startTime": 26.6,
+      "endTime": 29.1,
+      "title": "Call to Action",
+      "subtitle": "Clique em saiba mais",
+      "emphasis": 0.9,
+      "illustrationPrompt": "bright call-to-action button with finger clicking gesture and learn more text",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "split-screen",
+      "splitRatio": 0.5
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "bright call-to-action button with finger clicking gesture and learn more text"
+  }
+]

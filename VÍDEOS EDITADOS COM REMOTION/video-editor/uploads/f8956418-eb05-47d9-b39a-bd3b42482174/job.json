@@ -1,0 +1,137 @@
+{
+  "id": "f8956418-eb05-47d9-b39a-bd3b42482174",
+  "status": "completed",
+  "config": {
+    "preset": "venda-agressiva",
+    "captionStyle": "aggressive",
+    "musicEnabled": true,
+    "musicMood": "energetic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:37:34.165Z",
+      "completedAt": "2026-04-14T16:37:44.060Z",
+      "progress": 100,
+      "details": "720x1280, 60.1s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:37:44.061Z",
+      "completedAt": "2026-04-14T16:37:44.218Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:37:44.219Z",
+      "completedAt": "2026-04-14T16:37:48.953Z",
+      "progress": 100,
+      "details": "17 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:37:48.953Z",
+      "completedAt": "2026-04-14T16:38:04.449Z",
+      "progress": 100,
+      "details": "7 scenes planned, mood: energetic"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:04.450Z",
+      "completedAt": "2026-04-14T16:38:10.945Z",
+      "progress": 100,
+      "details": "Removed 10.5s of silence, 19 cuts"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:10.946Z",
+      "completedAt": "2026-04-14T16:38:10.951Z",
+      "progress": 100,
+      "details": "96 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:10.954Z",
+      "completedAt": "2026-04-14T16:38:10.970Z",
+      "progress": 100,
+      "details": "7 scenes configured, 4 need images, 7 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:10.974Z",
+      "completedAt": "2026-04-14T16:38:10.984Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:10.991Z",
+      "completedAt": "2026-04-14T16:38:12.822Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-04-14T16:38:12.823Z",
+      "completedAt": "2026-04-14T16:38:17.557Z",
+      "error": "You passed C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\remotion\\src\\Root.tsx as your entry point, but this file does not contain \"registerRoot\". You should use the file that calls registerRoot() as the entry point. To ignore this error, pass \"ignoreRegisterRootWarning\" to bundle(). This error cannot be ignored on the CLI."
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-04-14T16:38:17.586Z",
+      "completedAt": "2026-04-14T16:38:17.762Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-04-14T16:37:34.159Z",
+  "updatedAt": "2026-04-14T16:38:17.764Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\dea70f5b-6256-4e0a-bf53-326c3993bd6e\\original.mp4",
+  "videoDuration": 60.137,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\trimmed.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\transcription.json",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\audio-normalized.wav",
+  "error": "Completed with failures in: render",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\CLAUDE CODE PROJETO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\f8956418-eb05-47d9-b39a-bd3b42482174\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+[
+  {
+    "scene": {
+      "id": "scene-001",
+      "type": "hook",
+      "startTime": 0.7,
+      "endTime": 5.7,
+      "title": "Investimento Baixo, Lucro Alto",
+      "subtitle": "Menos de R$50 para gerar lucro",
+      "emphasis": 0.9,
+      "illustrationPrompt": "money bills and coins floating around a smartphone showing profit graphs",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "blend-overlay",
+      "opacity": 0.3
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "money bills and coins floating around a smartphone showing profit graphs"
+  },
+  {
+    "scene": {
+      "id": "scene-002",
+      "type": "solution",
+      "startTime": 5.8,
+      "endTime": 12.8,
+      "title": "Treinamento Completo",
+      "subtitle": "Configure sua campanha em menos de 24h",
+      "emphasis": 0.7,
+      "illustrationPrompt": "digital training interface with campaign setup screens and timer showing 24 hours",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-003",
+      "type": "transition",
+      "startTime": 13,
+      "endTime": 13.6,
+      "title": "Prova Real",
+      "subtitle": "Veja na tela",
+      "emphasis": 0.5,
+      "illustrationPrompt": "computer screen with analytics dashboard highlighting results",
+      "zoomSuggestion": "none",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-004",
+      "type": "proof",
+      "startTime": 14,
+      "endTime": 19.6,
+      "title": "Resultados Comprovados",
+      "subtitle": "R$2.294 investidos = R$16.882 em vendas",
+      "emphasis": 0.8,
+      "illustrationPrompt": "dashboard showing campaign results with investment vs revenue comparison chart",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-005",
+      "type": "benefit",
+      "startTime": 19.8,
+      "endTime": 26.3,
+      "title": "Aprenda do Zero",
+      "subtitle": "Mesmo sem experiência em anúncios",
+      "emphasis": 0.6,
+      "illustrationPrompt": "beginner turning into expert with ads manager interface in background",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "pip",
+      "pipPosition": "bottom-right",
+      "pipScale": 0.3,
+      "opacity": 1
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "beginner turning into expert with ads manager interface in background"
+  },
+  {
+    "scene": {
+      "id": "scene-006",
+      "type": "cta",
+      "startTime": 26.6,
+      "endTime": 29.1,
+      "title": "Acesse Agora",
+      "subtitle": "Clique em saiba mais",
+      "emphasis": 0.9,
+      "illustrationPrompt": "bright call-to-action button with arrow pointing and glowing effects",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "split-screen",
+      "splitRatio": 0.5
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "bright call-to-action button with arrow pointing and glowing effects"
+  }
+]

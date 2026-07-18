@@ -1,0 +1,9 @@
+FALHA - Formato 1080x1920 9:16: Esperado 1080x1920, recebido 576x1024
+OK - Legenda na parte inferior (safe area): positionY=0.76
+OK - Fonte permitida: Plus Jakarta Sans
+OK - Legenda legível (tamanho + stroke): OK
+OK - Rosto não cortado (zoom <= 1.15): maxZoom=1.08
+OK - Zoom não repetitivo: 0.7 zooms / 15s
+OK - Transições em momentos lógicos: 0 transições, todas justificadas
+OK - SFX não exagerado: 1/10 SFX
+Avisos: Vídeo não está em 9:16 — será forçado no render.

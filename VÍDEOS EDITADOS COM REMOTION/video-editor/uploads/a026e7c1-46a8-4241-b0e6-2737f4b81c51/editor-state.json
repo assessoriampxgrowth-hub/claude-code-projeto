@@ -1,0 +1,106 @@
+{
+  "editPlan": {
+    "format": "short_form",
+    "mainTheme": "treinamento para campanhas publicitarias lucrativas",
+    "targetDuration": 30,
+    "mood": "energetic",
+    "pace": "fast",
+    "musicMood": "energetic",
+    "highlights": [
+      "R$50",
+      "lucro",
+      "24 horas",
+      "R$16.882",
+      "campanha lucrativa"
+    ],
+    "scenes": [
+      {
+        "id": "hook-001",
+        "type": "hook",
+        "startTime": 0.7,
+        "endTime": 5.7,
+        "title": "Investimento Mínimo, Lucro Máximo",
+        "subtitle": "Menos de R$50 para gerar lucro",
+        "emphasis": 0.9,
+        "illustrationPrompt": "Money bills and coins with profit growth arrow, green and gold colors",
+        "zoomSuggestion": "in",
+        "transitionIn": "slide-left",
+        "transitionOut": "fade"
+      },
+      {
+        "id": "solution-001",
+        "type": "solution",
+        "startTime": 5.8,
+        "endTime": 12.8,
+        "title": "Treinamento Completo",
+        "subtitle": "Primeira campanha em 24h",
+        "emphasis": 0.8,
+        "illustrationPrompt": "Digital marketing dashboard with campaign setup interface, modern blue design",
+        "zoomSuggestion": "none",
+        "transitionIn": "fade",
+        "transitionOut": "slide"
+      },
+      {
+        "id": "transition-001",
+        "type": "transition",
+        "startTime": 13,
+        "endTime": 14,
+        "title": "Prova Real",
+        "subtitle": "Veja os resultados",
+        "emphasis": 0.7,
+        "illustrationPrompt": "Computer screen with analytics data, professional setup",
+        "zoomSuggestion": "in",
+        "transitionIn": "slide",
+        "transitionOut": "cut"
+      },
+      {
+        "id": "proof-001",
+        "type": "proof",
+        "startTime": 14,
+        "endTime": 19.6,
+        "title": "Resultados Comprovados",
+        "subtitle": "R$2.294 investidos = R$16.882 vendidos",
+        "emphasis": 0.9,
+        "illustrationPrompt": "Sales dashboard showing ROI numbers, green profit indicators, financial charts",
+        "zoomSuggestion": "in",
+        "transitionIn": "cut",
+        "transitionOut": "fade"
+      },
+      {
+        "id": "benefit-001",
+        "type": "benefit",
+        "startTime": 19.8,
+        "endTime": 26.3,
+        "title": "Para Iniciantes",
+        "subtitle": "Mesmo sem experiência em anúncios",
+        "emphasis": 0.8,
+        "illustrationPrompt": "Beginner learning digital marketing, step by step tutorial interface",
+        "zoomSuggestion": "out",
+        "transitionIn": "fade",
+        "transitionOut": "slide"
+      },
+      {
+        "id": "cta-001",
+        "type": "cta",
+        "startTime": 26.6,
+        "endTime": 29.1,
+        "title": "Ação Imediata",
+        "subtitle": "Clique em saiba mais agora",
+        "emphasis": 0.9,
+        "illustrationPrompt": "Bright call-to-action button with clicking animation, orange and white design",
+        "zoomSuggestion": "in",
+        "transitionIn": "slide",
+        "transitionOut": "cut"
+      }
+    ]
+  },
+  "effects": {
+    "colorGrading": "none",
+    "vignette": false,
+    "vignetteIntensity": 0.3,
+    "letterbox": false,
+    "letterboxRatio": 2.35,
+    "blurBackground": false
+  },
+  "captionStyleName": "bold"
+}

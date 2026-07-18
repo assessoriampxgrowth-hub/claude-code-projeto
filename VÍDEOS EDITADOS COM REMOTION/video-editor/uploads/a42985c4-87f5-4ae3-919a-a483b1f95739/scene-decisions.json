@@ -1,0 +1,63 @@
+[
+  {
+    "scene": {
+      "id": "scene-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 1.5,
+      "title": "Nossa Agência",
+      "subtitle": "Esse aqui é a nossa",
+      "emphasis": 0.9,
+      "illustrationPrompt": "modern marketing agency office with creative workspace and team collaboration",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "blend-overlay",
+      "opacity": 0.3
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "modern marketing agency office with creative workspace and team collaboration"
+  },
+  {
+    "scene": {
+      "id": "scene-002",
+      "type": "narration",
+      "startTime": 1.5,
+      "endTime": 3.6,
+      "title": "Agência de Marcha",
+      "subtitle": "agência de marcha",
+      "emphasis": 0.8,
+      "illustrationPrompt": "professional marketing team working on campaigns with digital screens and creative materials",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "scene-003",
+      "type": "cta",
+      "startTime": 3.6,
+      "endTime": 6.4,
+      "title": "Quer Conhecer?",
+      "subtitle": "se você quiser conhecer...",
+      "emphasis": 0.9,
+      "illustrationPrompt": "inviting call-to-action visual with contact information and professional branding elements",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "split-screen",
+      "splitRatio": 0.5
+    },
+    "shouldGenerateImage": true,
+    "imagePrompt": "inviting call-to-action visual with contact information and professional branding elements"
+  }
+]

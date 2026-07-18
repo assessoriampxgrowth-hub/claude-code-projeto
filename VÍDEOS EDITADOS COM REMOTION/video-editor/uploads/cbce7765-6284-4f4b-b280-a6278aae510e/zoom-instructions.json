@@ -1,0 +1,42 @@
+[
+  {
+    "startTime": 0.7,
+    "endTime": 5.7,
+    "scale": 1.1755,
+    "focusX": 0.5,
+    "focusY": 0.35,
+    "easing": "easeIn"
+  },
+  {
+    "startTime": 5.8,
+    "endTime": 12.8,
+    "scale": 1.0455,
+    "focusX": 0.5,
+    "focusY": 0.4,
+    "easing": "easeOut"
+  },
+  {
+    "startTime": 14,
+    "endTime": 19.6,
+    "scale": 1.0832000000000002,
+    "focusX": 0.5,
+    "focusY": 0.4,
+    "easing": "easeInOut"
+  },
+  {
+    "startTime": 19.8,
+    "endTime": 26.3,
+    "scale": 1.0936000000000001,
+    "focusX": 0.5,
+    "focusY": 0.4,
+    "easing": "easeOut"
+  },
+  {
+    "startTime": 26.6,
+    "endTime": 29.1,
+    "scale": 1.234,
+    "focusX": 0.5,
+    "focusY": 0.5,
+    "easing": "easeIn"
+  }
+]

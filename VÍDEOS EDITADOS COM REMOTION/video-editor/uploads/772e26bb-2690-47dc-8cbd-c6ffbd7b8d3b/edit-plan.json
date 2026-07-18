@@ -1,0 +1,84 @@
+{
+  "format": "short_form",
+  "mainTheme": "marketing digital e presença no Google para empresas",
+  "targetDuration": 20,
+  "mood": "energetic",
+  "pace": "fast",
+  "musicMood": "energetic",
+  "highlights": [
+    "90%",
+    "Google",
+    "vendas",
+    "perdendo",
+    "concorrente",
+    "solução",
+    "WhatsApp"
+  ],
+  "scenes": [
+    {
+      "id": "hook-001",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 6,
+      "title": "Estatística Impactante",
+      "subtitle": "90% das vendas acontecem pelo Google",
+      "emphasis": 0.9,
+      "illustrationPrompt": "businessman looking at Google search results on computer screen with percentage statistics floating around",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "problem-001",
+      "type": "problem",
+      "startTime": 6.2,
+      "endTime": 11.5,
+      "title": "Identificação do Problema",
+      "subtitle": "Empresa não posicionada no Google",
+      "emphasis": 0.7,
+      "illustrationPrompt": "empty Google My Business profile with missing information and red warning signs",
+      "zoomSuggestion": "out",
+      "transitionIn": "fade",
+      "transitionOut": "slide"
+    },
+    {
+      "id": "problem-002",
+      "type": "problem",
+      "startTime": 11.7,
+      "endTime": 15.5,
+      "title": "Consequências",
+      "subtitle": "Perdendo vendas para concorrentes",
+      "emphasis": 0.8,
+      "illustrationPrompt": "competitor business stealing customers, arrows pointing away from one business to another",
+      "zoomSuggestion": "in",
+      "transitionIn": "slide",
+      "transitionOut": "fade"
+    },
+    {
+      "id": "solution-001",
+      "type": "solution",
+      "startTime": 15.6,
+      "endTime": 18,
+      "title": "Apresentação da Solução",
+      "subtitle": "Resolução imediata do problema",
+      "emphasis": 0.8,
+      "illustrationPrompt": "professional consultant with lightbulb and solution icons, positive energy",
+      "zoomSuggestion": "in",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    },
+    {
+      "id": "cta-001",
+      "type": "cta",
+      "startTime": 18.4,
+      "endTime": 20.2,
+      "title": "Chamada para Ação",
+      "subtitle": "Clique e fale no WhatsApp",
+      "emphasis": 1,
+      "illustrationPrompt": "WhatsApp button with click animation and contact icons, call-to-action design",
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    }
+  ]
+}

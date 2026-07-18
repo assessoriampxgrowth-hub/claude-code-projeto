@@ -1,0 +1,137 @@
+{
+  "id": "13029a9b-aff9-4731-b5c3-8a892b768aba",
+  "status": "completed",
+  "config": {
+    "preset": "premium",
+    "captionStyle": "premium",
+    "musicEnabled": true,
+    "musicMood": "cinematic",
+    "scenesEnabled": true,
+    "aggressiveCuts": true,
+    "zoomEnabled": true
+  },
+  "steps": [
+    {
+      "name": "normalize",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:16.718Z",
+      "completedAt": "2026-05-16T13:59:24.745Z",
+      "progress": 100,
+      "details": "720x1280, 60.1s, 30fps"
+    },
+    {
+      "name": "extract-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:24.746Z",
+      "completedAt": "2026-05-16T13:59:24.909Z",
+      "progress": 100,
+      "details": "Audio extracted to WAV"
+    },
+    {
+      "name": "transcribe",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:24.910Z",
+      "completedAt": "2026-05-16T13:59:29.748Z",
+      "progress": 100,
+      "details": "17 segments transcribed"
+    },
+    {
+      "name": "analyze",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:29.749Z",
+      "completedAt": "2026-05-16T13:59:47.708Z",
+      "progress": 100,
+      "details": "7 scenes planned, mood: energetic"
+    },
+    {
+      "name": "detect-silences",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:47.708Z",
+      "completedAt": "2026-05-16T13:59:54.328Z",
+      "progress": 100,
+      "details": "Removed 6.4s of silence, 9 cuts"
+    },
+    {
+      "name": "generate-captions",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:54.329Z",
+      "completedAt": "2026-05-16T13:59:54.333Z",
+      "progress": 100,
+      "details": "50 caption blocks generated"
+    },
+    {
+      "name": "generate-scenes",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:54.334Z",
+      "completedAt": "2026-05-16T13:59:54.341Z",
+      "progress": 100,
+      "details": "7 scenes configured, 4 need images, 3 zoom instructions"
+    },
+    {
+      "name": "select-music",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:54.343Z",
+      "completedAt": "2026-05-16T13:59:54.348Z",
+      "progress": 100,
+      "details": "No music tracks available in library"
+    },
+    {
+      "name": "mix-audio",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:54.349Z",
+      "completedAt": "2026-05-16T13:59:56.083Z",
+      "progress": 100,
+      "details": "Audio normalized (no music)"
+    },
+    {
+      "name": "render",
+      "status": "failed",
+      "startedAt": "2026-05-16T13:59:56.084Z",
+      "completedAt": "2026-05-16T13:59:58.159Z",
+      "error": "Can only download URLs starting with http:// or https://, got \"file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/uploads/13029a9b-aff9-4731-b5c3-8a892b768aba/trimmed.mp4\"\n    at getClient (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:470:9)\n    at file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:474:20\n    at new Promise (<anonymous>)\n    at readFileWithoutRedirect (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:473:10)\n    at readFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:492:39)\n    at file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:595:5\n    at new Promise (<anonymous>)\n    at downloadFileWithoutRetries (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:554:10)\n    at downloadFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:660:23)\n    at downloadAsset (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:14707:24)\n    at listener (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:15170:7)\n    at Server.<anonymous> (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:16050:14)\n    at Server.emit (node:events:508:28)\n    at parserOnIncoming (node:_http_server:1210:12)\n    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17)\n    at getClient (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:470:9)\n    at file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:474:20\n    at new Promise (<anonymous>)\n    at readFileWithoutRedirect (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:473:10)\n    at readFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:492:39)\n    at file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:595:5\n    at new Promise (<anonymous>)\n    at downloadFileWithoutRetries (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:554:10)\n    at downloadFile (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:660:23)\n    at downloadAsset (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:14707:24)\n    at listener (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:15170:7)\n    at Server.<anonymous> (file:///C:/Users/Matheus/Desktop/MEM%C3%93RIA%20CLAUDE%20CODE/CODIGO/V%C3%8DDEOS%20EDITADOS%20COM%20REMOTION/video-editor/node_modules/@remotion/renderer/dist/esm/index.mjs:16050:14)\n    at Server.emit (node:events:508:28)\n    at parserOnIncoming (node:_http_server:1210:12)\n    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17)"
+    },
+    {
+      "name": "generate-outputs",
+      "status": "completed",
+      "startedAt": "2026-05-16T13:59:58.164Z",
+      "completedAt": "2026-05-16T13:59:58.331Z",
+      "progress": 100,
+      "details": "4 output files generated"
+    }
+  ],
+  "createdAt": "2026-05-16T13:59:16.714Z",
+  "updatedAt": "2026-05-16T13:59:58.333Z",
+  "originalVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\198742d0-3f42-4a83-9eaf-b1e73327ef60\\original.mp4",
+  "videoDuration": 60.137,
+  "videoWidth": 720,
+  "videoHeight": 1280,
+  "normalizedVideoPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\trimmed.mp4",
+  "audioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\audio.wav",
+  "transcriptionPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\transcription.json",
+  "editPlanPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\edit-plan.json",
+  "mixedAudioPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\audio-normalized.wav",
+  "error": "Completed with failures in: render",
+  "thumbnailPath": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\thumbnail.jpg",
+  "outputFiles": [
+    {
+      "name": "Thumbnail",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\thumbnail.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "Subtitles (SRT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\captions.srt",
+      "type": "text/srt"
+    },
+    {
+      "name": "Subtitles (VTT)",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\captions.vtt",
+      "type": "text/vtt"
+    },
+    {
+      "name": "Metadata",
+      "path": "C:\\Users\\Matheus\\Desktop\\MEMÓRIA CLAUDE CODE\\CODIGO\\VÍDEOS EDITADOS COM REMOTION\\video-editor\\uploads\\13029a9b-aff9-4731-b5c3-8a892b768aba\\metadata.json",
+      "type": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,1214 @@
+[
+  {
+    "id": "0d5f2660-1ae4-48b8-8e13-19cd44490bfa",
+    "startTime": 0.7400000095367432,
+    "endTime": 1.9023529080783619,
+    "words": [
+      {
+        "word": "Menos",
+        "start": 0.7400000095367432,
+        "end": 1.0305882341721477,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 1.0305882341721477,
+        "end": 1.3211764588075525,
+        "isHighlight": false
+      },
+      {
+        "word": "R$50",
+        "start": 1.3211764588075525,
+        "end": 1.6117646834429573,
+        "isHighlight": false
+      },
+      {
+        "word": "é",
+        "start": 1.6117646834429573,
+        "end": 1.9023529080783619,
+        "isHighlight": false
+      }
+    ],
+    "text": "Menos de R$50 é",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "5ed77790-6f84-43b9-bc48-11a84a9bbc53",
+    "startTime": 1.9023529080783619,
+    "endTime": 3.0647058066199806,
+    "words": [
+      {
+        "word": "o",
+        "start": 1.9023529080783619,
+        "end": 2.1929411327137665,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 2.1929411327137665,
+        "end": 2.4835293573491715,
+        "isHighlight": false
+      },
+      {
+        "word": "você",
+        "start": 2.4835293573491715,
+        "end": 2.774117581984576,
+        "isHighlight": false
+      },
+      {
+        "word": "paga",
+        "start": 2.774117581984576,
+        "end": 3.0647058066199806,
+        "isHighlight": false
+      }
+    ],
+    "text": "o que você paga",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "5b93e81d-7cfa-4c04-a5e3-5b9cf7a21f11",
+    "startTime": 3.0647058066199806,
+    "endTime": 4.2270587051616,
+    "words": [
+      {
+        "word": "para",
+        "start": 3.0647058066199806,
+        "end": 3.355294031255385,
+        "isHighlight": false
+      },
+      {
+        "word": "gerar",
+        "start": 3.355294031255385,
+        "end": 3.6458822558907897,
+        "isHighlight": false
+      },
+      {
+        "word": "isso",
+        "start": 3.6458822558907897,
+        "end": 3.9364704805261947,
+        "isHighlight": false
+      },
+      {
+        "word": "aqui",
+        "start": 3.9364704805261947,
+        "end": 4.2270587051616,
+        "isHighlight": false
+      }
+    ],
+    "text": "para gerar isso aqui",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "fca5a41a-d20e-41f4-959e-664cd8c7b40b",
+    "startTime": 4.2270587051616,
+    "endTime": 5.389411603703218,
+    "words": [
+      {
+        "word": "de",
+        "start": 4.2270587051616,
+        "end": 4.517646929797004,
+        "isHighlight": false
+      },
+      {
+        "word": "lucro",
+        "start": 4.517646929797004,
+        "end": 4.808235154432409,
+        "isHighlight": true
+      },
+      {
+        "word": "no",
+        "start": 4.808235154432409,
+        "end": 5.098823379067813,
+        "isHighlight": false
+      },
+      {
+        "word": "seu",
+        "start": 5.098823379067813,
+        "end": 5.389411603703218,
+        "isHighlight": false
+      }
+    ],
+    "text": "de lucro no seu",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "0d2b0b5d-8a9d-48fe-a161-b669544ee0af",
+    "startTime": 5.389411603703218,
+    "endTime": 5.78000020980835,
+    "words": [
+      {
+        "word": "bolso.",
+        "start": 5.389411603703218,
+        "end": 5.679999828338623,
+        "isHighlight": false
+      }
+    ],
+    "text": "bolso.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "8c64d5cd-8242-4add-a779-0678d1145548",
+    "startTime": 5.78000020980835,
+    "endTime": 6.735555701785618,
+    "words": [
+      {
+        "word": "É",
+        "start": 5.78000020980835,
+        "end": 6.018889082802667,
+        "isHighlight": false
+      },
+      {
+        "word": "isso",
+        "start": 6.018889082802667,
+        "end": 6.257777955796984,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 6.257777955796984,
+        "end": 6.496666828791301,
+        "isHighlight": false
+      },
+      {
+        "word": "eu",
+        "start": 6.496666828791301,
+        "end": 6.735555701785618,
+        "isHighlight": false
+      }
+    ],
+    "text": "É isso que eu",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "074d356a-0129-4088-8eb4-db51e53d785e",
+    "startTime": 6.735555701785618,
+    "endTime": 7.691111193762885,
+    "words": [
+      {
+        "word": "vou",
+        "start": 6.735555701785618,
+        "end": 6.974444574779934,
+        "isHighlight": false
+      },
+      {
+        "word": "te",
+        "start": 6.974444574779934,
+        "end": 7.213333447774251,
+        "isHighlight": false
+      },
+      {
+        "word": "ensinar",
+        "start": 7.213333447774251,
+        "end": 7.452222320768568,
+        "isHighlight": false
+      },
+      {
+        "word": "no",
+        "start": 7.452222320768568,
+        "end": 7.691111193762885,
+        "isHighlight": false
+      }
+    ],
+    "text": "vou te ensinar no",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "0a4c2a97-ca35-45f0-b8b1-f6e3fb55a4d4",
+    "startTime": 7.691111193762885,
+    "endTime": 8.646666685740152,
+    "words": [
+      {
+        "word": "treinamento,",
+        "start": 7.691111193762885,
+        "end": 7.930000066757202,
+        "isHighlight": false
+      },
+      {
+        "word": "onde",
+        "start": 7.930000066757202,
+        "end": 8.168888939751518,
+        "isHighlight": false
+      },
+      {
+        "word": "eu",
+        "start": 8.168888939751518,
+        "end": 8.407777812745836,
+        "isHighlight": false
+      },
+      {
+        "word": "vou",
+        "start": 8.407777812745836,
+        "end": 8.646666685740152,
+        "isHighlight": false
+      }
+    ],
+    "text": "treinamento, onde eu vou",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "73692b81-aa53-49c3-8674-086e79bfddd8",
+    "startTime": 8.646666685740152,
+    "endTime": 9.60222217771742,
+    "words": [
+      {
+        "word": "te",
+        "start": 8.646666685740152,
+        "end": 8.88555555873447,
+        "isHighlight": false
+      },
+      {
+        "word": "ensinar",
+        "start": 8.88555555873447,
+        "end": 9.124444431728786,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 9.124444431728786,
+        "end": 9.363333304723103,
+        "isHighlight": false
+      },
+      {
+        "word": "configurar",
+        "start": 9.363333304723103,
+        "end": 9.60222217771742,
+        "isHighlight": false
+      }
+    ],
+    "text": "te ensinar a configurar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "05e1acb7-1188-4596-b52b-3240ee4c620f",
+    "startTime": 9.60222217771742,
+    "endTime": 10.769999980926514,
+    "words": [
+      {
+        "word": "a",
+        "start": 9.60222217771742,
+        "end": 9.841111050711739,
+        "isHighlight": false
+      },
+      {
+        "word": "sua",
+        "start": 9.841111050711739,
+        "end": 10.079999923706055,
+        "isHighlight": false
+      },
+      {
+        "word": "primeira",
+        "start": 10.079999923706055,
+        "end": 10.424999952316284,
+        "isHighlight": false
+      },
+      {
+        "word": "campanha",
+        "start": 10.424999952316284,
+        "end": 10.769999980926514,
+        "isHighlight": false
+      }
+    ],
+    "text": "a sua primeira campanha",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "3b58fe75-d58a-4a06-8887-5431a3fe75c9",
+    "startTime": 10.769999980926514,
+    "endTime": 12.150000095367432,
+    "words": [
+      {
+        "word": "lucrativa",
+        "start": 10.769999980926514,
+        "end": 11.115000009536743,
+        "isHighlight": false
+      },
+      {
+        "word": "em",
+        "start": 11.115000009536743,
+        "end": 11.460000038146973,
+        "isHighlight": false
+      },
+      {
+        "word": "menos",
+        "start": 11.460000038146973,
+        "end": 11.805000066757202,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 11.805000066757202,
+        "end": 12.150000095367432,
+        "isHighlight": false
+      }
+    ],
+    "text": "lucrativa em menos de",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "0d51149b-d069-4585-9010-8d446b53c0ce",
+    "startTime": 12.150000095367432,
+    "endTime": 12.84000015258789,
+    "words": [
+      {
+        "word": "24",
+        "start": 12.150000095367432,
+        "end": 12.495000123977661,
+        "isHighlight": false
+      },
+      {
+        "word": "horas.",
+        "start": 12.495000123977661,
+        "end": 12.84000015258789,
+        "isHighlight": false
+      }
+    ],
+    "text": "24 horas.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "b0a5182a-63df-4822-8368-2dde77cae2eb",
+    "startTime": 13.039999961853027,
+    "endTime": 13.839999961853028,
+    "words": [
+      {
+        "word": "Veja",
+        "start": 13.039999961853027,
+        "end": 13.184999942779541,
+        "isHighlight": false
+      },
+      {
+        "word": "na",
+        "start": 13.184999942779541,
+        "end": 13.329999923706055,
+        "isHighlight": false
+      },
+      {
+        "word": "minha",
+        "start": 13.329999923706055,
+        "end": 13.474999904632568,
+        "isHighlight": false
+      },
+      {
+        "word": "tela.",
+        "start": 13.474999904632568,
+        "end": 13.619999885559082,
+        "isHighlight": false
+      }
+    ],
+    "text": "Veja na minha tela.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "52a2fd1d-152b-4c34-a553-a37351aa1c40",
+    "startTime": 14,
+    "endTime": 16.47111087375217,
+    "words": [
+      {
+        "word": "A",
+        "start": 14,
+        "end": 14.617777718438042,
+        "isHighlight": false
+      },
+      {
+        "word": "gente",
+        "start": 14.617777718438042,
+        "end": 15.235555436876085,
+        "isHighlight": false
+      },
+      {
+        "word": "investiu",
+        "start": 15.235555436876085,
+        "end": 15.853333155314127,
+        "isHighlight": false
+      },
+      {
+        "word": "R$2.294",
+        "start": 15.853333155314127,
+        "end": 16.47111087375217,
+        "isHighlight": false
+      }
+    ],
+    "text": "A gente investiu R$2.294",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "e40c55cb-232d-4ce2-a37c-850282304a08",
+    "startTime": 16.47111087375217,
+    "endTime": 18.94222174750434,
+    "words": [
+      {
+        "word": "e",
+        "start": 16.47111087375217,
+        "end": 17.088888592190212,
+        "isHighlight": false
+      },
+      {
+        "word": "vendeu",
+        "start": 17.088888592190212,
+        "end": 17.706666310628254,
+        "isHighlight": false
+      },
+      {
+        "word": "R$16.882",
+        "start": 17.706666310628254,
+        "end": 18.3244440290663,
+        "isHighlight": false
+      },
+      {
+        "word": "nessa",
+        "start": 18.3244440290663,
+        "end": 18.94222174750434,
+        "isHighlight": false
+      }
+    ],
+    "text": "e vendeu R$16.882 nessa",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "c4b2eb3f-ebef-4b7f-99bd-b71ec00ec2e1",
+    "startTime": 18.94222174750434,
+    "endTime": 19.559999465942383,
+    "words": [
+      {
+        "word": "campanha.",
+        "start": 18.94222174750434,
+        "end": 19.559999465942383,
+        "isHighlight": false
+      }
+    ],
+    "text": "campanha.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "39682a5d-379b-4f43-9280-2753d70ed626",
+    "startTime": 19.799999237060547,
+    "endTime": 20.527271964333274,
+    "words": [
+      {
+        "word": "Você",
+        "start": 19.799999237060547,
+        "end": 19.98181741887873,
+        "isHighlight": false
+      },
+      {
+        "word": "quer",
+        "start": 19.98181741887873,
+        "end": 20.16363560069691,
+        "isHighlight": false
+      },
+      {
+        "word": "aprender",
+        "start": 20.16363560069691,
+        "end": 20.345453782515094,
+        "isHighlight": false
+      },
+      {
+        "word": "a",
+        "start": 20.345453782515094,
+        "end": 20.527271964333274,
+        "isHighlight": false
+      }
+    ],
+    "text": "Você quer aprender a",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "2ea3f2bc-4e32-4308-99ca-f3885bcccdad",
+    "startTime": 20.527271964333274,
+    "endTime": 21.254544691606,
+    "words": [
+      {
+        "word": "fazer",
+        "start": 20.527271964333274,
+        "end": 20.709090146151457,
+        "isHighlight": false
+      },
+      {
+        "word": "isso",
+        "start": 20.709090146151457,
+        "end": 20.890908327969637,
+        "isHighlight": false
+      },
+      {
+        "word": "em",
+        "start": 20.890908327969637,
+        "end": 21.07272650978782,
+        "isHighlight": false
+      },
+      {
+        "word": "menos",
+        "start": 21.07272650978782,
+        "end": 21.254544691606,
+        "isHighlight": false
+      }
+    ],
+    "text": "fazer isso em menos",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "14702e1c-e7a5-478a-a2e5-609b88019c2c",
+    "startTime": 21.254544691606,
+    "endTime": 21.854544691606,
+    "words": [
+      {
+        "word": "de",
+        "start": 21.254544691606,
+        "end": 21.436362873424184,
+        "isHighlight": false
+      },
+      {
+        "word": "24",
+        "start": 21.436362873424184,
+        "end": 21.618181055242367,
+        "isHighlight": false
+      },
+      {
+        "word": "horas?",
+        "start": 21.618181055242367,
+        "end": 21.799999237060547,
+        "isHighlight": false
+      }
+    ],
+    "text": "de 24 horas?",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "1ae0211c-60c1-40b7-83e9-149d21dd6985",
+    "startTime": 22.200000762939453,
+    "endTime": 23.350769923283504,
+    "words": [
+      {
+        "word": "A",
+        "start": 22.200000762939453,
+        "end": 22.487693053025467,
+        "isHighlight": false
+      },
+      {
+        "word": "subir",
+        "start": 22.487693053025467,
+        "end": 22.775385343111477,
+        "isHighlight": false
+      },
+      {
+        "word": "sua",
+        "start": 22.775385343111477,
+        "end": 23.06307763319749,
+        "isHighlight": false
+      },
+      {
+        "word": "primeira",
+        "start": 23.06307763319749,
+        "end": 23.350769923283504,
+        "isHighlight": false
+      }
+    ],
+    "text": "A subir sua primeira",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "f46a511f-e473-418e-9cc9-e54c560a76a3",
+    "startTime": 23.350769923283504,
+    "endTime": 24.501539083627556,
+    "words": [
+      {
+        "word": "campanha",
+        "start": 23.350769923283504,
+        "end": 23.638462213369515,
+        "isHighlight": false
+      },
+      {
+        "word": "lucrativa,",
+        "start": 23.638462213369515,
+        "end": 23.92615450345553,
+        "isHighlight": false
+      },
+      {
+        "word": "mesmo",
+        "start": 23.92615450345553,
+        "end": 24.213846793541542,
+        "isHighlight": false
+      },
+      {
+        "word": "que",
+        "start": 24.213846793541542,
+        "end": 24.501539083627556,
+        "isHighlight": false
+      }
+    ],
+    "text": "campanha lucrativa, mesmo que",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "a5a9f0c2-7bae-400a-ac6e-4cbc6fc559ca",
+    "startTime": 24.501539083627556,
+    "endTime": 25.652308243971603,
+    "words": [
+      {
+        "word": "você",
+        "start": 24.501539083627556,
+        "end": 24.789231373713566,
+        "isHighlight": false
+      },
+      {
+        "word": "nunca",
+        "start": 24.789231373713566,
+        "end": 25.07692366379958,
+        "isHighlight": false
+      },
+      {
+        "word": "tenha",
+        "start": 25.07692366379958,
+        "end": 25.36461595388559,
+        "isHighlight": false
+      },
+      {
+        "word": "estado",
+        "start": 25.36461595388559,
+        "end": 25.652308243971603,
+        "isHighlight": false
+      }
+    ],
+    "text": "você nunca tenha estado",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "fc03beca-f537-427f-bcb5-19d1d4d53071",
+    "startTime": 25.652308243971603,
+    "endTime": 26.34000015258789,
+    "words": [
+      {
+        "word": "gerenciador",
+        "start": 25.652308243971603,
+        "end": 25.940000534057617,
+        "isHighlight": false
+      },
+      {
+        "word": "de",
+        "start": 25.940000534057617,
+        "end": 26.140000343322754,
+        "isHighlight": false
+      },
+      {
+        "word": "anúncios?",
+        "start": 26.140000343322754,
+        "end": 26.34000015258789,
+        "isHighlight": false
+      }
+    ],
+    "text": "gerenciador de anúncios?",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "b0082bbf-f1cb-4347-bd2d-41462950690a",
+    "startTime": 26.6200008392334,
+    "endTime": 27.362857546125138,
+    "words": [
+      {
+        "word": "Eu",
+        "start": 26.6200008392334,
+        "end": 26.805715015956334,
+        "isHighlight": false
+      },
+      {
+        "word": "vou",
+        "start": 26.805715015956334,
+        "end": 26.99142919267927,
+        "isHighlight": false
+      },
+      {
+        "word": "te",
+        "start": 26.99142919267927,
+        "end": 27.177143369402206,
+        "isHighlight": false
+      },
+      {
+        "word": "ensinar",
+        "start": 27.177143369402206,
+        "end": 27.362857546125138,
+        "isHighlight": false
+      }
+    ],
+    "text": "Eu vou te ensinar",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "e090c05b-a047-48dc-b219-10b51abfe632",
+    "startTime": 27.362857546125138,
+    "endTime": 27.96285754612514,
+    "words": [
+      {
+        "word": "na",
+        "start": 27.362857546125138,
+        "end": 27.548571722848074,
+        "isHighlight": false
+      },
+      {
+        "word": "outra",
+        "start": 27.548571722848074,
+        "end": 27.73428589957101,
+        "isHighlight": false
+      },
+      {
+        "word": "página.",
+        "start": 27.73428589957101,
+        "end": 27.920000076293945,
+        "isHighlight": false
+      }
+    ],
+    "text": "na outra página.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "60dd2366-bb73-4831-b7d1-130f702e29d0",
+    "startTime": 28.280000686645508,
+    "endTime": 28.920000076293945,
+    "words": [
+      {
+        "word": "Clique",
+        "start": 28.280000686645508,
+        "end": 28.440000534057617,
+        "isHighlight": false
+      },
+      {
+        "word": "aqui",
+        "start": 28.440000534057617,
+        "end": 28.600000381469727,
+        "isHighlight": false
+      },
+      {
+        "word": "em",
+        "start": 28.600000381469727,
+        "end": 28.760000228881836,
+        "isHighlight": false
+      },
+      {
+        "word": "saiba",
+        "start": 28.760000228881836,
+        "end": 28.920000076293945,
+        "isHighlight": false
+      }
+    ],
+    "text": "Clique aqui em saiba",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  },
+  {
+    "id": "cc856c08-476b-4171-a254-776ffdeeceeb",
+    "startTime": 28.920000076293945,
+    "endTime": 29.420000076293945,
+    "words": [
+      {
+        "word": "mais.",
+        "start": 28.920000076293945,
+        "end": 29.079999923706055,
+        "isHighlight": false
+      }
+    ],
+    "text": "mais.",
+    "style": {
+      "name": "premium",
+      "fontFamily": "Poppins, sans-serif",
+      "fontWeight": 700,
+      "fontSize": 46,
+      "color": "#FFFFFF",
+      "highlightColor": "#B800FF",
+      "backgroundColor": "rgba(0,0,0,0.4)",
+      "backgroundOpacity": 0.4,
+      "position": "bottom",
+      "uppercase": false,
+      "maxWordsPerLine": 4,
+      "animation": "slide",
+      "shadowColor": "rgba(0,0,0,0.6)",
+      "shadowBlur": 6
+    }
+  }
+]

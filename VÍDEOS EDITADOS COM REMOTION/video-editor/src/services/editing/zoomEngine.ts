@@ -1,172 +1,110 @@
-import type { EditPlan, EditPlanScene } from '@/services/pipeline/types';
+import type { EditPlan } from '@/services/pipeline/types';
+import type { SceneFace } from './faceDetector';
 
 export interface ZoomInstruction {
   startTime: number;
   endTime: number;
-  scale: number; // 1.0 = normal, 1.2 = 20% zoom
-  focusX: number; // 0-1, horizontal focus point
-  focusY: number; // 0-1, vertical focus point
+  scale: number; // 1.0 = normal
+  focusX: number; // 0-1
+  focusY: number; // 0-1
   easing: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut';
+  mode?: 'in' | 'out';
+  rampSeconds?: number;
 }
 
 /**
- * Generate zoom instructions based on the edit plan and zoom settings.
- * Each scene can have a zoom suggestion; this function translates
- * those into timed zoom instructions for the renderer.
+ * Strategic, face-aware zoom engine — MPX standard.
+ *
+ * Fixes the "seesaw" problem: zoom is applied only on the hook and a LIMITED
+ * number of high-emphasis scenes as punch-ins. Each punch-in ramps in fast,
+ * holds, then ramps back out. Adjacent zoomed scenes are merged.
+ *
+ * Face-aware: when face detections are provided, the zoom focus point tracks
+ * the detected face and the max scale is chosen so the face is NEVER cropped:
+ *   - close-up  -> max 1.08
+ *   - medium    -> max 1.12
+ *   - wide      -> max 1.15
  */
 export function generateZoomInstructions(
   editPlan: EditPlan,
-  enabled: boolean
+  enabled: boolean,
+  videoDuration?: number,
+  faces?: SceneFace[]
 ): ZoomInstruction[] {
-  if (!enabled) return [];
+  if (!enabled || editPlan.scenes.length === 0) return [];
 
+  const scenes = [...editPlan.scenes].sort((a, b) => a.startTime - b.startTime);
+  const duration = videoDuration ?? scenes[scenes.length - 1].endTime;
+
+  // Max zooms by video length (MPX rule)
+  const maxZooms = duration <= 15 ? 4 : duration <= 30 ? 7 : 10;
+
+  const faceMap = new Map<string, SceneFace>();
+  if (faces) for (const f of faces) faceMap.set(f.sceneId, f);
+
+  // 1) Hook zoom — always zoom the first scene
+  const selected = new Set<number>([0]);
+
+  // 2) Punch-ins on the highest-emphasis scenes (excluding the hook)
+  const candidates = scenes
+    .map((s, i) => ({ s, i }))
+    .filter(
+      ({ s, i }) =>
+        i !== 0 &&
+        s.zoomSuggestion !== 'none' &&
+        s.emphasis >= 0.6 &&
+        s.endTime - s.startTime >= 1.5
+    )
+    .sort((a, b) => b.s.emphasis - a.s.emphasis)
+    .slice(0, Math.max(0, maxZooms - 1));
+
+  for (const c of candidates) selected.add(c.i);
+
+  // 3) Build instructions; merge consecutive selected scenes into one held zoom
+  const sortedIdx = Array.from(selected).sort((a, b) => a - b);
   const instructions: ZoomInstruction[] = [];
 
-  for (const scene of editPlan.scenes) {
-    const duration = scene.endTime - scene.startTime;
-    if (duration <= 0) continue;
+  let g = 0;
+  while (g < sortedIdx.length) {
+    const start = sortedIdx[g];
+    let end = start;
+    while (g + 1 < sortedIdx.length && sortedIdx[g + 1] === end + 1) {
+      end = sortedIdx[g + 1];
+      g++;
+    }
+    g++;
 
-    const zoom = resolveZoom(scene, editPlan.pace);
-    if (!zoom) continue;
+    const isHook = start === 0;
+    const startScene = scenes[start];
+
+    // Face-aware focus + scale
+    const face = faceMap.get(startScene.id);
+    let focusX = 0.5;
+    let focusY = 0.38;
+    let maxScale = 1.08; // conservative default (talking head)
+
+    if (face && face.detected) {
+      focusX = face.centerX;
+      focusY = face.centerY;
+      maxScale =
+        face.shot === 'wide' ? 1.15 : face.shot === 'medium' ? 1.12 : 1.08;
+      // Safety: if the face is near an edge, pull the zoom back so a punch-in
+      // never pushes the face out of frame.
+      const edgeMargin = Math.min(focusX, 1 - focusX, focusY, 1 - focusY);
+      if (edgeMargin < 0.18) maxScale = Math.min(maxScale, 1.06);
+    }
 
     instructions.push({
-      startTime: scene.startTime,
-      endTime: scene.endTime,
-      scale: zoom.scale,
-      focusX: zoom.focusX,
-      focusY: zoom.focusY,
-      easing: zoom.easing,
+      startTime: startScene.startTime,
+      endTime: scenes[end].endTime,
+      scale: maxScale,
+      focusX,
+      focusY,
+      easing: 'easeOut',
+      mode: 'in',
+      rampSeconds: isHook ? 0.38 : 0.4,
     });
   }
 
-  // Fill gaps between zooms with subtle drift
-  const filled = fillGaps(instructions, editPlan);
-
-  return filled;
-}
-
-interface ZoomParams {
-  scale: number;
-  focusX: number;
-  focusY: number;
-  easing: ZoomInstruction['easing'];
-}
-
-/**
- * Determine zoom parameters for a scene based on its type and emphasis.
- */
-function resolveZoom(
-  scene: EditPlanScene,
-  pace: string
-): ZoomParams | null {
-  const baseFocusX = 0.5;
-  const baseFocusY = 0.4; // Slightly above center (face area for talking heads)
-
-  // Honor the scene's zoom suggestion
-  if (scene.zoomSuggestion === 'none') return null;
-
-  // Determine scale based on scene type and emphasis
-  const typeScales: Record<string, number> = {
-    hook: 1.15,
-    problem: 1.1,
-    solution: 1.05,
-    benefit: 1.12,
-    proof: 1.08,
-    cta: 1.2,
-    narration: 1.03,
-    title: 1.0,
-    transition: 1.0,
-  };
-
-  let scale = typeScales[scene.type] ?? 1.05;
-
-  // Adjust by emphasis
-  scale = 1 + (scale - 1) * scene.emphasis;
-
-  // Adjust by pace
-  if (pace === 'aggressive' || pace === 'fast') {
-    scale = 1 + (scale - 1) * 1.3; // Amplify zoom
-  } else if (pace === 'slow') {
-    scale = 1 + (scale - 1) * 0.6; // Reduce zoom
-  }
-
-  // Clamp scale
-  scale = Math.max(1.0, Math.min(scale, 1.4));
-
-  // If the resulting zoom is negligible, skip
-  if (scale < 1.02) return null;
-
-  // Determine direction
-  if (scene.zoomSuggestion === 'out') {
-    // Zoom out: start zoomed, end normal
-    // We represent this as starting at scale and easing out
-    return {
-      scale,
-      focusX: baseFocusX,
-      focusY: baseFocusY,
-      easing: 'easeOut',
-    };
-  }
-
-  // Default: zoom in
-  // Vary focus point slightly based on scene type for visual interest
-  let focusX = baseFocusX;
-  let focusY = baseFocusY;
-
-  if (scene.type === 'cta') {
-    focusY = 0.5; // Center for CTA
-  } else if (scene.type === 'hook') {
-    focusY = 0.35; // Upper area for hook (face)
-  }
-
-  // Choose easing based on scene type
-  let easing: ZoomInstruction['easing'] = 'easeInOut';
-  if (scene.type === 'hook' || scene.type === 'cta') {
-    easing = 'easeIn'; // Quick zoom for impact
-  } else if (scene.type === 'narration') {
-    easing = 'linear'; // Smooth subtle zoom for narration
-  }
-
-  return { scale, focusX, focusY, easing };
-}
-
-/**
- * Fill gaps between zoom instructions with very subtle drift zooms
- * to avoid static-looking segments.
- */
-function fillGaps(
-  instructions: ZoomInstruction[],
-  editPlan: EditPlan
-): ZoomInstruction[] {
-  if (instructions.length === 0) return instructions;
-
-  const sorted = [...instructions].sort(
-    (a, b) => a.startTime - b.startTime
-  );
-  const result: ZoomInstruction[] = [];
-
-  for (let i = 0; i < sorted.length; i++) {
-    result.push(sorted[i]);
-
-    // Check gap to next instruction
-    if (i < sorted.length - 1) {
-      const gapStart = sorted[i].endTime;
-      const gapEnd = sorted[i + 1].startTime;
-      const gapDuration = gapEnd - gapStart;
-
-      // Only fill gaps longer than 2 seconds
-      if (gapDuration > 2) {
-        result.push({
-          startTime: gapStart,
-          endTime: gapEnd,
-          scale: 1.02, // Very subtle
-          focusX: 0.5,
-          focusY: 0.45,
-          easing: 'linear',
-        });
-      }
-    }
-  }
-
-  return result;
+  return instructions;
 }

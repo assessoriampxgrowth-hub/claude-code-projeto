@@ -1,0 +1,54 @@
+[
+  {
+    "scene": {
+      "id": "79e51f23-1814-46d7-a48c-dc5bbe8cd71b",
+      "type": "hook",
+      "startTime": 0,
+      "endTime": 5,
+      "title": "Abertura",
+      "emphasis": 0.9,
+      "zoomSuggestion": "in",
+      "transitionIn": "cut",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "text-card",
+      "cardBackground": "#0A0F1A"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "7ee525a8-90f8-4487-890d-92e84bb869ca",
+      "type": "narration",
+      "startTime": 5,
+      "endTime": 31.6,
+      "title": "Conteudo Principal",
+      "emphasis": 0.5,
+      "zoomSuggestion": "none",
+      "transitionIn": "fade",
+      "transitionOut": "fade"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  },
+  {
+    "scene": {
+      "id": "06f3a06e-532a-451f-8fea-5ae7d10601a4",
+      "type": "cta",
+      "startTime": 31.6,
+      "endTime": 36.6,
+      "title": "Call to Action",
+      "emphasis": 0.9,
+      "zoomSuggestion": "in",
+      "transitionIn": "fade",
+      "transitionOut": "cut"
+    },
+    "composition": {
+      "mode": "clean"
+    },
+    "shouldGenerateImage": false
+  }
+]

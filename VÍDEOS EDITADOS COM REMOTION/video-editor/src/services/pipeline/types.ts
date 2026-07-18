@@ -30,6 +30,15 @@ export interface JobConfig {
   aggressiveCuts: boolean;
   zoomEnabled: boolean;
   customPrompt?: string;
+  language?: string; // 'auto' | 'pt' | 'en' | ...
+  effects?: {
+    colorGrading: string;
+    vignette: boolean;
+    vignetteIntensity: number;
+    letterbox: boolean;
+    letterboxRatio: number;
+    blurBackground: boolean;
+  };
 }
 
 export interface Job {

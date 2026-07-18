@@ -38,14 +38,26 @@ export function generateCaptionBlocks(
   // Split into word-timed lines
   const wordLines = splitIntoWordLines(segments, style.maxWordsPerLine);
 
+  // Max accent (green) words per block — MPX rule: never the whole phrase.
+  const maxHighlight = style.maxHighlightWords ?? Infinity;
+
   // Convert each word line into a caption block
   const blocks: CaptionBlock[] = wordLines.map((line) => {
-    const words: CaptionWord[] = line.words.map((w) => ({
-      word: style.uppercase ? w.word.toUpperCase() : w.word,
-      start: w.start,
-      end: w.end,
-      isHighlight: isHighlightWord(w.word, highlightSet),
-    }));
+    let highlightCount = 0;
+    const words: CaptionWord[] = line.words.map((w) => {
+      let isHighlight = isHighlightWord(w.word, highlightSet);
+      // Cap the number of highlighted words per block
+      if (isHighlight) {
+        if (highlightCount >= maxHighlight) isHighlight = false;
+        else highlightCount++;
+      }
+      return {
+        word: style.uppercase ? w.word.toUpperCase() : w.word,
+        start: w.start,
+        end: w.end,
+        isHighlight,
+      };
+    });
 
     const text = words.map((w) => w.word).join(' ');
 
