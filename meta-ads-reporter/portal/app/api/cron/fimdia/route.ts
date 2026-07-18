@@ -34,6 +34,13 @@ async function executar(req: NextRequest) {
   }
 
   const envio = await sendWhatsAppText(MATHEUS_WHATSAPP, resumo);
+
+  // Prévia da agenda de amanhã, junto com o fechamento do dia.
+  try {
+    const secret = process.env.CRON_SECRET ?? "";
+    const base = process.env.CLIENT_PORTAL_URL ?? "https://portal-alpha-weld.vercel.app";
+    await fetch(base + "/api/cron/agenda", { headers: { Authorization: "Bearer " + secret } });
+  } catch {}
   return NextResponse.json({ status: envio.success ? "enviado" : `erro: ${envio.error}` });
 }
 
