@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ademicon Mineiros — Conquiste seu bem SEM JUROS</title>
+<meta name="description" content="Consórcio Ademicon Mineiros: conquiste seu imóvel, carro ou capital sem juros e sem entrada. Descubra em 30 segundos o plano ideal pra você.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ============ CONFIG DA MARCA — ADEMICON ============ */
+  :root{
+    --red:        #E30613;
+    --red-dark:   #B00010;
+    --red-deep:   #7A0009;
+    --red-glow:   rgba(227,6,19,.45);
+    --ink:        #1a0305;
+    --white:      #ffffff;
+    --cream:      #fff5f5;
+    --muted:      rgba(255,255,255,.72);
+    --line:       rgba(255,255,255,.14);
+    --card:       rgba(255,255,255,.06);
+    --gold:       #ffd36b;
+    --radius:     20px;
+    --shadow:     0 24px 60px -20px rgba(0,0,0,.55);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    color:var(--white);
+    background:
+      radial-gradient(1200px 700px at 80% -5%, #ff2b39 0%, transparent 55%),
+      radial-gradient(900px 600px at 0% 20%, #c30111 0%, transparent 60%),
+      linear-gradient(160deg, #c40010 0%, #9c000f 45%, #6f0009 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.font-display{ font-family:'Poppins',sans-serif; letter-spacing:-.02em; line-height:1.05; }
+  .wrap{ width:100%; max-width:1080px; margin:0 auto; padding:0 22px; }
+  .hl{ color:var(--gold); }
+  .nowrap{ white-space:nowrap; }
+
+  /* grain overlay */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+    background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.014) 3px,rgba(255,255,255,.014) 4px);
+  }
+  .layer{ position:relative; z-index:1; }
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky; top:0; z-index:40;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(180deg, rgba(120,0,10,.55), rgba(120,0,10,0));
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 22px; max-width:1080px; margin:0 auto; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand svg{ width:38px; height:38px; }
+  .brand .txt{ display:flex; flex-direction:column; line-height:1; }
+  .brand .txt b{ font-family:'Poppins'; font-weight:800; font-size:19px; letter-spacing:.06em; }
+  .brand .txt span{ font-size:11px; letter-spacing:.32em; color:var(--muted); margin-top:3px; }
+  .nav .btn-mini{ font-size:14px; }
+
+  /* ============ HERO ============ */
+  .hero{ text-align:center; padding:44px 0 30px; }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.1); border:1px solid var(--line);
+    padding:8px 16px; border-radius:999px; font-size:13px; font-weight:600;
+    color:var(--cream); margin-bottom:22px;
+  }
+  .badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px var(--gold); animation:pulse 1.6s infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.35} }
+
+  .hero h1{ font-size:clamp(34px,7vw,64px); font-weight:900; margin-bottom:18px; text-shadow:0 4px 30px rgba(0,0,0,.35); }
+  .hero h1 .stroke{ color:transparent; -webkit-text-stroke:2px var(--white); }
+  .hero p.sub{ font-size:clamp(16px,2.4vw,20px); color:var(--cream); max-width:640px; margin:0 auto 30px; font-weight:500; }
+
+  .cta{
+    display:inline-flex; align-items:center; gap:10px; cursor:pointer; border:none;
+    font-family:'Poppins'; font-weight:800; font-size:clamp(16px,2vw,19px);
+    color:var(--red-deep); background:linear-gradient(180deg,#fff,#ffe9e9);
+    padding:18px 34px; border-radius:999px; text-decoration:none;
+    box-shadow:0 14px 34px -10px rgba(0,0,0,.55), inset 0 -3px 0 rgba(0,0,0,.08);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:hover{ transform:translateY(-3px); box-shadow:0 22px 44px -12px rgba(0,0,0,.6); }
+  .cta.small{ padding:14px 26px; font-size:16px; }
+  .cta .arrow{ transition:transform .2s; }
+  .cta:hover .arrow{ transform:translateX(4px); }
+
+  .hero .trust{ display:flex; gap:26px; justify-content:center; flex-wrap:wrap; margin-top:30px; color:var(--muted); font-size:14px; font-weight:600; }
+  .hero .trust b{ color:#fff; }
+
+  /* ============ STATS STRIP ============ */
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:34px 0 10px; }
+  .stat{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 14px; text-align:center; }
+  .stat .n{ font-family:'Poppins'; font-weight:800; font-size:clamp(26px,4vw,38px); }
+  .stat .l{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+  /* ============ QUIZ ============ */
+  .quiz-section{ padding:52px 0; }
+  .quiz-head{ text-align:center; margin-bottom:26px; }
+  .quiz-head h2{ font-size:clamp(26px,4.5vw,40px); font-weight:800; }
+  .quiz-head p{ color:var(--cream); margin-top:10px; font-size:16px; }
+
+  .quiz-card{
+    background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
+    border:1px solid var(--line); border-radius:24px;
+    box-shadow:var(--shadow); padding:30px 26px 34px; max-width:680px; margin:0 auto;
+    backdrop-filter:blur(6px); overflow:hidden;
+  }
+  .progress{ height:8px; background:rgba(0,0,0,.22); border-radius:999px; overflow:hidden; margin-bottom:8px; }
+  .progress .bar{ height:100%; width:20%; background:linear-gradient(90deg,var(--gold),#ffb020); border-radius:999px; transition:width .4s cubic-bezier(.4,0,.2,1); }
+  .progress-label{ display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); margin-bottom:24px; font-weight:600; }
+
+  .step{ display:none; animation:fade .35s ease; }
+  .step.active{ display:block; }
+  @keyframes fade{ from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:translateY(0)} }
+
+  .q-title{ font-family:'Poppins'; font-weight:700; font-size:clamp(20px,3.2vw,26px); margin-bottom:6px; }
+  .q-sub{ color:var(--muted); font-size:14.5px; margin-bottom:22px; }
+
+  .options{ display:grid; gap:12px; }
+  .options.two{ grid-template-columns:1fr 1fr; }
+  .opt{
+    display:flex; align-items:center; gap:14px; text-align:left; cursor:pointer;
+    background:rgba(255,255,255,.05); border:1.5px solid var(--line); border-radius:14px;
+    padding:16px 18px; color:#fff; font-size:15.5px; font-weight:600; width:100%;
+    transition:all .16s ease;
+  }
+  .opt:hover{ background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.4); transform:translateY(-2px); }
+  .opt.sel{ background:#fff; color:var(--red-deep); border-color:#fff; }
+  .opt .ico{ font-size:24px; width:34px; text-align:center; }
+  .opt.sel .ico{ filter:none; }
+
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:13.5px; font-weight:700; margin-bottom:7px; color:var(--cream); }
+  .field input{
+    width:100%; padding:15px 16px; border-radius:12px; border:1.5px solid var(--line);
+    background:rgba(0,0,0,.18); color:#fff; font-size:16px; font-family:inherit;
+    transition:border .15s;
+  }
+  .field input::placeholder{ color:rgba(255,255,255,.4); }
+  .field input:focus{ outline:none; border-color:var(--gold); }
+
+  .nav-row{ display:flex; justify-content:space-between; align-items:center; margin-top:24px; gap:12px; }
+  .btn-back{ background:none; border:none; color:var(--muted); font-weight:700; cursor:pointer; font-size:14.5px; font-family:inherit; }
+  .btn-back:hover{ color:#fff; }
+  .btn-back[hidden]{ visibility:hidden; }
+  .hint{ font-size:12.5px; color:var(--muted); text-align:center; margin-top:16px; }
+  .hint svg{ vertical-align:-2px; margin-right:4px; }
+
+  /* result */
+  #result{ text-align:center; }
+  .result-ring{
+    width:96px; height:96px; margin:0 auto 20px; border-radius:50%;
+    background:linear-gradient(180deg,var(--gold),#ffab00);
+    display:grid; place-items:center; font-size:48px; color:var(--red-deep);
+    box-shadow:0 0 0 10px rgba(255,211,107,.16), 0 14px 30px -8px rgba(0,0,0,.5);
+    animation:pop .5s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes pop{ from{transform:scale(.4); opacity:0} to{transform:scale(1); opacity:1} }
+  .result-box{ background:rgba(0,0,0,.2); border:1px solid var(--line); border-radius:16px; padding:18px; margin:22px 0; text-align:left; font-size:14.5px; }
+  .result-box .row{ display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed var(--line); }
+  .result-box .row:last-child{ border-bottom:none; }
+  .result-box .row span:first-child{ color:var(--muted); }
+  .result-box .row span:last-child{ font-weight:700; }
+  .wa-btn{
+    display:inline-flex; align-items:center; gap:12px; width:100%; justify-content:center;
+    background:linear-gradient(180deg,#25d366,#1eb257); color:#04361a;
+    font-family:'Poppins'; font-weight:800; font-size:18px; padding:18px; border-radius:14px;
+    text-decoration:none; box-shadow:0 14px 30px -10px rgba(37,211,102,.6); transition:transform .15s;
+  }
+  .wa-btn:hover{ transform:translateY(-2px); }
+
+  /* ============ BENEFITS ============ */
+  .benefits{ padding:20px 0 54px; }
+  .benefits h2{ text-align:center; font-size:clamp(26px,4.5vw,38px); font-weight:800; margin-bottom:8px; }
+  .benefits .lead{ text-align:center; color:var(--cream); max-width:560px; margin:0 auto 34px; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .bcard{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 20px; transition:transform .2s, background .2s; }
+  .bcard:hover{ transform:translateY(-4px); background:rgba(255,255,255,.1); }
+  .bcard .emo{ font-size:34px; }
+  .bcard h3{ font-size:18px; margin:14px 0 8px; font-family:'Poppins'; font-weight:700; }
+  .bcard p{ color:var(--muted); font-size:14.5px; line-height:1.55; }
+
+  /* ============ COMPARISON ============ */
+  .compare{ padding:10px 0 54px; }
+  .cmp-card{ background:var(--card); border:1px solid var(--line); border-radius:22px; overflow:hidden; }
+  .cmp-row{ display:grid; grid-template-columns:1.4fr 1fr 1fr; }
+  .cmp-row>div{ padding:16px 18px; border-bottom:1px solid var(--line); font-size:14.5px; display:flex; align-items:center; }
+  .cmp-row.head>div{ font-family:'Poppins'; font-weight:700; font-size:15px; background:rgba(0,0,0,.16); }
+  .cmp-row .yes{ color:#7dffa8; font-weight:800; }
+  .cmp-row .no{ color:#ff9ba1; font-weight:700; }
+  .cmp-row:last-child>div{ border-bottom:none; }
+  .cmp-me{ background:rgba(255,211,107,.08); }
+
+  /* ============ FINAL CTA ============ */
+  .final{ text-align:center; padding:20px 0 70px; }
+  .final-card{ background:linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.12)); border:1px solid var(--line); border-radius:26px; padding:44px 26px; box-shadow:var(--shadow); }
+  .final-card h2{ font-size:clamp(26px,5vw,44px); font-weight:900; margin-bottom:14px; }
+  .final-card p{ color:var(--cream); max-width:520px; margin:0 auto 26px; font-size:17px; }
+
+  footer{ text-align:center; padding:30px 22px 44px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); }
+  footer b{ color:#fff; }
+  footer .small{ font-size:11.5px; opacity:.7; margin-top:10px; max-width:640px; margin-left:auto; margin-right:auto; line-height:1.5; }
+
+  /* sticky mobile cta */
+  .sticky-cta{ position:fixed; bottom:0; left:0; right:0; z-index:50; padding:12px 16px; background:linear-gradient(0deg,rgba(90,0,8,.96),rgba(90,0,8,.7)); backdrop-filter:blur(8px); display:none; }
+  .sticky-cta .cta{ width:100%; justify-content:center; }
+
+  @media(max-width:640px){
+    .stats{ grid-template-columns:1fr 1fr 1fr; gap:8px; }
+    .stat{ padding:14px 6px; }
+    .grid3{ grid-template-columns:1fr; }
+    .options.two{ grid-template-columns:1fr; }
+    .cmp-row{ grid-template-columns:1.2fr .9fr .9fr; }
+    .cmp-row>div{ padding:12px; font-size:13px; }
+    .nav .brand .txt span{ display:none; }
+    .hero{ padding-top:30px; }
+    .sticky-cta{ display:block; }
+    body{ padding-bottom:76px; }
+    .hero .cta{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ademicon">
+        <path d="M20 66 L20 52 Q20 48 24 48 L38 48 Q42 48 42 52 L42 66 Q42 70 38 70 L24 70 Q20 70 20 66 Z" stroke="#fff" stroke-width="5"/>
+        <path d="M58 66 L58 52 Q58 48 62 48 L76 48 Q80 48 80 52 L80 66 Q80 70 76 70 L62 70 Q58 70 58 66 Z" stroke="#fff" stroke-width="5"/>
+        <path d="M24 48 L46 22 Q50 18 54 22 L76 48" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M40 48 L52 34" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div class="txt"><b>ADEMICON</b><span>MINEIROS</span></div>
+    </div>
+    <a href="#quiz" class="cta small">Simular agora</a>
+  </div>
+</header>
+
+<div class="layer">
+
+<!-- ===== HERO ===== -->
+<section class="hero wrap">
+  <div class="badge"><span class="dot"></span> Vagas limitadas • Grupo formando agora em Mineiros-GO</div>
+  <h1>Pare de <span class="stroke">enriquecer o banco</span>.<br>Conquiste seu bem <span class="hl">SEM JUROS</span>.</h1>
+  <p class="sub">Imóvel, carro, terreno ou capital de giro com o consórcio Ademicon — <b>sem juros, sem entrada</b> e com parcela que cabe no seu bolso. Descubra em 30 segundos o plano ideal pra você.</p>
+  <a href="#quiz" class="cta">Descobrir meu plano ideal <span class="arrow">→</span></a>
+  <div class="trust">
+    <div>✅ <b>+40 anos</b> de mercado</div>
+    <div>✅ <b>Maior</b> administradora independente</div>
+    <div>✅ <b>Sem</b> análise de crédito pra entrar</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">0%</div><div class="l">de juros</div></div>
+    <div class="stat"><div class="n">R$0</div><div class="l">de entrada</div></div>
+    <div class="stat"><div class="n">30s</div><div class="l">pra simular</div></div>
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="quiz-section wrap" id="quiz">
+  <div class="quiz-head">
+    <h2>Descubra seu plano em <span class="hl">4 perguntas</span></h2>
+    <p>Responda rapidinho e receba uma simulação personalizada no seu WhatsApp.</p>
+  </div>
+
+  <div class="quiz-card">
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="progress-label"><span id="stepLabel">Etapa 1 de 5</span><span id="pct">20%</span></div>
+
+    <!-- STEP 1 -->
+    <div class="step active" data-step="1">
+      <div class="q-title">O que você quer conquistar?</div>
+      <div class="q-sub">Escolha o seu objetivo principal.</div>
+      <div class="options two">
+        <button class="opt" data-q="objetivo" data-v="🏠 Imóvel / Casa própria"><span class="ico">🏠</span> Imóvel / Casa própria</button>
+        <button class="opt" data-q="objetivo" data-v="🚗 Carro / Moto"><span class="ico">🚗</span> Carro ou Moto</button>
+        <button class="opt" data-q="objetivo" data-v="🌱 Terreno / Construção"><span class="ico">🌱</span> Terreno / Construção</button>
+        <button class="opt" data-q="objetivo" data-v="💼 Capital / Investimento"><span class="ico">💼</span> Capital / Investir</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" data-step="2">
+      <div class="q-title">Qual valor de crédito você busca?</div>
+      <div class="q-sub">Uma estimativa já ajuda a encontrar o melhor grupo.</div>
+      <div class="options two">
+        <button class="opt" data-q="valor" data-v="Até R$ 50 mil"><span class="ico">💠</span> Até R$ 50 mil</button>
+        <button class="opt" data-q="valor" data-v="R$ 50 a 150 mil"><span class="ico">💠</span> R$ 50 a 150 mil</button>
+        <button class="opt" data-q="valor" data-v="R$ 150 a 300 mil"><span class="ico">💠</span> R$ 150 a 300 mil</button>
+        <button class="opt" data-q="valor" data-v="Acima de R$ 300 mil"><span class="ico">💎</span> Acima de R$ 300 mil</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" data-step="3">
+      <div class="q-title">Quanto você pode investir por mês?</div>
+      <div class="q-sub">Pra montar uma parcela que cabe no seu bolso.</div>
+      <div class="options two">
+        <button class="opt" data-q="parcela" data-v="Até R$ 500"><span class="ico">💰</span> Até R$ 500</button>
+        <button class="opt" data-q="parcela" data-v="R$ 500 a 1.000"><span class="ico">💰</span> R$ 500 a 1.000</button>
+        <button class="opt" data-q="parcela" data-v="R$ 1.000 a 2.000"><span class="ico">💰</span> R$ 1.000 a 2.000</button>
+        <button class="opt" data-q="parcela" data-v="Acima de R$ 2.000"><span class="ico">🤑</span> Acima de R$ 2.000</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" data-step="4">
+      <div class="q-title">Quando você quer começar?</div>
+      <div class="q-sub">Isso define quais grupos estão disponíveis pra você.</div>
+      <div class="options">
+        <button class="opt" data-q="prazo" data-v="🔥 O quanto antes"><span class="ico">🔥</span> O quanto antes — tô decidido(a)</button>
+        <button class="opt" data-q="prazo" data-v="Nos próximos 30 dias"><span class="ico">📅</span> Nos próximos 30 dias</button>
+        <button class="opt" data-q="prazo" data-v="Em 2 a 3 meses"><span class="ico">🗓️</span> Em 2 a 3 meses</button>
+        <button class="opt" data-q="prazo" data-v="Só pesquisando"><span class="ico">🔎</span> Ainda estou pesquisando</button>
+      </div>
+    </div>
+
+    <!-- STEP 5 - CAPTURA -->
+    <div class="step" data-step="5">
+      <div class="q-title">Prontinho! Pra onde envio sua simulação?</div>
+      <div class="q-sub">Um consultor Ademicon Mineiros vai te mandar o plano ideal no WhatsApp.</div>
+      <div class="field">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" placeholder="Ex.: João Silva" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fone">Seu WhatsApp (com DDD)</label>
+        <input type="tel" id="fone" placeholder="(64) 9 9999-9999" autocomplete="tel" inputmode="numeric">
+      </div>
+      <div class="hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z" stroke="#ffd36b" stroke-width="2" stroke-linejoin="round"/></svg>
+        Seus dados estão seguros. Sem spam, só a sua simulação.
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="step" data-step="6">
+      <div id="result">
+        <div class="result-ring">✓</div>
+        <div class="q-title" style="font-size:26px">Você foi <span class="hl">PRÉ-QUALIFICADO!</span></div>
+        <div class="q-sub" id="resultName">Seu plano personalizado está pronto.</div>
+        <div class="result-box" id="resultBox"></div>
+        <a href="#" class="wa-btn" id="waFinal">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="#04361a"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L4 29l7.2-1.9c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3Zm0 22.7c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.2-.3-.4a10 10 0 0 1-1.6-5.4c0-5.6 4.6-10.2 10.3-10.2S26 9 26 14.6 21.6 25.7 16 25.7Z"/><path d="M22 18.3c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.3-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.4 0-.5.2-.7l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5 0-.8.4-.3.4-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5l-.7-.4Z"/></svg>
+          Receber minha simulação no WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="nav-row" id="navRow">
+      <button class="btn-back" id="btnBack" hidden>← Voltar</button>
+      <span></span>
+      <button class="cta small" id="btnNext" style="display:none">Enviar e ver meu plano →</button>
+    </div>
+    <div class="hint" id="autoHint">👆 Toque na opção pra avançar automaticamente</div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits wrap">
+  <h2>Por que o consórcio é a jogada <span class="hl">inteligente</span></h2>
+  <p class="lead">Enquanto o financiamento faz você pagar o bem <b>2 a 3x mais caro</b>, o consórcio te leva ao mesmo objetivo pagando o valor real.</p>
+  <div class="grid3">
+    <div class="bcard"><div class="emo">🚫</div><h3>Zero juros</h3><p>Você paga o valor do bem + uma taxa de administração. Nada de juros compostos que engordam a dívida.</p></div>
+    <div class="bcard"><div class="emo">⚡</div><h3>Seja contemplado antes</h3><p>Com lance você pode antecipar sua carta de crédito e conquistar seu bem muito mais rápido.</p></div>
+    <div class="bcard"><div class="emo">🛡️</div><h3>Segurança total</h3><p>Ademicon: mais de 40 anos, fiscalizada pelo Banco Central e a maior administradora independente do país.</p></div>
+    <div class="bcard"><div class="emo">🔑</div><h3>Sem entrada</h3><p>Comece a construir seu patrimônio hoje, sem precisar de um valor gigante de entrada.</p></div>
+    <div class="bcard"><div class="emo">💳</div><h3>Parcela que cabe</h3><p>Planos flexíveis que se ajustam ao seu bolso — do plano enxuto ao crédito alto.</p></div>
+    <div class="bcard"><div class="emo">📈</div><h3>Poder de compra à vista</h3><p>Sua carta de crédito é dinheiro na mão. Você negocia como comprador à vista e ganha desconto.</p></div>
+  </div>
+</section>
+
+<!-- ===== COMPARE ===== -->
+<section class="compare wrap">
+  <div class="cmp-card">
+    <div class="cmp-row head">
+      <div>Comparativo</div><div>Financiamento</div><div class="cmp-me">Consórcio Ademicon</div>
+    </div>
+    <div class="cmp-row"><div>Juros</div><div class="no">Altíssimos ✕</div><div class="cmp-me yes">Zero ✓</div></div>
+    <div class="cmp-row"><div>Entrada</div><div class="no">Obrigatória ✕</div><div class="cmp-me yes">Não precisa ✓</div></div>
+    <div class="cmp-row"><div>Custo final do bem</div><div class="no">Até 3x mais ✕</div><div class="cmp-me yes">Valor real ✓</div></div>
+    <div class="cmp-row"><div>Flexibilidade</div><div class="no">Baixa ✕</div><div class="cmp-me yes">Total ✓</div></div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final wrap">
+  <div class="final-card">
+    <h2>Seu patrimônio começa <span class="hl">hoje</span>.</h2>
+    <p>As vagas dos grupos em formação são limitadas. Faça sua simulação gratuita agora e saia na frente.</p>
+    <a href="#quiz" class="cta">Quero minha simulação grátis →</a>
+  </div>
+</section>
+
+<footer>
+  <b>ADEMICON · MINEIROS-GO</b><br>
+  Consórcio inteligente para quem quer conquistar mais.
+  <div class="small">
+    Este site é uma página de captação de leads. Consórcio não é financiamento. Contemplação por sorteio ou lance, conforme regulamento. Sujeito a análise e disponibilidade de grupos. Ademicon Administradora de Consórcios.
+  </div>
+</footer>
+
+</div><!-- /layer -->
+
+<!-- sticky mobile cta -->
+<div class="sticky-cta"><a href="#quiz" class="cta">Simular agora — é grátis →</a></div>
+
+<script>
+/* ====== CONFIG ====== */
+/* >>> TROQUE pelo WhatsApp do consultor Ademicon Mineiros (formato: 55 + DDD + numero) <<< */
+const WHATSAPP = "556499999999";
+
+/* ====== STATE ====== */
+const answers = { objetivo:"", valor:"", parcela:"", prazo:"" };
+let current = 1;
+const TOTAL_STEPS = 5; // 4 perguntas + captura
+const steps = document.querySelectorAll('.step');
+const bar = document.getElementById('bar');
+const pct = document.getElementById('pct');
+const stepLabel = document.getElementById('stepLabel');
+const btnBack = document.getElementById('btnBack');
+const btnNext = document.getElementById('btnNext');
+const autoHint = document.getElementById('autoHint');
+
+function show(step){
+  steps.forEach(s=> s.classList.toggle('active', +s.dataset.step===step));
+  current = step;
+  const p = Math.min(step, TOTAL_STEPS);
+  const percent = Math.round((p/TOTAL_STEPS)*100);
+  bar.style.width = percent+'%';
+  pct.textContent = percent+'%';
+  stepLabel.textContent = step<=TOTAL_STEPS ? `Etapa ${step} de ${TOTAL_STEPS}` : 'Concluído 🎉';
+  btnBack.hidden = step===1 || step===6;
+  // captura step -> mostra botão enviar; result step esconde nav
+  const isCapture = step===5;
+  const isResult = step===6;
+  btnNext.style.display = isCapture ? 'inline-flex' : 'none';
+  autoHint.style.display = (step<=4) ? 'block' : 'none';
+  document.getElementById('navRow').style.display = isResult ? 'none' : 'flex';
+  if(step<=5){ document.querySelector('.quiz-card').scrollIntoView({behavior:'smooth', block:'center'}); }
+}
+
+/* opção clicada */
+document.querySelectorAll('.opt').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const q = btn.dataset.q;
+    answers[q] = btn.dataset.v;
+    // marca visual no grupo
+    btn.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+    btn.classList.add('sel');
+    // avança automático
+    setTimeout(()=> show(current+1), 260);
+  });
+});
+
+btnBack.addEventListener('click', ()=> show(current-1));
+
+/* envio */
+btnNext.addEventListener('click', submitLead);
+function submitLead(){
+  const nome = document.getElementById('nome').value.trim();
+  const foneRaw = document.getElementById('fone').value.trim();
+  const fone = foneRaw.replace(/\D/g,'');
+  if(nome.length<2){ alert('Por favor, digite seu nome.'); document.getElementById('nome').focus(); return; }
+  if(fone.length<10){ alert('Digite um WhatsApp válido com DDD.'); document.getElementById('fone').focus(); return; }
+
+  // monta resumo
+  const box = document.getElementById('resultBox');
+  box.innerHTML = `
+    <div class="row"><span>Objetivo</span><span>${answers.objetivo||'—'}</span></div>
+    <div class="row"><span>Crédito desejado</span><span>${answers.valor||'—'}</span></div>
+    <div class="row"><span>Investimento/mês</span><span>${answers.parcela||'—'}</span></div>
+    <div class="row"><span>Início</span><span>${answers.prazo||'—'}</span></div>`;
+  document.getElementById('resultName').textContent = `${nome.split(' ')[0]}, seu plano personalizado está pronto 👇`;
+
+  // link whatsapp
+  const msg = `Olá! Quero minha simulação de consórcio Ademicon Mineiros.%0A%0A`+
+    `👤 Nome: ${encodeURIComponent(nome)}%0A`+
+    `📱 WhatsApp: ${encodeURIComponent(foneRaw)}%0A`+
+    `🎯 Objetivo: ${encodeURIComponent(answers.objetivo)}%0A`+
+    `💠 Crédito: ${encodeURIComponent(answers.valor)}%0A`+
+    `💰 Invest/mês: ${encodeURIComponent(answers.parcela)}%0A`+
+    `⏱️ Início: ${encodeURIComponent(answers.prazo)}`;
+  document.getElementById('waFinal').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  show(6);
+}
+
+/* enter no form avança */
+document.getElementById('fone').addEventListener('keydown', e=>{ if(e.key==='Enter') submitLead(); });
+</script>
+</body>
+</html>
