@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ademicon Mineiros — Conquiste seu bem SEM JUROS</title>
+<meta name="description" content="Consórcio Ademicon em Mineiros-GO: conquiste seu imóvel, carro ou capital sem juros e sem entrada. Simulação gratuita no WhatsApp.">
+<meta property="og:title" content="Ademicon Mineiros — Conquiste seu bem SEM JUROS">
+<meta property="og:description" content="Imóvel, carro ou capital sem juros e sem entrada. Faça sua simulação gratuita agora.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --cor-primaria:#E30613;
+    --cor-primaria-esc:#a5000c;
+    --cor-fundo:#ffffff;
+    --cor-fundo-alt:#fff5f5;
+    --cor-texto:#1a1a1a;
+    --cor-texto-claro:#5c5c5c;
+    --cor-botao:#E30613;
+    --cor-botao-hover:#b00010;
+    --cor-destaque:#E30613;
+    --cor-urgencia:#EF4444;
+    --cor-sucesso:#10B981;
+    --branco:#ffffff;
+    --hero-1:#E30613; --hero-2:#a5000c; --hero-3:#6d0008;
+    --borda:#eee0e0;
+    --sombra:0 12px 34px -12px rgba(0,0,0,.18);
+    --sombra-forte:0 20px 50px -16px rgba(227,6,19,.4);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--cor-fundo); color:var(--cor-texto);
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-weight:900; letter-spacing:-.03em; line-height:1.08; text-wrap:balance; }
+  .wrap{ width:100%; max-width:1120px; margin:0 auto; padding:0 20px; }
+  .hl{ color:var(--cor-destaque); }
+  strong{ font-weight:800; }
+
+  /* ===== REVEAL ===== */
+  .rv{ opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+  .rv.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .rv{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+    .cta-pulse{ animation:none !important; }
+  }
+
+  /* ===== HEADER ===== */
+  header{ position:sticky; top:0; z-index:50; background:var(--branco); transition:box-shadow .25s; }
+  header.scrolled{ box-shadow:0 4px 20px rgba(0,0,0,.08); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 20px; max-width:1120px; margin:0 auto; }
+  .brand{ display:flex; align-items:center; gap:11px; }
+  .logo-badge{ width:44px; height:44px; border-radius:12px; background:var(--cor-primaria); display:grid; place-items:center; flex-shrink:0; }
+  .logo-badge svg{ width:29px; height:29px; }
+  .brand .txt{ display:flex; flex-direction:column; line-height:1.05; }
+  .brand .txt b{ font-weight:900; font-size:19px; letter-spacing:.02em; color:var(--cor-texto); }
+  .brand .txt span{ font-size:11px; letter-spacing:.06em; color:var(--cor-texto-claro); }
+  .nav-tag{ font-size:13px; font-weight:700; color:var(--cor-primaria); }
+  @media (max-width:600px){ .nav-tag{ display:none; } }
+
+  /* ===== BOTÕES ===== */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px; cursor:pointer;
+    border:none; text-decoration:none; font-family:inherit; font-size:17px; font-weight:800;
+    text-transform:uppercase; letter-spacing:.01em; padding:18px 40px; border-radius:8px;
+    background:var(--cor-botao); color:var(--branco); transition:background .2s, transform .15s, box-shadow .2s;
+    box-shadow:var(--sombra-forte); line-height:1.2;
+  }
+  .btn:hover{ background:var(--cor-botao-hover); transform:translateY(-2px); }
+  .btn:focus-visible{ outline:3px solid rgba(255,255,255,.9); outline-offset:3px; }
+  a:focus-visible, input:focus-visible, button:focus-visible{ outline:3px solid var(--cor-primaria); outline-offset:2px; }
+  .btn-wpp{ background:var(--cor-sucesso); box-shadow:0 16px 34px -12px rgba(16,185,129,.5); }
+  .btn-wpp:hover{ background:#0e9f6e; }
+  .cta-pulse{ animation:pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ box-shadow:var(--sombra-forte);} 50%{ box-shadow:0 20px 50px -10px rgba(227,6,19,.6);} }
+
+  /* ===== HERO ===== */
+  .hero{ background:linear-gradient(160deg,var(--hero-1),var(--hero-2) 55%,var(--hero-3)); color:var(--branco); padding:52px 0 60px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:520px; height:520px; border-radius:50%; top:-160px; right:-140px; background:radial-gradient(circle,rgba(255,255,255,.14),transparent 68%); }
+  .hero .inner{ position:relative; z-index:1; text-align:center; max-width:760px; margin:0 auto; }
+  .badge-urg{ display:inline-flex; align-items:center; gap:8px; background:rgba(0,0,0,.22); border:1px solid rgba(255,255,255,.28); padding:8px 16px; border-radius:999px; font-size:13.5px; font-weight:800; margin-bottom:22px; }
+  .badge-urg .dot{ width:8px; height:8px; border-radius:50%; background:#ffd36b; box-shadow:0 0 10px #ffd36b; animation:blink 1.5s infinite; }
+  @keyframes blink{ 0%,100%{opacity:1} 50%{opacity:.3} }
+  .hero h1{ font-size:clamp(32px,7vw,56px); margin-bottom:18px; }
+  .hero h1 u{ text-decoration:none; position:relative; white-space:nowrap; }
+  .hero h1 u::after{ content:""; position:absolute; left:0; right:0; bottom:.06em; height:.16em; background:#ffd36b; border-radius:4px; z-index:-1; }
+  .hero p.sub{ font-size:clamp(16px,2.3vw,20px); color:rgba(255,255,255,.92); margin:0 auto 30px; max-width:560px; }
+  .hero .btn{ background:var(--branco); color:var(--cor-primaria); }
+  .hero .btn:hover{ background:#ffe9ea; }
+  .hero-trust{ margin-top:26px; font-size:14px; color:rgba(255,255,255,.85); font-weight:600; }
+  .hero-trust b{ color:#fff; }
+
+  /* ===== STATS ===== */
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:600px; margin:34px auto 0; }
+  .stat{ background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:16px 8px; }
+  .stat .n{ font-weight:900; font-size:clamp(22px,5vw,30px); color:#fff; }
+  .stat .l{ font-size:12px; color:rgba(255,255,255,.82); margin-top:2px; }
+
+  /* ===== SEÇÕES ===== */
+  section.blk{ padding:56px 0; }
+  .sec-head{ text-align:center; max-width:640px; margin:0 auto 38px; }
+  .sec-head h2{ font-size:clamp(26px,4.4vw,40px); color:var(--cor-texto); }
+  .sec-head p{ color:var(--cor-texto-claro); margin-top:12px; }
+
+  /* BENEFÍCIOS */
+  .grid3{ display:grid; grid-template-columns:1fr; gap:18px; }
+  .bcard{ background:var(--cor-fundo-alt); border:1px solid var(--borda); border-radius:16px; padding:28px 24px; }
+  .bcard .emo{ width:54px; height:54px; border-radius:14px; background:var(--branco); border:1px solid var(--borda); display:grid; place-items:center; font-size:27px; }
+  .bcard h3{ font-size:20px; margin:16px 0 8px; color:var(--cor-texto); }
+  .bcard p{ color:var(--cor-texto-claro); font-size:15.5px; line-height:1.6; }
+
+  /* PROVA SOCIAL */
+  .proof{ background:var(--cor-fundo-alt); }
+  .proof .big{ text-align:center; }
+  .proof .num{ font-weight:900; font-size:clamp(52px,14vw,96px); line-height:1; color:var(--cor-destaque); letter-spacing:-.04em; }
+  .proof .ctx{ font-size:clamp(17px,2.6vw,22px); font-weight:700; color:var(--cor-texto); margin-top:6px; }
+  .proof .sub{ color:var(--cor-texto-claro); margin-top:8px; }
+
+  /* FORMULÁRIO */
+  .form-sec{ background:linear-gradient(160deg,var(--hero-1),var(--hero-3)); color:var(--branco); }
+  .form-card{ background:var(--branco); color:var(--cor-texto); border-radius:20px; box-shadow:var(--sombra); padding:34px 26px; max-width:520px; margin:0 auto; }
+  .form-card h2{ font-size:clamp(24px,4vw,32px); text-align:center; }
+  .form-card .sub{ text-align:center; color:var(--cor-texto-claro); margin:10px 0 24px; font-size:15.5px; }
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:14px; font-weight:800; margin-bottom:7px; }
+  .field input{ width:100%; padding:16px; border-radius:10px; border:2px solid var(--borda); background:#fafafa; color:var(--cor-texto); font-size:16px; font-family:inherit; transition:border-color .15s; }
+  .field input::placeholder{ color:#aaa; }
+  .field input:focus-visible{ outline:none; border-color:var(--cor-primaria); background:#fff; }
+  .form-card .btn{ width:100%; margin-top:6px; }
+  .form-card .btn[disabled]{ opacity:.75; cursor:progress; }
+  .err{ color:var(--cor-urgencia); font-size:14px; font-weight:700; margin-top:12px; text-align:center; min-height:1px; }
+  .form-note{ text-align:center; font-size:12.5px; color:var(--cor-texto-claro); margin-top:14px; }
+
+  /* GARANTIA */
+  .guar{ text-align:center; }
+  .guar-card{ max-width:660px; margin:0 auto; background:var(--cor-fundo-alt); border:1px solid var(--borda); border-radius:18px; padding:38px 26px; }
+  .guar-card .shield{ font-size:44px; }
+  .guar-card h2{ font-size:clamp(24px,4vw,34px); margin:12px 0 10px; }
+  .guar-card p{ color:var(--cor-texto-claro); max-width:480px; margin:0 auto 26px; }
+
+  footer{ background:var(--cor-texto); color:rgba(255,255,255,.8); text-align:center; padding:34px 20px; font-size:13.5px; }
+  footer b{ color:#fff; }
+  footer .disc{ font-size:11.5px; opacity:.6; margin-top:12px; max-width:640px; margin-inline:auto; line-height:1.55; }
+
+  /* WHATSAPP FLUTUANTE (mobile) */
+  .wpp-float{ position:fixed; bottom:18px; right:16px; z-index:60; width:58px; height:58px; border-radius:50%; background:var(--cor-sucesso); display:none; place-items:center; box-shadow:0 10px 26px -6px rgba(16,185,129,.6); }
+  .wpp-float svg{ width:32px; height:32px; }
+  @media (max-width:767px){ .wpp-float{ display:grid; } }
+
+  /* DESKTOP */
+  @media (min-width:768px){
+    .grid3{ grid-template-columns:repeat(3,1fr); gap:22px; }
+    .hero{ padding:70px 0 78px; }
+    section.blk{ padding:72px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="nav">
+    <div class="brand">
+      <div class="logo-badge" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 66 L20 52 Q20 48 24 48 L38 48 Q42 48 42 52 L42 66 Q42 70 38 70 L24 70 Q20 70 20 66 Z" stroke="#fff" stroke-width="5"/>
+          <path d="M58 66 L58 52 Q58 48 62 48 L76 48 Q80 48 80 52 L80 66 Q80 70 76 70 L62 70 Q58 70 58 66 Z" stroke="#fff" stroke-width="5"/>
+          <path d="M24 48 L46 22 Q50 18 54 22 L76 48" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 48 L52 34" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="txt"><b>ADEMICON</b><span>Mineiros-GO</span></div>
+    </div>
+    <span class="nav-tag">Consórcio sem juros</span>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="inner">
+      <span class="badge-urg"><span class="dot"></span> Grupos formando agora — vagas limitadas</span>
+      <h1>Conquiste seu imóvel ou carro <u>sem juros</u> e pare de enriquecer o banco</h1>
+      <p class="sub">Consórcio Ademicon em Mineiros-GO: <strong>zero juros, zero entrada</strong> e parcela que cabe no seu bolso. Simulação gratuita, sem compromisso.</p>
+      <a href="#form" class="btn cta-pulse">Quero meu plano sem juros</a>
+      <div class="stats">
+        <div class="stat"><div class="n">0%</div><div class="l">de juros</div></div>
+        <div class="stat"><div class="n">R$ 0</div><div class="l">de entrada</div></div>
+        <div class="stat"><div class="n">+40</div><div class="l">anos de mercado</div></div>
+      </div>
+      <p class="hero-trust">✅ <b>Maior</b> administradora independente do país · fiscalizada pelo Banco Central</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Por que o consórcio é a escolha inteligente</h2>
+      <p>Enquanto o financiamento cobra juros que dobram ou triplicam o valor do bem, o consórcio te leva ao mesmo objetivo pagando o preço real.</p>
+    </div>
+    <div class="grid3">
+      <div class="bcard rv">
+        <div class="emo" aria-hidden="true">🚫</div>
+        <h3>Zero juros de verdade</h3>
+        <p>Você paga só o valor do bem + uma taxa de administração transparente. Sem juros compostos engordando sua dívida — economia que chega a dezenas de milhares de reais.</p>
+      </div>
+      <div class="bcard rv">
+        <div class="emo" aria-hidden="true">⚡</div>
+        <h3>Contemple mais rápido com lance</h3>
+        <p>Além do sorteio mensal, você pode ofertar um lance e antecipar sua carta de crédito — recebendo o dinheiro pra comprar à vista muito antes do fim do plano.</p>
+      </div>
+      <div class="bcard rv">
+        <div class="emo" aria-hidden="true">🔑</div>
+        <h3>Sem entrada e sem análise pra entrar</h3>
+        <p>Não precisa de um valor gigante de entrada nem de aprovação de crédito pra começar. Você planeja seu patrimônio hoje com uma parcela que cabe no orçamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="blk proof">
+  <div class="wrap">
+    <div class="big rv">
+      <div class="num">+1.200</div>
+      <div class="ctx">famílias já realizaram o sonho com a Ademicon</div>
+      <p class="sub">Imóveis, carros e conquistas reais — de quem trocou os juros do banco por um plano inteligente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO -->
+<section class="blk form-sec" id="form">
+  <div class="wrap">
+    <div class="form-card rv">
+      <h2>Receba sua simulação grátis</h2>
+      <p class="sub">Deixe seus dados e um consultor Ademicon Mineiros te envia o plano ideal no WhatsApp.</p>
+      <form id="leadForm" novalidate>
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex.: João Silva" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="whatsapp">Seu WhatsApp (com DDD)</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(64) 9 9999-9999" autocomplete="tel" inputmode="numeric" required>
+        </div>
+        <button type="submit" class="btn" id="submitBtn">Quero economizar sem juros</button>
+        <div class="err" id="formErr" role="alert" aria-live="polite"></div>
+        <p class="form-note">🔒 Seus dados estão seguros. Sem spam — só a sua simulação.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA + CTA -->
+<section class="blk guar">
+  <div class="wrap">
+    <div class="guar-card rv">
+      <div class="shield" aria-hidden="true">🛡️</div>
+      <h2>Simulação 100% gratuita e sem compromisso</h2>
+      <p>Você conhece os números, tira todas as dúvidas e decide com calma. Nada de pressão — só clareza pra você tomar a melhor decisão.</p>
+      <a href="#form" class="btn">Fazer minha simulação grátis</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <b>ADEMICON · MINEIROS-GO</b><br>
+  Consórcio inteligente para quem quer conquistar mais.
+  <div class="disc">Consórcio não é financiamento. Contemplação por sorteio ou lance, conforme regulamento. Sujeito a análise e disponibilidade de grupos. Ademicon Administradora de Consórcios.</div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="#" class="wpp-float" id="wppFloat" aria-label="Falar com um consultor no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L4 29l7.2-1.9c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3Zm0 22.7c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.2-.3-.4a10 10 0 0 1-1.6-5.4c0-5.6 4.6-10.2 10.3-10.2S26 9 26 14.6 21.6 25.7 16 25.7Zm6-7.4c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.3-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.4 0-.5.2-.7l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5 0-.8.4-.3.4-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5l-.7-.4Z"/></svg>
+</a>
+
+<script>
+/* ============================================================
+   CONFIG — troque os 3 valores abaixo pelos seus dados reais
+   ============================================================ */
+const CONFIG = {
+  PIXEL_ID:   '000000000000000',           // Meta Pixel (15 dígitos)
+  WEBHOOK_URL:'',                            // URL do Google Apps Script (deixe '' pra desativar)
+  WHATSAPP:   '556499999999',                // WhatsApp destino: 55 + DDD + número
+  MSG:        'Olá! Quero minha simulação de consórcio Ademicon Mineiros sem juros.'
+};
+const DESTINO = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(CONFIG.MSG);
+
+/* ===== META PIXEL ===== */
+(function(){
+  if(!/^\d{15}$/.test(CONFIG.PIXEL_ID)) return; // não carrega com ID inválido
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,
+  'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', CONFIG.PIXEL_ID);
+  fbq('track', 'PageView');
+})();
+function track(event){
+  if(window.fbq){ try{ fbq('track', event); }catch(e){} }
+}
+let leadFired = sessionStorage.getItem('lead_fired') === '1';
+function fireLeadOnce(){
+  if(leadFired) return;
+  leadFired = true;
+  sessionStorage.setItem('lead_fired','1');
+  track('Lead');
+}
+
+/* ===== HEADER SOMBRA + REVEAL ===== */
+const hdr = document.getElementById('hdr');
+addEventListener('scroll', ()=> hdr.classList.toggle('scrolled', scrollY > 12), {passive:true});
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.rv').forEach(el=> io.observe(el));
+
+/* ===== VIEWCONTENT (form na viewport, uma vez) ===== */
+let vcFired = false;
+const vcObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting && !vcFired){ vcFired = true; track('ViewContent'); vcObserver.disconnect(); } });
+}, {threshold:.4});
+vcObserver.observe(document.getElementById('form'));
+
+/* ===== WHATSAPP FLUTUANTE ===== */
+document.getElementById('wppFloat').addEventListener('click', (e)=>{
+  e.preventDefault(); fireLeadOnce(); window.open(DESTINO, '_blank');
+});
+
+/* ===== FORMULÁRIO ===== */
+const form = document.getElementById('leadForm');
+const btn = document.getElementById('submitBtn');
+const errBox = document.getElementById('formErr');
+
+function postWebhook(payload){
+  if(!CONFIG.WEBHOOK_URL) return Promise.resolve();
+  const ctrl = new AbortController();
+  const t = setTimeout(()=> ctrl.abort(), 8000);
+  return fetch(CONFIG.WEBHOOK_URL, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload),
+    signal:ctrl.signal,
+    mode:'no-cors'
+  }).finally(()=> clearTimeout(t));
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  errBox.textContent = '';
+  const nome = document.getElementById('nome').value.trim();
+  const foneRaw = document.getElementById('whatsapp').value.trim();
+  const fone = foneRaw.replace(/\D/g,'');
+
+  if(nome.length < 2){ errBox.textContent = 'Digite seu nome completo.'; document.getElementById('nome').focus(); return; }
+  if(fone.length < 10 || fone.length > 11){ errBox.textContent = 'Digite um WhatsApp válido com DDD (10 ou 11 dígitos).'; document.getElementById('whatsapp').focus(); return; }
+
+  btn.disabled = true;
+  const original = btn.textContent;
+  btn.textContent = 'Aguarde...';
+
+  const payload = { nome:nome, whatsapp:foneRaw, timestamp:new Date().toISOString(), origem:'landing-form', url:location.href };
+
+  postWebhook(payload)
+    .catch(err=> console.error('Webhook falhou (seguindo assim mesmo):', err))
+    .finally(()=>{
+      fireLeadOnce();
+      const msg = CONFIG.MSG + '\n\nNome: ' + nome + '\nWhatsApp: ' + foneRaw;
+      window.location.href = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(msg);
+    });
+});
+</script>
+</body>
+</html>
