@@ -61,11 +61,26 @@ def normalizar(texto: str) -> str:
     return texto.strip()
 
 
-def _casa(nome_normalizado: str, chave: str) -> bool:
-    """Casa por igualdade ou por conter a chave como termo (ex.: 'Esfriou/Reativar')."""
-    if nome_normalizado == chave:
-        return True
-    return re.search(rf"(^| ){re.escape(chave)}( |$)", nome_normalizado) is not None
+# Palavras de ligação, descartadas na comparação: "Objeção: Preço" precisa casar
+# com a chave "objecao em preco".
+_LIGACAO = {"em", "de", "do", "da", "e", "o", "a", "no", "na", "com", "por", "para"}
+
+
+def _palavras(texto: str) -> list:
+    return [p for p in normalizar(texto).split() if p not in _LIGACAO]
+
+
+def _casa(nome: str, chave: str) -> bool:
+    """
+    Casa quando todas as palavras significativas da chave aparecem no nome.
+
+    Aguenta as variações que aparecem na prática: "Objeção: Preço" para
+    "objecao em preco", "Follow-up Marcado" para "marcado", e uma etiqueta
+    combinada como "Esfriou / Reativar" casando com as duas chaves.
+    """
+    esperadas = _palavras(chave)
+    encontradas = set(_palavras(nome))
+    return bool(esperadas) and all(p in encontradas for p in esperadas)
 
 
 def resolver(etiquetas_whatsapp: list) -> dict:

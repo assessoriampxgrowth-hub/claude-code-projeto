@@ -304,6 +304,18 @@ def cmd_etiquetas(_args):
     _resumo_etiquetas(carregar_etiquetas())
 
 
+# ─── tudo ──────────────────────────────────────────────────────────────────
+
+def cmd_tudo(args):
+    """Exporta, classifica e mostra a prévia numa tacada só."""
+    print("═" * 62 + "\n  1/3  EXPORTANDO CONVERSAS\n" + "═" * 62)
+    cmd_exportar(args)
+    print("\n" + "═" * 62 + "\n  2/3  ANALISANDO O CONTEXTO\n" + "═" * 62)
+    cmd_analisar(args)
+    print("\n" + "═" * 62 + "\n  3/3  PRÉVIA DAS ETIQUETAS\n" + "═" * 62)
+    cmd_aplicar(args)
+
+
 def _resumo_etiquetas(grupos):
     linhas = [[e["name"], "ALVO — pode ser aplicada"] for e in grupos["alvo"]]
     linhas += [[e["name"], "PROTEGIDA — conversa é ignorada"] for e in grupos["protegidas"]]
@@ -360,6 +372,17 @@ def main():
     ap.add_argument("--intervalo", type=float, default=1.0,
                     help="segundos entre gravações (padrão: 1.0)")
     ap.set_defaults(func=cmd_aplicar)
+
+    t = sub.add_parser("tudo", help="exporta + analisa + mostra a prévia de uma vez")
+    t.add_argument("--limite", type=int, default=40)
+    t.add_argument("--mensagens", type=int, default=40)
+    t.add_argument("--completar", action="store_true")
+    t.add_argument("--paralelo", type=int, default=4)
+    t.add_argument("--confirmar", action="store_true", help="já grava no WhatsApp no fim")
+    t.add_argument("--confianca-minima", type=float, default=0.6)
+    t.add_argument("--sem-remover", action="store_true")
+    t.add_argument("--intervalo", type=float, default=1.0)
+    t.set_defaults(func=cmd_tudo)
 
     args = p.parse_args()
     try:
