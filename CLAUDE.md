@@ -42,6 +42,13 @@ python main.py schedule
 
 # Configure WhatsApp instance interactively
 python configurar-whatsapp.py
+
+# Lead tagging on WhatsApp (requires whatsapp-server running + Business account)
+python etiquetar_leads.py etiquetas              # show label mapping
+python etiquetar_leads.py exportar --limite 40   # download recent conversations
+python etiquetar_leads.py analisar               # classify via Anthropic API
+python etiquetar_leads.py aplicar                # preview only — writes nothing
+python etiquetar_leads.py aplicar --confirmar    # actually apply labels
 ```
 
 ### Environment Variables
@@ -74,6 +81,16 @@ Data flow for each client: `meta_api` → `report_generator` + `pdf_generator` �
 - **`scheduler.py`** — APScheduler `BlockingScheduler` with `CronTrigger` in `America/Sao_Paulo`.
 - **`config.py`** — Single source of truth for env-based settings; imported by all modules.
 - **`gerar_todos.py`** — Standalone batch script: publishes PDFs for all active clients silently (no prompts, no WhatsApp), 30-day window.
+
+### Lead tagging (`etiquetar_leads.py` + `etiquetas.py`)
+
+Separate flow from the reporting pipeline. Reads WhatsApp conversations, classifies each lead's funnel stage with the Anthropic API, and applies WhatsApp labels.
+
+- **`whatsapp-server/server.js`** — local `whatsapp-web.js` server (session persisted in `whatsapp-server/auth/`). Beyond the Evolution-compatible send endpoints, it exposes `GET /labels/:instance`, `GET /chats/:instance`, `GET /chat/messages/:instance`, and `POST /label/handle/:instance`. Labels require a **WhatsApp Business** account; on a personal account these return 409.
+- **`etiquetas.py`** — label taxonomy and the classifier. `PROTEGIDAS` (prospect, repique, matriculados, aulas agendadas) make a conversation be skipped entirely — nothing added, nothing removed. `ALVO` (novo, em atendimento, esfriou, reativar, objeção em preço, vai pensar, marcado) are the applicable labels, each with the criteria fed to the model. `resolver()` matches the account's real label names against the taxonomy accent- and case-insensitively; unmatched labels are never touched.
+- **`etiquetar_leads.py`** — four-step CLI (`etiquetas` → `exportar` → `analisar` → `aplicar`). Intermediate state lands in `analise/` (gitignored — it holds real customer conversations). `aplicar` is a dry run unless `--confirmar` is passed, and skips decisions below `--confianca-minima` (default 0.6).
+
+`POST /label/handle` computes the final label set server-side from the chat's current labels, so unrelated labels always survive a write.
 
 ---
 

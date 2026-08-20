@@ -99,6 +99,121 @@ app.post('/message/sendMedia/:instance', async (req, res) => {
   }
 })
 
+// ─── Etiquetas / leads (requer WhatsApp Business) ──────────────────────────
+// Usadas por etiquetar_leads.py. Etiquetas só existem em contas Business:
+// em conta pessoal a whatsapp-web.js lança erro, devolvido aqui como 409.
+
+function exigirConexao(res) {
+  if (connectionStatus !== 'connected') {
+    res.status(503).json({ error: 'WhatsApp não conectado' })
+    return false
+  }
+  return true
+}
+
+function erroEtiqueta(res, e) {
+  const msg = String(e && e.message || e)
+  console.error('[labels]', msg)
+  res.status(409).json({
+    error: msg,
+    hint: 'Etiquetas só estão disponíveis em contas WhatsApp Business.',
+  })
+}
+
+const serializarEtiqueta = (l) => ({ id: l.id, name: l.name, hexColor: l.hexColor })
+
+// Lista todas as etiquetas da conta
+app.get('/labels/:instance', async (req, res) => {
+  if (!exigirConexao(res)) return
+  try {
+    const labels = await client.getLabels()
+    res.json(labels.map(serializarEtiqueta))
+  } catch (e) {
+    erroEtiqueta(res, e)
+  }
+})
+
+// Lista as conversas mais recentes, já com as etiquetas de cada uma
+app.get('/chats/:instance', async (req, res) => {
+  if (!exigirConexao(res)) return
+  const limit = Math.min(parseInt(req.query.limit, 10) || 40, 500)
+  const incluirGrupos = req.query.includeGroups === 'true'
+  try {
+    const chats = (await client.getChats())
+      .filter(c => c.id._serialized !== 'status@broadcast')
+      .filter(c => incluirGrupos || !c.isGroup)
+      .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0))
+      .slice(0, limit)
+
+    const saida = []
+    for (const chat of chats) {
+      let labels = []
+      try {
+        labels = (await client.getChatLabels(chat.id._serialized)).map(serializarEtiqueta)
+      } catch (e) {
+        // conta sem suporte a etiquetas: segue sem elas
+      }
+      saida.push({
+        chatId: chat.id._serialized,
+        name: chat.name || chat.id.user,
+        number: chat.id.user,
+        isGroup: chat.isGroup,
+        timestamp: chat.timestamp || 0,
+        unreadCount: chat.unreadCount || 0,
+        labels,
+      })
+    }
+    res.json(saida)
+  } catch (e) {
+    erroEtiqueta(res, e)
+  }
+})
+
+// Histórico de mensagens de uma conversa
+app.get('/chat/messages/:instance', async (req, res) => {
+  if (!exigirConexao(res)) return
+  const { chatId } = req.query
+  if (!chatId) return res.status(400).json({ error: 'chatId é obrigatório' })
+  const limit = Math.min(parseInt(req.query.limit, 10) || 40, 200)
+  try {
+    const chat = await client.getChatById(chatId)
+    const mensagens = await chat.fetchMessages({ limit })
+    res.json(mensagens.map(m => ({
+      fromMe: m.fromMe,
+      body: m.body || '',
+      type: m.type,
+      timestamp: m.timestamp,
+      hasMedia: m.hasMedia,
+    })))
+  } catch (e) {
+    erroEtiqueta(res, e)
+  }
+})
+
+// Adiciona/remove etiquetas de uma conversa.
+// Body: { chatId, add: [labelId], remove: [labelId] }
+// O conjunto final é calculado a partir das etiquetas atuais, então qualquer
+// etiqueta não citada em add/remove é preservada.
+app.post('/label/handle/:instance', async (req, res) => {
+  if (!exigirConexao(res)) return
+  const { chatId, add = [], remove = [] } = req.body || {}
+  if (!chatId) return res.status(400).json({ error: 'chatId é obrigatório' })
+  try {
+    const chat = await client.getChatById(chatId)
+    const atuais = (await client.getChatLabels(chatId)).map(l => String(l.id))
+
+    const remover = new Set(remove.map(String))
+    const finais = new Set(atuais.filter(id => !remover.has(id)))
+    add.map(String).forEach(id => finais.add(id))
+
+    const ids = [...finais]
+    await chat.changeLabels(ids)
+    res.json({ status: 'ok', chatId, before: atuais, after: ids })
+  } catch (e) {
+    erroEtiqueta(res, e)
+  }
+})
+
 // Compatibilidade Evolution API
 app.get('/instance/fetchInstances', (req, res) => {
   res.json([{ instance: { instanceName: 'meu-whatsapp', state: connectionStatus === 'connected' ? 'open' : 'close' } }])

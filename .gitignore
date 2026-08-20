@@ -23,6 +23,9 @@ build/
 # Logs
 *.log
 
+# Conversas de clientes exportadas do WhatsApp — dado pessoal, nunca commitar
+meta-ads-reporter/analise/
+
 # OS
 .DS_Store
 Thumbs.db

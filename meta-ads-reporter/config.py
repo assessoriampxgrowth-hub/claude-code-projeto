@@ -33,6 +33,15 @@ BLOB_TOKEN = os.getenv("BLOB_READ_WRITE_TOKEN")
 # Portal do cliente
 CLIENT_PORTAL_URL = os.getenv("CLIENT_PORTAL_URL", "")
 
+# Etiquetagem de leads (whatsapp-server + Anthropic)
+# Por padrão reaproveita a configuração da Evolution API, já que o
+# whatsapp-server local expõe a mesma URL/apikey.
+WHATSAPP_SERVER_URL = os.getenv("WHATSAPP_SERVER_URL", EVOLUTION_API_URL)
+WHATSAPP_SERVER_KEY = os.getenv("WHATSAPP_SERVER_KEY", EVOLUTION_API_KEY)
+WHATSAPP_INSTANCE = os.getenv("WHATSAPP_INSTANCE", EVOLUTION_INSTANCE or "meu-whatsapp")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
+
 
 def validate():
     missing = []
