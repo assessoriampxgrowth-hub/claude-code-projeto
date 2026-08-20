@@ -35,6 +35,8 @@ PASTA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analise")
 ARQ_CONVERSAS = os.path.join(PASTA, "conversas.json")
 ARQ_DECISOES = os.path.join(PASTA, "decisoes.json")
 ARQ_LEITURA = os.path.join(PASTA, "conversas.md")
+ARQ_LISTAS = os.path.join(PASTA, "listas.md")
+ARQ_IGNORAR = os.path.join(PASTA, "ignorar.txt")
 
 
 # ─── Servidor WhatsApp ─────────────────────────────────────────────────────
@@ -77,16 +79,46 @@ def _checar(r):
     raise RuntimeError(msg)
 
 
-def carregar_etiquetas() -> dict:
-    """Busca as etiquetas da conta e resolve contra a taxonomia."""
-    grupos = tax.resolver(_get("/labels"))
-    if not grupos["alvo"]:
-        raise RuntimeError(
-            "Nenhuma etiqueta alvo encontrada na conta.\n"
-            "  → Esperadas: " + ", ".join(tax.ALVO) + "\n"
-            "  → Crie-as no WhatsApp Business ou ajuste a taxonomia em etiquetas.py."
-        )
-    return grupos
+def carregar_etiquetas(nomes_listas: list = None) -> dict:
+    """
+    Descobre como a conta organiza as conversas.
+
+    Conta Business: usa as etiquetas reais, e a gravação é automática ("modo
+    etiqueta"). Conta comum: cai para as Listas, que não têm API — a análise
+    acontece igual, mas a inclusão fica manual ("modo lista").
+    """
+    try:
+        grupos = tax.resolver(_get("/labels"))
+    except RuntimeError as e:
+        print(f"⚠  Sem API de etiquetas: {str(e).splitlines()[0]}")
+        grupos = None
+
+    if grupos and grupos["alvo"]:
+        return {**grupos, "modo": "etiqueta"}
+
+    if grupos is not None:
+        print("⚠  A conta não tem nenhuma etiqueta alvo.")
+    print("→  Seguindo em MODO LISTA: as conversas serão analisadas e agrupadas\n"
+          "   por lista, mas a inclusão precisa ser feita à mão no WhatsApp\n"
+          "   (três pontos → Listas → Editar pessoa ou grupo).\n")
+    return {
+        "modo": "lista",
+        "alvo": tax.montar_listas(nomes_listas),
+        "protegidas": [],
+        "desconhecidas": [],
+    }
+
+
+def carregar_ignorados() -> set:
+    """
+    No modo lista não dá para saber em que lista um contato já está, então as
+    conversas a pular (matriculados, prospect, repique, aulas agendadas) vêm de
+    analise/ignorar.txt — um nome ou número por linha.
+    """
+    if not os.path.exists(ARQ_IGNORAR):
+        return set()
+    with open(ARQ_IGNORAR, encoding="utf-8") as f:
+        return {tax.normalizar(l) for l in f if l.strip() and not l.startswith("#")}
 
 
 def _dias_parado(timestamp) -> int:
@@ -103,6 +135,9 @@ def cmd_exportar(args):
     _resumo_etiquetas(grupos)
 
     ids_protegidos = {str(e["id"]) for e in grupos["protegidas"]}
+    ignorados = carregar_ignorados()
+    if ignorados:
+        print(f"\n{len(ignorados)} contato(s) na lista de exclusão (analise/ignorar.txt).")
 
     # Puxa uma folga quando --completar, para repor as conversas descartadas.
     limite_busca = args.limite * 4 if args.completar else args.limite
@@ -113,6 +148,9 @@ def cmd_exportar(args):
     for chat in brutas:
         protegidas = [e["name"] for e in chat.get("labels", [])
                       if str(e["id"]) in ids_protegidos]
+        if tax.normalizar(chat["name"]) in ignorados or chat["number"] in ignorados:
+            protegidas = protegidas or ["consta em ignorar.txt"]
+
         if protegidas:
             ignoradas.append({**chat, "motivo": ", ".join(protegidas)})
             if not args.completar:
@@ -219,6 +257,10 @@ def cmd_analisar(args):
 
 def cmd_aplicar(args):
     dados = _carregar(ARQ_DECISOES, "Rode 'analisar' antes de 'aplicar'.")
+
+    if dados["etiquetas"].get("modo") == "lista":
+        return _saida_modo_lista(dados, args)
+
     alvo_por_nome = {tax.normalizar(e["name"]): e for e in dados["etiquetas"]["alvo"]}
     ids_alvo = {str(e["id"]) for e in dados["etiquetas"]["alvo"]}
 
@@ -277,6 +319,55 @@ def cmd_aplicar(args):
     assert all(str(e["id"]) in ids_alvo for p in planos for e in p["remover"])
 
 
+def _saida_modo_lista(dados, args):
+    """
+    Listas do WhatsApp não têm API: em vez de gravar, agrupa os contatos por
+    lista, na ordem em que você vai adicioná-los no diálogo
+    'Editar pessoa ou grupo'.
+    """
+    por_lista, indefinidos = {}, []
+    for d in dados["decisoes"]:
+        if d["etiqueta"] == tax.SEM_ETIQUETA or d["confianca"] < args.confianca_minima:
+            motivo = ("classificador não decidiu" if d["etiqueta"] == tax.SEM_ETIQUETA
+                      else f"confiança {d['confianca']:.2f}")
+            indefinidos.append((d, motivo))
+            continue
+        por_lista.setdefault(d["etiqueta"], []).append(d)
+
+    partes = ["# Contatos por lista", "",
+              "Abra o WhatsApp → três pontos → Listas → escolha a lista →",
+              "*Editar pessoa ou grupo* → adicione os contatos abaixo.", ""]
+
+    for e in dados["etiquetas"]["alvo"]:
+        contatos = por_lista.get(e["name"], [])
+        cabecalho = f"## {e['name']}  ({len(contatos)})"
+        print(f"\n{'─' * 62}\n  {e['name'].upper()}  —  {len(contatos)} contato(s)\n{'─' * 62}")
+        partes.append(cabecalho)
+        if not contatos:
+            print("  (nenhum)")
+            partes.extend(["", "_nenhum contato_", ""])
+            continue
+        for d in contatos:
+            print(f"  • {d['name']:<26.26} {d['number']:<15} {d['justificativa'][:44]}")
+            partes.append(f"- **{d['name']}** — `{d['number']}` — {d['justificativa']}")
+        partes.append("")
+
+    if indefinidos:
+        print(f"\n{'─' * 62}\n  SEM DEFINIÇÃO  —  decida à mão\n{'─' * 62}")
+        partes.append("## Sem definição — decida à mão")
+        for d, motivo in indefinidos:
+            print(f"  • {d['name']:<26.26} {d['number']:<15} {motivo}")
+            partes.append(f"- **{d['name']}** — `{d['number']}` — {motivo}")
+
+    _salvar_texto(ARQ_LISTAS, "\n".join(partes))
+    total = sum(len(v) for v in por_lista.values())
+    print(f"\n✓ {total} contato(s) distribuído(s) → {ARQ_LISTAS}")
+    print("\n⚠  Listas do WhatsApp não têm API: a inclusão é manual, pelo diálogo\n"
+          "   'Editar pessoa ou grupo'. Nada foi alterado na sua conta.")
+    if args.confirmar:
+        print("   (--confirmar não tem efeito no modo lista)")
+
+
 def _mostrar_plano(planos, pulos):
     if planos:
         print("\nSERÁ APLICADO:\n")
@@ -317,6 +408,14 @@ def cmd_tudo(args):
 
 
 def _resumo_etiquetas(grupos):
+    if grupos.get("modo") == "lista":
+        print(tabulate([[e["name"], "análise automática, inclusão manual"]
+                        for e in grupos["alvo"]],
+                       headers=["Lista", "Tratamento"], tablefmt="simple"))
+        print("\nPara pular contatos já matriculados/prospect/repique, escreva o\n"
+              "nome ou número de cada um em analise/ignorar.txt (um por linha).")
+        return
+
     linhas = [[e["name"], "ALVO — pode ser aplicada"] for e in grupos["alvo"]]
     linhas += [[e["name"], "PROTEGIDA — conversa é ignorada"] for e in grupos["protegidas"]]
     linhas += [[e["name"], "não mapeada — nunca é tocada"] for e in grupos["desconhecidas"]]
@@ -331,9 +430,13 @@ def _resumo_etiquetas(grupos):
 # ─── util ──────────────────────────────────────────────────────────────────
 
 def _salvar(caminho, dados):
+    _salvar_texto(caminho, json.dumps(dados, ensure_ascii=False, indent=2))
+
+
+def _salvar_texto(caminho, texto):
     os.makedirs(PASTA, exist_ok=True)
     with open(caminho, "w", encoding="utf-8") as f:
-        json.dump(dados, f, ensure_ascii=False, indent=2)
+        f.write(texto)
 
 
 def _carregar(caminho, dica):

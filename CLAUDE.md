@@ -88,9 +88,21 @@ Separate flow from the reporting pipeline. Reads WhatsApp conversations, classif
 
 - **`whatsapp-server/server.js`** — local `whatsapp-web.js` server (session persisted in `whatsapp-server/auth/`). Beyond the Evolution-compatible send endpoints, it exposes `GET /labels/:instance`, `GET /chats/:instance`, `GET /chat/messages/:instance`, and `POST /label/handle/:instance`. Labels require a **WhatsApp Business** account; on a personal account these return 409.
 - **`etiquetas.py`** — label taxonomy and the classifier. `PROTEGIDAS` (prospect, repique, matriculados, aulas agendadas) make a conversation be skipped entirely — nothing added, nothing removed. `ALVO` (novo, em atendimento, esfriou, reativar, objeção em preço, vai pensar, marcado) are the applicable labels, each with the criteria fed to the model. `resolver()` matches the account's real label names against the taxonomy accent- and case-insensitively; unmatched labels are never touched.
-- **`etiquetar_leads.py`** — four-step CLI (`etiquetas` → `exportar` → `analisar` → `aplicar`). Intermediate state lands in `analise/` (gitignored — it holds real customer conversations). `aplicar` is a dry run unless `--confirmar` is passed, and skips decisions below `--confianca-minima` (default 0.6).
+- **`etiquetar_leads.py`** — CLI with `etiquetas` → `exportar` → `analisar` → `aplicar`, plus `tudo` which chains the first three. Intermediate state lands in `analise/` (gitignored — it holds real customer conversations). `aplicar` is a dry run unless `--confirmar` is passed, and skips decisions below `--confianca-minima` (default 0.6).
 
 `POST /label/handle` computes the final label set server-side from the chat's current labels, so unrelated labels always survive a write.
+
+**Two modes, auto-detected on startup by whether `GET /labels` succeeds:**
+
+| | modo etiqueta | modo lista |
+|---|---|---|
+| Account | WhatsApp Business | WhatsApp comum |
+| Feature | Etiquetas (has API) | Listas (UI only, **no API**) |
+| Reading + classification | automatic | automatic |
+| Assignment | automatic via `--confirmar` | **manual** — the CLI groups contacts per list and writes `analise/listas.md`; the user adds them via três pontos → Listas → Editar pessoa ou grupo |
+| Skipping already-handled leads | by protected label | via `analise/ignorar.txt`, one name or number per line |
+
+There is no WhatsApp API for Listas — do not add write code for that path. In modo lista `--confirmar` is accepted but has no effect, and no write request is ever issued.
 
 ---
 

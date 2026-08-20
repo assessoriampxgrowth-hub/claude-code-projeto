@@ -52,6 +52,35 @@ ALVO = {
 
 SEM_ETIQUETA = "NENHUMA"
 
+# O WhatsApp comum organiza conversas em "Listas", que só existem na interface:
+# não há API para incluir alguém numa lista. Nesse caso a ferramenta ainda lê as
+# conversas e decide a lista de cada uma, mas a inclusão é manual. Nomes usados
+# quando a conta não expõe etiquetas por API.
+LISTAS_PADRAO = [
+    "Novo",
+    "Em Atendimento",
+    "Esfriou / Reativar",
+    "Objeção: Preço",
+    "Vai Pensar",
+    "Follow-up Marcado",
+]
+
+
+def montar_listas(nomes: list = None) -> list:
+    """
+    Monta as opções de classificação a partir de nomes de lista, sem consultar a
+    conta. Cada nome recebe os critérios da taxonomia que casarem com ele.
+    """
+    opcoes = []
+    for nome in (nomes or LISTAS_PADRAO):
+        criterios = [desc for chave, desc in ALVO.items() if _casa(nome, chave)]
+        opcoes.append({
+            "id": None,
+            "name": nome,
+            "criterio": " ".join(criterios) or "Sem critério na taxonomia.",
+        })
+    return opcoes
+
 
 def normalizar(texto: str) -> str:
     """Minúsculas, sem acento e sem pontuação, para comparar nomes de etiqueta."""
